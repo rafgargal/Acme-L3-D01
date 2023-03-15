@@ -1,30 +1,26 @@
 
-package acme.entities.auditing;
-
-import java.util.Date;
+package acme.entities.lecture;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.datatypes.ActivityType;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Lecturer;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class AuditingRecord extends AbstractEntity {
+public class Lecture extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -34,29 +30,33 @@ public class AuditingRecord extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 75)
-	protected String			subject;
+	protected String			title;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			assessment;
+	protected String			lAbstract;
 
-	@Past
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				auditPeriodInicial;
+	@NotBlank
+	@Positive
+	protected Double			learningTime;
 
-	@Past
-	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				auditPeriodFinal;
+	@NotBlank
+	@Length(max = 100)
+	protected String			body;
 
-	@Enumerated(EnumType.STRING)
-	protected Marks				mark;
+	@NotNull
+	protected ActivityType		activityType;
 
 	@URL
-	protected String			link;
+	protected String			furtherInfo;
+
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
 
 	@Valid
 	@NotNull
 	@ManyToOne(optional = false)
-	protected Audit				audit;
+	protected Lecturer			lecturer;
 
 }
