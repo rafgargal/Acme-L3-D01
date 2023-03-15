@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.0.0">
-  <zoom_level>5</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>335</x>
-      <y>265</y>
-      <w>50</w>
-      <h>80</h>
+      <x>498</x>
+      <y>186</y>
+      <w>60</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Marks
@@ -24,10 +24,10 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>145</x>
-      <y>175</y>
-      <w>215</w>
-      <h>70</h>
+      <x>246</x>
+      <y>300</y>
+      <w>258</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Audit
@@ -43,18 +43,18 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>165</x>
-      <y>285</y>
-      <w>155</w>
-      <h>80</h>
+      <x>270</x>
+      <y>432</y>
+      <w>252</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Auditing Record
 --
 + subject: String {NotBlank, Length(0,76)}
 + assessment: String {NotBlank,Length(0, 101)}
-+ audit_period_inicio: Timestamp {Past}
-+ audit_period_final: Timestamp {Past}
++ audit_period_inicio: Timestamp {Past, Temporal(TIMESTAMP)}
++ audit_period_final: Timestamp {Past, Temporal(TIMESTAMP)}
 + mark: Marks
 + link: String {URL}
 bg=green</panel_attributes>
@@ -63,10 +63,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>170</x>
-      <y>405</y>
-      <w>155</w>
-      <h>60</h>
+      <x>72</x>
+      <y>180</y>
+      <w>186</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Auditor
@@ -81,10 +81,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>240</y>
-      <w>55</w>
-      <h>55</h>
+      <x>384</x>
+      <y>378</y>
+      <w>66</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
@@ -95,24 +95,24 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>360</y>
-      <w>60</w>
-      <h>55</h>
+      <x>198</x>
+      <y>246</y>
+      <w>90</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
-m1=1
+m1=  1
 son realizados
 m2= *</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;80.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>10</x>
-      <y>185</y>
-      <w>110</w>
-      <h>40</h>
+      <x>84</x>
+      <y>312</y>
+      <w>132</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>mark is the mode
 of the marks in the corresponding
@@ -124,10 +124,10 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>115</x>
-      <y>205</y>
-      <w>40</w>
-      <h>35</h>
+      <x>210</x>
+      <y>336</y>
+      <w>48</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;50.0</additional_attributes>
@@ -135,10 +135,10 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>30</x>
-      <y>305</y>
-      <w>90</w>
-      <h>40</h>
+      <x>108</x>
+      <y>456</y>
+      <w>108</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>The difference between
 audit_period_Inicio and
@@ -150,12 +150,51 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>115</x>
-      <y>320</y>
-      <w>60</w>
-      <h>20</h>
+      <x>210</x>
+      <y>474</y>
+      <w>72</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>348</x>
+      <y>144</y>
+      <w>132</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+DashBoard
+
+--
++ totalAudits 
++ averageNumAuditingRecords
++ deviationNumAuditingRecords
++ minNumAuditingRecords
++ maxNumAuditingRecords
++ averagePeriodAuditingRecords
++ deviationPeriodAuditingRecords
++ minPeriodAuditingRecords
++ maxPeriodAuditingRecords
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>204</y>
+      <w>108</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=  1
+tiene
+m2= 1</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
