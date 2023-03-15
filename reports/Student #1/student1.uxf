@@ -22,8 +22,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>432</x>
-      <y>256</y>
+      <x>424</x>
+      <y>384</y>
       <w>312</w>
       <h>112</h>
     </coordinates>
@@ -52,7 +52,7 @@ Lecture
 --
 + title: String {NotBlank, Length(max = 75)}
 + lAbstract: String {NotBlank, Length(max = 100)}
-+ learningTime: Time (NotNull)
++ learningTime: Double (NotBlank, Positive)
 + body: String {NotBlank, Length(max = 100)}
 + activityType: ActivityType
 + furtherInfo: String {URL}
@@ -62,30 +62,16 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>536</x>
-      <y>160</y>
-      <w>40</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>lt=x-&gt;
-m1=1..*
-m2=1
-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>336</x>
       <y>232</y>
-      <w>112</w>
-      <h>104</h>
+      <w>104</w>
+      <h>232</h>
     </coordinates>
     <panel_attributes>lt=x-&gt;
 m1=1..*
 m2=1
 </panel_attributes>
-    <additional_attributes>120.0;100.0;60.0;100.0;60.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>110.0;260.0;60.0;260.0;60.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -104,29 +90,26 @@ m2=1..*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>136</x>
-      <y>344</y>
-      <w>128</w>
-      <h>32</h>
+      <x>104</x>
+      <y>312</y>
+      <w>176</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 LecturerDashboard
+--
++ theoryLectures: Integer
++ handsOnLectures: Integer
++ averageLTLectures: Double
++ deviationLTLectures: Double
++ minimumLTLectures: Double
++ maximumLTLectures: Double
++ averageLTCourses: Double
++ deviationLTCourses: Double
++ minimumLTCourses: Double
++ maximumLTCourses: Double
 bg=green</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>192</x>
-      <y>256</y>
-      <w>32</w>
-      <h>104</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=1
-m2=1
-</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -144,5 +127,47 @@ ActivityType
 + BALANCED
 bg=YELLOW</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>256</y>
+      <w>152</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+LectureCourse
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>160</y>
+      <w>40</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=1..*
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>288</y>
+      <w>40</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=1..*
+</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
