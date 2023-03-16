@@ -1,7 +1,7 @@
 
 package acme.entities.bulletin;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
@@ -25,7 +25,7 @@ public class Bulletin extends AbstractEntity {
 	protected static final long	serialVersionUID	= 1L;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@PastOrPresent
 	protected Date				moment;
 
