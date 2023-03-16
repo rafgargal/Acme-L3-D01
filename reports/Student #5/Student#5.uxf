@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>498</x>
-      <y>186</y>
+      <x>528</x>
+      <y>294</y>
       <w>60</w>
       <h>96</h>
     </coordinates>
@@ -24,7 +24,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>246</x>
+      <x>234</x>
       <y>300</y>
       <w>258</w>
       <h>84</h>
@@ -43,8 +43,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>432</y>
+      <x>120</x>
+      <y>456</y>
       <w>252</w>
       <h>90</h>
     </coordinates>
@@ -81,35 +81,35 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>384</x>
+      <x>246</x>
       <y>378</y>
       <w>66</w>
-      <h>66</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 se componen
 m2=*</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>198</x>
       <y>246</y>
-      <w>90</w>
+      <w>84</w>
       <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=  1
 son realizados
 m2= *</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;60.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>84</x>
+      <x>72</x>
       <y>312</y>
       <w>132</w>
       <h>48</h>
@@ -124,19 +124,19 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
+      <x>198</x>
       <y>336</y>
       <w>48</w>
-      <h>42</h>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;60.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>108</x>
-      <y>456</y>
+      <x>72</x>
+      <y>366</y>
       <w>108</w>
       <h>48</h>
     </coordinates>
@@ -150,18 +150,18 @@ bg=pink</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>474</y>
-      <w>72</w>
-      <h>24</h>
+      <x>144</x>
+      <y>408</y>
+      <w>18</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;100.0;20.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>348</x>
+      <x>336</x>
       <y>144</y>
       <w>132</w>
       <h>132</h>
@@ -188,13 +188,47 @@ bg=green</panel_attributes>
     <coordinates>
       <x>252</x>
       <y>204</y>
-      <w>108</w>
+      <w>96</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=  1
 tiene
 m2= 1</panel_attributes>
-    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>402</x>
+      <y>456</y>
+      <w>234</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Course
+--
++ code: String {Pattern([A-Z]{1,3}[0-9]{3}), NotBlank, Unique}
++ title: String {NotBlank, Length(max = 75)}
++ cAbstract: String {NotBlank, Length(max = 100)}
++ activityType: ActivityType
++ retailPrice: Money 
++ furtherInfo: String {URL}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>378</y>
+      <w>36</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=  1
+sobre
+m2= *</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
