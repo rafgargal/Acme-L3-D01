@@ -1,12 +1,11 @@
 
-package acme.entities;
+package acme.entities.bulletin;
 
 import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -21,13 +20,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Peep extends AbstractEntity {
+public class Bulletin extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	@NotNull
 	protected Date				moment;
 
 	@NotBlank
@@ -35,20 +34,12 @@ public class Peep extends AbstractEntity {
 	protected String			title;
 
 	@NotBlank
-	@Length(max = 75)
-	protected String			nick;
-
-	@NotBlank
 	@Length(max = 100)
 	protected String			message;
 
-	@Email
-	protected String			email;
+	protected boolean			critical;
 
 	@URL
-	protected String			link;
+	protected String			moreInfoLink;
 
-	//Derived attributes
-
-	//Relationships
 }
