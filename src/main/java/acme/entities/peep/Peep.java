@@ -1,7 +1,7 @@
 
 package acme.entities.peep;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
@@ -25,7 +25,7 @@ public class Peep extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@PastOrPresent
 	@NotNull
 	protected Date				moment;
