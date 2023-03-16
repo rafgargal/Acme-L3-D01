@@ -1,10 +1,8 @@
 
-package acme.entities.auditing;
+package acme.entities.practicum;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
@@ -15,44 +13,46 @@ import org.hibernate.validator.constraints.Length;
 
 import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
-import acme.roles.Auditor;
+import acme.roles.Company;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Audit extends AbstractEntity {
+public class Practicum extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	@NotBlank
+	//Atributes
+
 	@Column(unique = true)
-	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
+	@NotBlank
+	@Pattern(regexp = "^[A-Z]{1,3}[0-9]{3}$")
 	protected String			code;
 
 	@NotBlank
-	@Length(max = 100)
-	protected String			conclusion;
+	@Length(max = 75)
+	protected String			title;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			weakPoints;
+	protected String			summary;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			strongPoints;
+	protected String			goals;
 
-	@Enumerated(EnumType.STRING)
-	protected Marks				mark;
+	// Derived attributes
 
-	@Valid
+	// Relationships
 	@NotNull
+	@Valid
 	@ManyToOne(optional = false)
-	protected Auditor			auditor;
+	protected Company			company;
 
-	@Valid
 	@NotNull
+	@Valid
 	@ManyToOne(optional = false)
 	protected Course			course;
 
