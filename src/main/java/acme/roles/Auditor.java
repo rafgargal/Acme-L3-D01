@@ -24,11 +24,11 @@ public class Auditor extends AbstractRole {
 
 	@NotBlank
 	@Size(max = 25)
-	protected String			profesional_ID;
+	protected String			profesionalId;
 
 	@NotBlank
 	@Size(max = 100)
-	protected String			list_Certification;
+	protected String			listCertification;
 
 	@URL
 	protected String			link;
