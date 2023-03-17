@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>335</x>
+      <y>265</y>
+      <w>50</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+Marks
+--
++ A+
++ A
++ B
++ C
++ F
++ F-
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>145</x>
+      <y>175</y>
+      <w>215</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Audit
+--
++ code: String {NotBlank, Unique, Pattern("[A-Z]{1,3}[0-9][0-9]{3}")}
++ conclusion: String {NotBlank,Length(0, 101)}
++ strong_points: String {NotBlank,Length(0, 101)}
++ weak_points: String {NotBlank,Length(0, 101)}
++ / mark: Marks
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>165</x>
+      <y>285</y>
+      <w>155</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Auditing Record
+--
++ subject: String {NotBlank, Length(0,76)}
++ assessment: String {NotBlank,Length(0, 101)}
++ audit_period_inicio: Timestamp {Past}
++ audit_period_final: Timestamp {Past}
++ mark: Marks
++ link: String {URL}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>405</y>
+      <w>155</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Auditor
+--
++ firm: String {NotBlank, Length(0, 76)}
++ profesional ID: String {NotBlank, Length(0,26)}
++ certifications: String {NotBlank, Length(0,101)}
++ link: String {URL}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>240</y>
+      <w>55</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+se componen
+m2=*</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>360</y>
+      <w>60</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+son realizados
+m2= *</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>185</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>mark is the mode
+of the marks in the corresponding
+auditing records; ties must be 
+broken arbitrarily if necessary
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>115</x>
+      <y>205</y>
+      <w>40</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>30</x>
+      <y>305</y>
+      <w>90</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>The difference between
+audit_period_Inicio and
+audit_period_final must 
+be at the very least an hour
+bg=pink</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>115</x>
+      <y>320</y>
+      <w>60</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;20.0</additional_attributes>
+  </element>
+</diagram>
