@@ -1,26 +1,26 @@
 
-package acme.entities.lecture;
+package acme.entities.enrolments;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.ActivityType;
+import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
-import acme.roles.Lecturer;
+import acme.roles.Student;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Lecture extends AbstractEntity {
+public class Enrolment extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -29,33 +29,27 @@ public class Lecture extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
+	@Column(unique = true)
+	@Pattern(regexp = "^[A-Z]{1,3}[0-9]{3}$")
+	protected String			code;
+
+	@NotBlank
 	@Length(max = 75)
-	protected String			title;
+	protected String			motivation;
 
 	@NotBlank
 	@Length(max = 100)
-	protected String			lAbstract;
-
-	@Positive
-	protected Double			learningTime;
-
-	@NotBlank
-	@Length(max = 100)
-	protected String			body;
-
-	@NotNull
-	protected ActivityType		activityType;
-
-	@URL
-	protected String			furtherInfo;
-
-	// Derived attributes -----------------------------------------------------
+	protected String			goals;
 
 	// Relationships ----------------------------------------------------------
 
+	@ManyToOne(optional = false)
 	@Valid
 	@NotNull
-	@ManyToOne(optional = false)
-	protected Lecturer			lecturer;
+	protected Student			student;
 
+	@ManyToOne(optional = false)
+	@Valid
+	@NotNull
+	protected Course			course;
 }

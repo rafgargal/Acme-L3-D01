@@ -17,11 +17,11 @@ public class CompanyDashboard extends AbstractForm {
 
 	int[]						totalPracticaByMonth;
 
-	double						averageSessionLength;
+	Double						averageSessionLength;
 
-	double						deviationSessionLength;
+	Double						deviationSessionLength;
 
-	double						minimunSessionLength;
+	Double						minimunSessionLength;
 
-	double						maximumSessiongLength;
+	Double						maximumSessiongLength;
 }
