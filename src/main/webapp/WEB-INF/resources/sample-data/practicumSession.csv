@@ -1,6 +1,6 @@
 key,title,summary,startDate,endDate,moreInfoLink,key:practicum
 practicumSession-01,"a","a",2020/02/02 00:00,2020/02/12 00:00,null,practicum-01
 practicumSession-02,"Esto es un texto para contar 75 caracteres. Esto es un texto para contar 75","Esto es un texto para contar 100 caracteres. Esto es un texto para contar 100 caracteres. Esto es un",2020/02/02 00:00,2020/02/12 00:00,https://www.google.com,practicum-01
-practicumSession-03,"Esto es un texto para contar 35 ","Esto es un texto para contar 50 caracteres. ", null, practicum-02
+practicumSession-03,"Esto es un texto para contar 35 ","Esto es un texto para contar 50 caracteres. ",2020/02/02 00:00,2020/02/12 00:00, null, practicum-02
 practicumSession-04,"Esto es un texto","Esto es un texto para contar",2020/02/02 00:00,2020/02/12 00:00,https://www.google.com,practicum-01
 practicumSession-05,"Esto es un texto suficientemente largo para hacer test","Esto es un texto para contar 75 caracteres. Esto es un texto para contar 75",2020/02/02 00:00,2020/02/12 00:00,https://www.google.com,practicum-03
