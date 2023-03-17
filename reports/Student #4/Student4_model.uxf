@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>477</x>
+      <x>423</x>
       <y>0</y>
       <w>360</w>
       <h>108</h>
@@ -25,7 +25,7 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>477</x>
+      <x>423</x>
       <y>189</y>
       <w>459</w>
       <h>126</h>
@@ -46,7 +46,7 @@ bg=green
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>54</x>
+      <x>0</x>
       <y>198</y>
       <w>297</w>
       <h>108</h>
@@ -66,7 +66,7 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
+      <x>594</x>
       <y>99</y>
       <w>45</w>
       <h>108</h>
@@ -79,7 +79,7 @@ m2=1..n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>342</x>
+      <x>288</x>
       <y>243</y>
       <w>153</w>
       <h>45</h>
@@ -93,8 +93,50 @@ m2= 0..n
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>45</x>
+      <x>1080</x>
+      <y>198</y>
+      <w>315</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Course
+--
+bg=green
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>576</x>
       <y>396</y>
+      <w>180</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>estimatedTime: is a derivated 
+attribute , in hours, computed 
+from the corresponding
+sessions plus/minus 10%
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>621</x>
+      <y>306</y>
+      <w>27</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>9</x>
+      <y>414</y>
       <w>315</w>
       <h>117</h>
     </coordinates>
@@ -112,29 +154,17 @@ bg=green
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>630</x>
-      <y>396</y>
-      <w>180</w>
-      <h>81</h>
-    </coordinates>
-    <panel_attributes>estimatedTime: is a derivated 
-attribute , in hours, computed 
-from the corresponding
-sessions plus/minus 10%
-bg=blue</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>675</x>
-      <y>306</y>
-      <w>27</w>
-      <h>108</h>
+      <x>873</x>
+      <y>243</y>
+      <w>225</w>
+      <h>45</h>
     </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <panel_attributes>lt=&lt;-x
+m1= 1
+m2= 0..n
+</panel_attributes>
+    <additional_attributes>230.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
