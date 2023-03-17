@@ -1,0 +1,5 @@
+key,key:userAccount,statement,strongFeatures,weakFeatures,moreInfo
+student-01,user-account-student-01,"Una muestra de texto","Esto es una fortaleza de prueba","Esto es una debilidad de", https://direcconprueba.es
+student-02,user-account-student-02,"Texto para probar 75 caracteres. Texto para probar 75 caracteres. Texto par","Esto es un texto de prueba para comprobar el maximo de caracteres. Esto es un texto para comprobar e","Esto es un texto de prueba para comprobar el maximo de caracteres. Esto es un texto para comprobar e", null
+student-03,user-account-student-02,"Esto es un texto con la mitad de caracteres statement","Esto es un texto con la mitad de caracteres strongFeatures","Esto es un texto con la mitad de caracteres weakFeatures", https://google.es
+student-04,user-account-student-01,"Esto es un texto de prueba lo suficientemente largo para un test","Esto es un texto de prueba lo suficientemente largo para un test","Esto es un texto de prueba lo suficientemente largo para un test",null

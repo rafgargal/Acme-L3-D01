@@ -1,0 +1,3 @@
+key,key:userAccount,name,VATnumber,summary,moreInfoLink
+company-01,user-account-company-01,Acme L3,123456789, An overview of the company, https://github.com/rafgargal/Acme-L3-D02
+company-02,user-account-company-02,Tech Inc, 12345679, This is a summary of the company, null

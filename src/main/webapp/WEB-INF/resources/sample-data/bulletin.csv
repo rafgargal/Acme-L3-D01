@@ -1,0 +1,6 @@
+key,moment,title,message,critical,moreInfoLink
+bulletin-01,2020/02/02 00:00,"a","a",0,null
+bulletin-02,2020/02/02 00:00,"Esto es un texto para contar 75 caracteres. Esto es un texto para contar 75","Esto es un texto para contar 100 caracteres. Esto es un texto para contar 100 caracteres. Esto es un",1,"https://www.google.com"
+bulletin-03,2020/02/02 00:00,"Esto es un texto para contar 35 ","Esto es un texto para contar 50 caracteres. ",0,null
+bulletin-04,2020/02/02 00:00,"Esto es un texto","Esto es un texto para contar",1,null
+bulletin-05,2020/02/02 00:00,"Esto es un texto suficientemente largo para hacer test","Esto es un texto para contar 75 caracteres. Esto es un texto para contar 75",1,https://www.google.com

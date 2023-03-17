@@ -1,26 +1,26 @@
 
-package acme.entities.lecture;
+package acme.entities.banner;
+
+import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.validation.Valid;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.ActivityType;
 import acme.framework.data.AbstractEntity;
-import acme.roles.Lecturer;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Lecture extends AbstractEntity {
+public class Banner extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -28,34 +28,33 @@ public class Lecture extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotBlank
-	@Length(max = 75)
-	protected String			title;
-
-	@NotBlank
-	@Length(max = 100)
-	protected String			lAbstract;
-
-	@Positive
-	protected Double			learningTime;
-
-	@NotBlank
-	@Length(max = 100)
-	protected String			body;
+	@NotNull
+	@Temporal(value = TemporalType.TIMESTAMP)
+	@PastOrPresent
+	protected Date				instantiationOrUpdateMoment;
 
 	@NotNull
-	protected ActivityType		activityType;
+	@Temporal(value = TemporalType.TIMESTAMP)
+	protected Date				displayPeriodStart;
+
+	@NotNull
+	@Temporal(value = TemporalType.TIMESTAMP)
+	protected Date				displayPeriodEnd;
 
 	@URL
-	protected String			furtherInfo;
+	@NotBlank
+	protected String			pictureLink;
+
+	@NotBlank
+	@Length(max = 75)
+	protected String			slogan;
+
+	@NotBlank
+	@URL
+	protected String			webDocLink;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
-	@Valid
-	@NotNull
-	@ManyToOne(optional = false)
-	protected Lecturer			lecturer;
 
 }
