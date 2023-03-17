@@ -1,0 +1,8 @@
+key,key:tutorial,title,s-abstract,type,start-date-time,end-date-time,further-information
+session-01,tutorial-01,Titulo de ejemplo,Este es un tutorial de ejemplo,THEORETICAL,2023/04/25 16:00,2023/04/25 21:00,https://wikipedia.org/
+session-02,tutorial-01,Titulo de ejemplo,Este es un tutorial de ejemplo,HANDS_ON,2023/04/25 16:00,2023/04/25 21:00,
+session-03,tutorial-01,Titulo de ejemplo,Este es un tutorial de ejemplo,BALANCED,2023/04/25 16:00,2023/04/25 21:00,
+session-04,tutorial-01,A,Este es un tutorial de ejemplo,THEORETICAL,2023/04/25 16:00,2023/04/25 21:00,
+session-05,tutorial-01,Cadena de 75 caracteres Cadena de 75 caracteres Cadena de 75 caracteres Cad,Este es un tutorial de ejemplo,THEORETICAL,2023/04/25 16:00,2023/04/25 21:00,
+session-06,tutorial-01,Titulo de ejemplo,A,THEORETICAL,2023/04/25 16:00,2023/04/25 21:00,
+session-07,tutorial-01,Titulo de ejemplo,Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres ,THEORETICAL,2023/04/25 16:00,2023/04/25 21:00,
