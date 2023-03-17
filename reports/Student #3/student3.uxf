@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.0.0">
-  <zoom_level>6</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>372</x>
-      <y>234</y>
-      <w>312</w>
-      <h>72</h>
+      <x>371</x>
+      <y>210</y>
+      <w>364</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Assistant
 --
 + supervisor: String {NotBlank, Length(max = 75)}
 + resume: String {NotBlank, Length(max = 100)}
-+ expertiseFields: String {NotBlank, Length(max = 100), Pattern(^(\w+)(,\s*\w+)*$)}
++ expertiseFields: String {NotBlank, Length(max = 100)}
 + furtherInformation: String {URL}
 bg=green</panel_attributes>
     <additional_attributes/>
@@ -22,18 +22,18 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>360</y>
-      <w>282</w>
-      <h>78</h>
+      <x>392</x>
+      <y>357</y>
+      <w>329</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Tutorial
 --
 + code: String {Unique,NotBlank, Pattern([A-Z]{1,3}[0-9][0-9]{3})}
 + title: String {NotBlank,Length(max = 75)}
-+ abstract: String {NotBlank, Length(max = 100)}
-+ goals: String {NotBlank, Length(max = 100), Pattern(^(\w+)(,\s*\w+)*$)}
++ tAbstract: String {NotBlank, Length(max = 100)}
++ goals: String {NotBlank, Length(max = 100)}
 + estimatedTotalTime: double
 bg=green</panel_attributes>
     <additional_attributes/>
@@ -41,45 +41,44 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>66</x>
-      <y>276</y>
-      <w>276</w>
-      <h>102</h>
+      <x>14</x>
+      <y>259</y>
+      <w>322</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Session
 --
 + title: String {NotBlank, Length(max = 75)}
-+ abstract: String {NotBlank,Length(max = 100)}
-+ type: ActivityType
-+ startDateTime: DateTime {NotNull, Temporal(TIMESTAMP)}
-+ endDateTime: DateTime {NotNull, Temporal(TIMESTAMP)}
++ sAbstract: String {NotBlank,Length(max = 100)}
++ type: ActivityType {NotNull}
++ startDateTime: Date {NotNull, Temporal(TIMESTAMP)}
++ endDateTime: Date {NotNull, Temporal(TIMESTAMP)}
 + furtherInformation: String {URL}
-+ / timePeriod: int {Min(3600), Max(18000), Transient}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>198</x>
-      <y>372</y>
-      <w>204</w>
-      <h>60</h>
+      <x>168</x>
+      <y>371</y>
+      <w>238</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=x-&gt;&gt;&gt;&gt;&gt;
-m1=0..*
+m1=1..*
 m2=1
-has &gt;</panel_attributes>
+belongs to &gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0;320.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>486</x>
-      <y>54</y>
-      <w>102</w>
-      <h>120</h>
+      <x>504</x>
+      <y>0</y>
+      <w>119</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 AssistantDashboard
@@ -100,54 +99,41 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>522</x>
-      <y>168</y>
-      <w>42</w>
-      <h>78</h>
-    </coordinates>
-    <panel_attributes>lt=x-&gt;
-m1=1
-m2=1
-has &gt;</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>522</x>
-      <y>300</y>
-      <w>42</w>
-      <h>72</h>
+      <x>546</x>
+      <y>287</y>
+      <w>77</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
-has &gt;</panel_attributes>
+belongs to &gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>306</x>
-      <y>138</y>
-      <w>96</w>
-      <h>54</h>
+      <x>294</x>
+      <y>98</y>
+      <w>112</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 ActivityType
 --
 + THEORETICAL
 + HANDS-ON
++ BALANCED
 bg=orange</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>126</x>
-      <y>174</y>
-      <w>150</w>
-      <h>66</h>
+      <x>84</x>
+      <y>140</y>
+      <w>175</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>- startDateTime must be at least
 one day ahead.
@@ -161,12 +147,46 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>192</x>
-      <y>234</y>
-      <w>18</w>
-      <h>54</h>
+      <x>161</x>
+      <y>210</y>
+      <w>21</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>539</y>
+      <w>329</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Course
+--
++ code: String {Pattern([A-Z]{1,3}[0-9]{3}), NotBlank, Unique}
++ title: String {NotBlank, Length(max = 75)}
++ cAbstract: String {NotBlank, Length(max = 100)}
++ activityType: ActivityType
++ retailPrice: Money 
++ furtherInfo: String {URL}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>441</y>
+      <w>77</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=0..*
+m2=1
+belongs to &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
   </element>
 </diagram>
