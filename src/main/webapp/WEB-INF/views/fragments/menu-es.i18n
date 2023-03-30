@@ -43,9 +43,10 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
-# master.menu.bulletin ##########################################################
+# master.menu.authenticated ##########################################################
 
-master.menu.bulletin = Boletín
+master.menu.authenticated = Autenticado
+master.menu.authenticated.bulletin = Boletín
 
 # master.menu.user-account ####################################################
 
