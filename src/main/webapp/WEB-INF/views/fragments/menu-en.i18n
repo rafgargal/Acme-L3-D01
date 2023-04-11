@@ -43,6 +43,10 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.company ################################################################
+master.menu.company = Company
+master.menu.company.my-practica = My practicums
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
