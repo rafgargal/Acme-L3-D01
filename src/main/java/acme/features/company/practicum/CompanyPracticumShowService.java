@@ -32,7 +32,7 @@ public class CompanyPracticumShowService extends AbstractService<Company, Practi
 	public void load() {
 		Practicum practicum;
 		int practicumId;
-		practicumId = super.getRequest().getData("practicumId", int.class);
+		practicumId = super.getRequest().getData("id", int.class);
 		practicum = this.practicumRepository.findPracticumById(practicumId);
 
 		super.getBuffer().setData(practicum);
