@@ -12,3 +12,5 @@ user-account-administrator-02,true,"UserIdentity{name: 'Administrator1', surname
 user-account-administrator-03,true,"UserIdentity{name: 'Administrator2', surname: 'Acme', email: 'administrator2@acme.com'}",administrator2,administrator2
 user-account-student-01,true,"UserIdentity{name: 'student', surname: '1', email: 'student1@alum.us.es'}",student1,student1
 user-account-student-02,true,"UserIdentity{name: 'student', surname: '2', email: 'student2@alum.us.es'}",student2,student2
+user-account-student-03,true,"UserIdentity{name: 'student', surname: '3', email: 'student3@alum.us.es'}",student2,student3
+user-account-student-04,true,"UserIdentity{name: 'student', surname: '4', email: 'student4@alum.us.es'}",student2,student4
