@@ -47,6 +47,7 @@ master.menu.consumer.favourite-link = Favourite link
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.bulletin = Bulletin
+master.menu.authenticated.tutorial = Tutorial
 
 # master.menu.user-account ####################################################
 
