@@ -19,12 +19,12 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.anonymous.course" action="/any/course/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.student1-favourite-link" action="https://ev.us.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.student2-favourite-link" action="https://www.formula1.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.student3-favourite-link" action="https://www.fcbarcelona.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.student4-favourite-link" action="https://www.realmadrid.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.student5-favourite-link" action="https://www.reddit.com/"/>
-			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -45,6 +45,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.course" action="/any/course/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.bulletin" action="/authenticated/bulletin/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
