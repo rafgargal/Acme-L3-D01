@@ -19,11 +19,23 @@ public class CompanyPracticumController extends AbstractController<Company, Prac
 	@Autowired
 	protected CompanyPracticumShowService		showService;
 
+	@Autowired
+	protected CompanyPracticumCreateService		createService;
+
+	@Autowired
+	protected CompanyPracticumDeleteService		deleteService;
+
+	@Autowired
+	protected CompanyPracticumUpdateService		updateService;
+
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listingService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("delete", this.deleteService);
+		super.addBasicCommand("update", this.updateService);
 	}
 
 }
