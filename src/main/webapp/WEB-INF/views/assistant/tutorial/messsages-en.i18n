@@ -8,5 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-assistant.tutorial.list.label.title = Title
-assistant.tutorial.list.label.course = Course
+assistant.tutorial.list.button.create=Create
+assistant.tutorial.list.label.title=Title
+assistant.tutorial.list.label.course=Course
+
+assistant.tutorial.form.label.title=Title
+assistant.tutorial.form.label.tAbstract=Abstract
+assistant.tutorial.form.label.code=Code
+assistant.tutorial.form.label.estimatedTotalTime=Estimated total time
+assistant.tutorial.form.label.goals=Goals
+assistant.tutorial.form.label.assistant=Assistant
+assistant.tutorial.form.label.course=Course
+assistant.tutorial.form.submit.save=Save
+assistant.tutorial.form.submit.delete=Delete
