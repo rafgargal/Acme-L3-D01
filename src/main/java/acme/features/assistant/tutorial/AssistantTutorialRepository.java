@@ -35,7 +35,4 @@ public interface AssistantTutorialRepository extends AbstractRepository {
 	@Query("select t from Tutorial t where t.code = :code")
 	Tutorial findTutorialByCode(String code);
 
-	@Query("delete from Tutorial where id = :id")
-	void deleteTutorialById(int id);
-
 }

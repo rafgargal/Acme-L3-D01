@@ -50,10 +50,31 @@ public class AssistantTutorialDeleteService extends AbstractService<Assistant, T
 	}
 
 	@Override
+	public void bind(final Tutorial object) {
+
+		assert object != null;
+
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findCourseById(courseId);
+
+		super.bind(object, "code", "title", "tAbstract", "estimatedTotalTime", "goals");
+		object.setCourse(course);
+
+	}
+
+	@Override
+	public void validate(final Tutorial object) {
+		assert object != null;
+	}
+
+	@Override
 	public void perform(final Tutorial object) {
 		assert object != null;
 
-		this.repository.deleteTutorialById(object.getId());
+		this.repository.delete(object);
 	}
 
 	@Override

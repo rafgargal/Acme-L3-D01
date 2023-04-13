@@ -35,7 +35,17 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		final int tutorialId = super.getRequest().getData("id", int.class);
+
+		final int assistantIdFromTutorial = this.repository.findTutorialById(tutorialId).getAssistant().getId();
+
+		final int assistantIdFromLoggedUser = super.getRequest().getPrincipal().getActiveRoleId();
+
+		if (assistantIdFromTutorial == assistantIdFromLoggedUser)
+			super.getResponse().setAuthorised(true);
+		else
+			super.getResponse().setAuthorised(false);
+
 	}
 
 	@Override
@@ -47,6 +57,27 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 		object = this.repository.findTutorialById(id);
 
 		super.getBuffer().setData(object);
+	}
+
+	@Override
+	public void bind(final Tutorial object) {
+
+		assert object != null;
+
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findCourseById(courseId);
+
+		super.bind(object, "code", "title", "tAbstract", "estimatedTotalTime", "goals");
+		object.setCourse(course);
+
+	}
+
+	@Override
+	public void validate(final Tutorial object) {
+		assert object != null;
 	}
 
 	@Override
