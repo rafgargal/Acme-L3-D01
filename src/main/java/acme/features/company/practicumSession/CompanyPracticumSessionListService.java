@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.practicum.Practicum;
 import acme.entities.practicumSessions.PracticumSession;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -25,8 +26,18 @@ public class CompanyPracticumSessionListService extends AbstractService<Company,
 
 	@Override
 	public void authorise() {
+		final boolean status;
+		int companyId;
+		final int id;
+		final Practicum practicum;
 
-		super.getResponse().setAuthorised(true);
+		companyId = super.getRequest().getPrincipal().getActiveRoleId();
+		id = super.getRequest().getData("masterId", int.class);
+		practicum = this.repository.findPracticumById(id);
+
+		status = companyId == practicum.getCompany().getId();
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
