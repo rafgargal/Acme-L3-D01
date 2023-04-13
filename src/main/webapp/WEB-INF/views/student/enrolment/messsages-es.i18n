@@ -20,3 +20,10 @@ student.enrolment.form.button.delete = Eliminar
 student.enrolment.form.label.course = Curso
 
 student.enrolment.form.button.update = Actualizar
+student.enrolment.form.button.finalise = Finalizar
+
+student.enrolment.form.label.holderName = Nombre completo de la tarjeta
+student.enrolment.form.label.lowerNibble = Número de la tarjeta
+
+student.enrolment.error.holderName.null = No puede esta vacio
+student.enrolment.error.lowerNibble.null =No puede esta vacio
