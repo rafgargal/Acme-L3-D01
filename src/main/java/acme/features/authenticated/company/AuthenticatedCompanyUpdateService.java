@@ -14,7 +14,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
 @Service
-public class AuthenticatedCompanyCreateService extends AbstractService<Authenticated, Company> {
+public class AuthenticatedCompanyUpdateService extends AbstractService<Authenticated, Company> {
 
 	@Autowired
 	protected AuthenticatedCompanyRepository repository;
@@ -29,7 +29,7 @@ public class AuthenticatedCompanyCreateService extends AbstractService<Authentic
 	public void authorise() {
 		boolean status;
 
-		status = !super.getRequest().getPrincipal().hasRole(Company.class);
+		status = super.getRequest().getPrincipal().hasRole(Company.class);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -38,16 +38,12 @@ public class AuthenticatedCompanyCreateService extends AbstractService<Authentic
 	public void load() {
 
 		Company object;
+		final int id;
+		final UserAccount user;
+
 		Principal principal;
-		int userAccountId;
-		UserAccount userAccount;
-
 		principal = super.getRequest().getPrincipal();
-		userAccountId = principal.getAccountId();
-		userAccount = this.repository.findUserAccountById(userAccountId);
-
-		object = new Company();
-		object.setUserAccount(userAccount);
+		object = this.repository.findCompanyByUserAccountById(principal.getAccountId());
 
 		super.getBuffer().setData(object);
 

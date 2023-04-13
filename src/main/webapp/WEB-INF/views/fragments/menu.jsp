@@ -63,6 +63,7 @@
 			<acme:menu-suboption code="master.menu.user-account.become-lecturer" action="/authenticated/lecturer/create" access="!hasRole('Lecturer')"/>
 			<acme:menu-suboption code="master.menu.user-account.lecturer" action="/authenticated/lecturer/update" access="hasRole('Lecturer')"/>
 			<acme:menu-suboption code="master.menu.user-account.company.create" action="/authenticated/company/create" access="!hasRole('Company')"/>
+				<acme:menu-suboption code="master.menu.user-account.company.update" action="/authenticated/company/update" access="hasRole('Company')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>

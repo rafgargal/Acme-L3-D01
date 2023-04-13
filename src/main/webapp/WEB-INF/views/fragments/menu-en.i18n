@@ -61,3 +61,6 @@ master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Lecturer a consumer
 master.menu.user-account.company.create = Become a company
+master.menu.user-account.company.update = Edit the company
+
+authenticated.company.form.button.update = Actualizar
