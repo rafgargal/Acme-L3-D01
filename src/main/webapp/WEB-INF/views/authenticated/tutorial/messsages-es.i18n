@@ -18,3 +18,7 @@ authenticated.tutorial.form.label.goals=Objetivos
 authenticated.tutorial.form.label.assistant=Asistente
 authenticated.tutorial.form.label.course=Curso
 authenticated.tutorial.form.button.course=Ir al curso
+authenticated.tutorial.form.message.assistant=Asistente
+authenticated.tutorial.form.label.supervisor=Supervisor
+authenticated.tutorial.form.label.resume=Resumen
+authenticated.tutorial.form.label.expertise-fields=Campos de especialización
