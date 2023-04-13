@@ -1,0 +1,9 @@
+
+	
+#  ##############################################################
+company.practicum.practicumSession.list.label.title = Nombre
+company.practicum.practicumSession.list.label.summary = Resumen
+
+company.practicum.form.label.startDate = Fecha de inicio
+company.practicum.form.label.endDate = Fecha final
+company.practicum.form.label.moreInfo = Mas informacion

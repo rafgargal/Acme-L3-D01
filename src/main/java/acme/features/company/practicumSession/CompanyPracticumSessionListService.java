@@ -21,7 +21,9 @@ public class CompanyPracticumSessionListService extends AbstractService<Company,
 
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+		status = super.getRequest().hasData("masterId", int.class);
+		super.getResponse().setChecked(status);
 	}
 
 	@Override
@@ -44,23 +46,23 @@ public class CompanyPracticumSessionListService extends AbstractService<Company,
 	public void load() {
 
 		final Collection<PracticumSession> sessions;
-		int practicumId;
+		final int practicumId;
 
 		practicumId = super.getRequest().getData("masterId", int.class);
 		sessions = this.repository.findPracticumSessionsByPracticumId(practicumId);
-
 		super.getBuffer().setData(sessions);
+		super.getResponse().setGlobal("masterId", practicumId);
 	}
 
 	@Override
 	public void unbind(final PracticumSession sessions) {
 		assert sessions != null;
-		int practicumId;
+		final int practicumId;
 		Tuple tuple;
 
 		practicumId = super.getRequest().getData("masterId", int.class);
 		tuple = super.unbind(sessions, "title", "summary");
-		super.getResponse().setGlobal("masterId", practicumId);
+		tuple.put("masterId", practicumId);
 		super.getResponse().setData(tuple);
 	}
 }

@@ -20,11 +20,11 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 	@Override
 	public void check() {
 
-		boolean status;
+		//boolean status;
 
-		status = super.getRequest().hasData("masterId", int.class);
+		//status = super.getRequest().hasData("masterId", int.class);
 
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 	@Override
 	public void authorise() {
@@ -43,8 +43,8 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 	@Override
 	public void load() {
 		PracticumSession session;
-		int practicumId;
-		Practicum practicum;
+		final int practicumId;
+		final Practicum practicum;
 
 		practicumId = super.getRequest().getData("masterId", int.class);
 		practicum = this.repository.findPracticumById(practicumId);
@@ -78,11 +78,12 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 	@Override
 	public void unbind(final PracticumSession session) {
 		assert session != null;
-
+		int masterId;
 		Tuple tuple;
-
+		masterId = super.getRequest().getData("masterId", int.class);
 		tuple = super.unbind(session, "title", "summary", "startDate", "endDate", "moreInfoLink");
-		tuple.put("masterId", super.getRequest().getData("masterId", int.class));
+		tuple.put("masterId", masterId);
 		super.getResponse().setData(tuple);
 	}
+
 }
