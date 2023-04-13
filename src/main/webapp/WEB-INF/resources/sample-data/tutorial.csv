@@ -1,9 +1,9 @@
-key,key:assistant,key:course,code,title,t-abstract,goals,estimated-total-time
-tutorial-01,assistant-01,course-01,AAA0001,Titulo de ejemplo,Este es un tutorial de ejemplo,aprendizaje,2.2
-tutorial-02,assistant-01,course-01,AAA0002,a,Este es un tutorial de ejemplo,aprendizaje,0.5
-tutorial-03,assistant-01,course-01,AAA0003,Cadena de 75 caracteres Cadena de 75 caracteres Cadena de 75 caracteres Cad,Este es un tutorial de ejemplo,aprendizaje,2.2
-tutorial-04,assistant-01,course-01,AAA0004,A,Este es un tutorial de ejemplo,aprendizaje,2.2
-tutorial-05,assistant-01,course-01,AAA0005,Titulo de ejemplo,A,aprendizaje,2.2
-tutorial-06,assistant-01,course-01,AAA0006,Titulo de ejemplo,Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres ,aprendizaje,22
-tutorial-07,assistant-01,course-01,AAA0007,Titulo de ejemplo,Este es un tutorial de ejemplo,A,2.2
-tutorial-08,assistant-01,course-01,AAA0008,Titulo de ejemplo,Este es un tutorial de ejemplo,Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres, 2.2
+key,key:assistant,key:course,code,title,t-abstract,goals,estimated-total-time,published
+tutorial-01,assistant-01,course-01,AAA0001,Titulo de ejemplo,Este es un tutorial de ejemplo,aprendizaje,2.2,false
+tutorial-02,assistant-01,course-01,AAA0002,a,Este es un tutorial de ejemplo,aprendizaje,0.5,true
+tutorial-03,assistant-01,course-01,AAA0003,Cadena de 75 caracteres Cadena de 75 caracteres Cadena de 75 caracteres Cad,Este es un tutorial de ejemplo,aprendizaje,2.2,false
+tutorial-04,assistant-01,course-01,AAA0004,A,Este es un tutorial de ejemplo,aprendizaje,2.2,false
+tutorial-05,assistant-01,course-01,AAA0005,Titulo de ejemplo,A,aprendizaje,2.2,true
+tutorial-06,assistant-01,course-01,AAA0006,Titulo de ejemplo,Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres,aprendizaje,22,false
+tutorial-07,assistant-01,course-01,AAA0007,Titulo de ejemplo,Este es un tutorial de ejemplo,A,2.2,true
+tutorial-08,assistant-01,course-01,AAA0008,Titulo de ejemplo,Este es un tutorial de ejemplo,Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres,2.2,false
