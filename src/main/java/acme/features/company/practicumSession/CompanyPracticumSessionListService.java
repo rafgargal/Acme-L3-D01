@@ -44,11 +44,12 @@ public class CompanyPracticumSessionListService extends AbstractService<Company,
 	@Override
 	public void unbind(final PracticumSession sessions) {
 		assert sessions != null;
-
+		int practicumId;
 		Tuple tuple;
 
+		practicumId = super.getRequest().getData("masterId", int.class);
 		tuple = super.unbind(sessions, "title", "summary");
-
+		super.getResponse().setGlobal("masterId", practicumId);
 		super.getResponse().setData(tuple);
 	}
 }
