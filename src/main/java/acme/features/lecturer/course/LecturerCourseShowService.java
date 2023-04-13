@@ -17,13 +17,12 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 	@Autowired
 	protected LecturerCourseRepository repository;
 
-	// AbstractService interface ---------------------------
+	// AbstractService interface ----------------------------------------------
 
 
 	@Override
 	public void check() {
 		boolean status;
-
 		status = super.getRequest().hasData("id", int.class);
 
 		super.getResponse().setChecked(status);
@@ -31,15 +30,14 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 
 	@Override
 	public void authorise() {
-		Course object;
-		int id;
-		int lecturerId;
+		boolean status;
+		Course course;
 
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneCourseById(id);
-		lecturerId = super.getRequest().getPrincipal().getAccountId();
+		course = this.repository.findOneCourseById(super.getRequest().getData("id", int.class));
 
-		super.getResponse().setAuthorised(object.getLecturer().getUserAccount().getId() == lecturerId);
+		status = course != null && super.getRequest().getPrincipal().hasRole(course.getLecturer());
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -51,6 +49,7 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 		object = this.repository.findOneCourseById(id);
 
 		super.getBuffer().setData(object);
+
 	}
 
 	@Override
@@ -59,8 +58,8 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "title", "cAbstract", "draftMode", "retailPrice", "furtherInfo");
-
+		tuple = super.unbind(object, "id", "code", "title", "cAbstract", "draftMode", "retailPrice", "furtherInfo");
+		tuple.put("activityType", this.repository.findActivityType(object.getId()));
 		super.getResponse().setData(tuple);
 	}
 

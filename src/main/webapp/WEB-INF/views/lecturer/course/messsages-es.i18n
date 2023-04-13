@@ -17,6 +17,7 @@ lecturer.course.form.label.cAbstract = Resumen
 lecturer.course.form.label.draftMode = Borrador
 lecturer.course.form.label.retailPrice = Precio
 lecturer.course.form.label.furtherInfo = Más información
+lecturer.course.form.label.activityType = Tipo de curso
 
 lecturer.course.list.button.create = Crear
 
@@ -28,3 +29,4 @@ lecturer.course.button.delete = Borrar
 lecturer.course.form.error.duplicated = Duplicado
 lecturer.course.form.error.negative-retailPrice = Precio negativo
 lecturer.course.error.lecture-in-draft-mode = Hay lectuas en modo borrador
+lecturer.course.error.theoretical-course = Los cursos teóricos son rechazados

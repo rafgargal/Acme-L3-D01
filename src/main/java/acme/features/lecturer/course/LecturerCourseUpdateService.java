@@ -23,21 +23,6 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 
 
 	@Override
-	public void authorise() {
-		boolean status;
-		int masterId;
-		Course course;
-		Lecturer lecturer;
-
-		masterId = super.getRequest().getData("id", int.class);
-		course = this.repository.findOneCourseById(masterId);
-		lecturer = course == null ? null : course.getLecturer();
-		status = course != null && super.getRequest().getPrincipal().hasRole(lecturer);
-
-		super.getResponse().setAuthorised(status);
-	}
-
-	@Override
 	public void check() {
 		boolean status;
 
@@ -47,13 +32,24 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 	}
 
 	@Override
+	public void authorise() {
+		boolean status;
+		Course course;
+
+		course = this.repository.findOneCourseById(super.getRequest().getData("id", int.class));
+
+		status = super.getRequest().getPrincipal().hasRole(course.getLecturer());
+
+		super.getResponse().setAuthorised(status);
+	}
+
+	@Override
 	public void load() {
 		Course object;
-		int id;
+		int courseId;
 
-		id = super.getRequest().getData("id", int.class);
-		object = this.repository.findOneCourseById(id);
-
+		courseId = super.getRequest().getData("id", int.class);
+		object = this.repository.findOneCourseById(courseId);
 		super.getBuffer().setData(object);
 	}
 
@@ -67,9 +63,13 @@ public class LecturerCourseUpdateService extends AbstractService<Lecturer, Cours
 	@Override
 	public void validate(final Course object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Course existing;
 
-		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
-			super.state(object.getRetailPrice().getAmount() > 0, "retailPrice", "lecturer.course.form.error.negative-retailPrice");
+			existing = this.repository.findOneCourseByCode(object.getCode());
+			super.state(existing == null, "code", "lecturer.course.form.error.duplicated");
+		}
+
 	}
 
 	@Override

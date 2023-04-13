@@ -29,20 +29,25 @@ public class LecturerCourseCreateService extends AbstractService<Lecturer, Cours
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Lecturer.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		Course object;
+		int userAccountId;
 		Lecturer lecturer;
 
-		lecturer = this.repository.findOneLecturerById(super.getRequest().getPrincipal().getAccountId());
+		userAccountId = super.getRequest().getPrincipal().getActiveRoleId();
+		lecturer = this.repository.findOneLecturerById(userAccountId);
 
 		object = new Course();
-		object.setDraftMode(true);
 		object.setLecturer(lecturer);
-
+		object.setDraftMode(true);
 		super.getBuffer().setData(object);
 	}
 
@@ -64,8 +69,6 @@ public class LecturerCourseCreateService extends AbstractService<Lecturer, Cours
 			super.state(existing == null, "code", "lecturer.course.form.error.duplicated");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("retailPrice"))
-			super.state(object.getRetailPrice().getAmount() > 0, "retailPrice", "lecturer.course.form.error.negative-retailPrice");
 	}
 
 	@Override

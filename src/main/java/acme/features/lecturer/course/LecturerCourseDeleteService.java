@@ -1,10 +1,16 @@
 
 package acme.features.lecturer.course;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.activities.Activity;
+import acme.entities.auditing.Audit;
 import acme.entities.course.Course;
+import acme.entities.course.LectureCourse;
+import acme.entities.enrolments.Enrolment;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -32,14 +38,11 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
 		Course course;
-		Lecturer lecturer;
 
-		masterId = super.getRequest().getData("id", int.class);
-		course = this.repository.findOneCourseById(masterId);
-		lecturer = course == null ? null : course.getLecturer();
-		status = course != null && course.isDraftMode() && super.getRequest().getPrincipal().hasRole(lecturer);
+		course = this.repository.findOneCourseById(super.getRequest().getData("id", int.class));
+
+		status = course != null && super.getRequest().getPrincipal().hasRole(course.getLecturer());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -65,11 +68,28 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 	@Override
 	public void validate(final Course object) {
 		assert object != null;
+
 	}
 
 	@Override
 	public void perform(final Course object) {
 		assert object != null;
+
+		List<LectureCourse> llc;
+		List<Audit> la;
+		List<Enrolment> le;
+		List<Activity> la2;
+
+		llc = this.repository.findAllLectureCourseByCourseId(object.getId());
+		la = this.repository.findAllAuditByCourseId(object.getId());
+		le = this.repository.findAllEnrolmentByCourseId(object.getId());
+		for (final Enrolment e : le) {
+			la2 = this.repository.findAllActivityByEnrolmentId(e.getId());
+			this.repository.deleteAll(la2);
+		}
+		this.repository.deleteAll(llc);
+		this.repository.deleteAll(la);
+		this.repository.deleteAll(le);
 
 		this.repository.delete(object);
 	}
@@ -81,6 +101,7 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 		Tuple tuple;
 
 		tuple = super.unbind(object, "code", "title", "cAbstract", "draftMode", "retailPrice", "furtherInfo");
+
 		super.getResponse().setData(tuple);
 	}
 
