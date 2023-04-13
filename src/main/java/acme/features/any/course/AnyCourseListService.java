@@ -36,7 +36,7 @@ public class AnyCourseListService extends AbstractService<Any, Course> {
 	public void load() {
 		List<Course> objects;
 
-		objects = this.repository.findAllCourse();
+		objects = this.repository.findAllPublishedCourse();
 
 		super.getBuffer().setData(objects);
 	}
