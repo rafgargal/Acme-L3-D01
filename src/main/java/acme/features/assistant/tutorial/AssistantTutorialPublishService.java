@@ -14,38 +14,33 @@ import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
 @Service
-public class AssistantTutorialShowService extends AbstractService<Assistant, Tutorial> {
+public class AssistantTutorialPublishService extends AbstractService<Assistant, Tutorial> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AssistantTutorialRepository repository;
 
-	// AbstractService interface ---------------------------
+	// AbstractService interface ----------------------------------------------
 
 
 	@Override
 	public void check() {
-		boolean status;
-
-		status = super.getRequest().hasData("id", int.class);
-
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
 	public void authorise() {
+		// Cannot publish if tutorial doesn't belong to you or tutorial has been published
+		super.getResponse().setAuthorised(true);
 		final int tutorialId = super.getRequest().getData("id", int.class);
+		final Tutorial tutorial = this.repository.findTutorialById(tutorialId);
 
-		final int assistantIdFromTutorial = this.repository.findTutorialById(tutorialId).getAssistant().getId();
+		final int assistantIdFromTutorial = tutorial.getAssistant().getId();
 
 		final int assistantIdFromLoggedUser = super.getRequest().getPrincipal().getActiveRoleId();
 
-		if (assistantIdFromTutorial == assistantIdFromLoggedUser)
-			super.getResponse().setAuthorised(true);
-		else
-			super.getResponse().setAuthorised(false);
-
+		super.getResponse().setAuthorised(assistantIdFromTutorial == assistantIdFromLoggedUser && !tutorial.isPublished());
 	}
 
 	@Override
@@ -61,7 +56,6 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 
 	@Override
 	public void bind(final Tutorial object) {
-
 		assert object != null;
 
 		int courseId;
@@ -70,14 +64,22 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 		courseId = super.getRequest().getData("course", int.class);
 		course = this.repository.findCourseById(courseId);
 
-		super.bind(object, "code", "title", "tAbstract", "estimatedTotalTime", "goals", "published");
+		super.bind(object, "code", "title", "tAbstract", "estimatedTotalTime", "goals");
 		object.setCourse(course);
-
 	}
 
 	@Override
 	public void validate(final Tutorial object) {
 		assert object != null;
+	}
+
+	@Override
+	public void perform(final Tutorial object) {
+		assert object != null;
+
+		object.setPublished(true);
+
+		this.repository.save(object);
 	}
 
 	@Override
@@ -91,7 +93,7 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "estimatedTotalTime", "goals", "tAbstract", "title", "assistant.supervisor", "course.title", "published");
+		tuple = super.unbind(object, "code", "estimatedTotalTime", "goals", "tAbstract", "title", "assistant.supervisor", "course", "course.title", "published", "id");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 

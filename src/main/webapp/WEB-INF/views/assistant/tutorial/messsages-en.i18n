@@ -24,3 +24,7 @@ assistant.tutorial.form.submit.delete=Delete
 
 assistant.tutorial.form.error.duplicated=Existing code
 assistant.tutorial.form.error.null-course=Choose a course
+
+assistant.tutorial.form.message.published=PUBLISHED
+assistant.tutorial.form.message.not-published=NOT PUBLISHED
+assistant.tutorial.form.submit.publish=Publish

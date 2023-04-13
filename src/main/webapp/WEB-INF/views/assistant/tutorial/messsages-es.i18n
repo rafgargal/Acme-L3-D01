@@ -23,3 +23,7 @@ assistant.tutorial.form.submit.delete=Borrar
 
 assistant.tutorial.form.error.duplicated=Código ya existente
 assistant.tutorial.form.error.null-course=Elige un curso
+
+assistant.tutorial.form.message.published=PUBLICADO
+assistant.tutorial.form.message.not-published=NO PUBLICADO
+assistant.tutorial.form.submit.publish=Publicar
