@@ -23,4 +23,5 @@
 	<acme:input-textarea code="authenticated.tutorial.form.label.goals" path="goals"/>
 	<acme:input-textbox code="authenticated.tutorial.form.label.assistant" path="assistant.supervisor"/>
 	<acme:input-textbox code="authenticated.tutorial.form.label.course" path="course.title"/>
+	<acme:button code="authenticated.tutorial.form.button.course" action="/any/course/show?id=${course.id}"/>
 </acme:form>
