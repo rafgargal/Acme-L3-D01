@@ -55,7 +55,7 @@ public class AuthenticatedCompanyCreateService extends AbstractService<Authentic
 	public void bind(final Company company) {
 		assert company != null;
 
-		super.bind(company, "name", "VATNumber", "summary", "moreInfoLink");
+		super.bind(company, "name", "VATnumber", "summary", "moreInfoLink");
 	}
 
 	@Override
