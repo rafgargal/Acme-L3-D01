@@ -42,7 +42,7 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 		assistant = this.repository.findAssistantById(super.getRequest().getPrincipal().getActiveRoleId());
 		object = new Tutorial();
 		object.setAssistant(assistant);
-		// object.setDraftMode(true);
+		object.setPublished(false);
 
 		super.getBuffer().setData(object);
 	}
@@ -71,11 +71,17 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 			existing = this.repository.findTutorialByCode(object.getCode());
 			super.state(existing == null, "code", "assistant.tutorial.form.error.duplicated");
 		}
+		if (!super.getBuffer().getErrors().hasErrors("course")) {
+			final Course existing = object.getCourse();
+			super.state(existing != null, "course", "assistant.tutorial.form.error.null-course");
+		}
 	}
 
 	@Override
 	public void perform(final Tutorial object) {
 		assert object != null;
+
+		System.out.println("ENTRA EN PERform");
 
 		this.repository.save(object);
 	}
@@ -91,7 +97,7 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
-		tuple = super.unbind(object, "code", "estimatedTotalTime", "goals", "tAbstract", "title", "assistant.supervisor", "course.title");
+		tuple = super.unbind(object, "code", "estimatedTotalTime", "goals", "tAbstract", "title", "assistant.supervisor", "course", "course.title", "published", "id");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 

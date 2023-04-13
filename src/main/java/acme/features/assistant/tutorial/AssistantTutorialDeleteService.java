@@ -35,11 +35,21 @@ public class AssistantTutorialDeleteService extends AbstractService<Assistant, T
 
 	@Override
 	public void authorise() {
+		// Cannot delete if tutorial doesn't belong to you or tutorial has been published
 		super.getResponse().setAuthorised(true);
+		final int tutorialId = super.getRequest().getData("id", int.class);
+		final Tutorial tutorial = this.repository.findTutorialById(tutorialId);
+
+		final int assistantIdFromTutorial = tutorial.getAssistant().getId();
+
+		final int assistantIdFromLoggedUser = super.getRequest().getPrincipal().getActiveRoleId();
+
+		super.getResponse().setAuthorised(assistantIdFromTutorial == assistantIdFromLoggedUser && !tutorial.isPublished());
 	}
 
 	@Override
 	public void load() {
+
 		Tutorial object;
 		int id;
 

@@ -21,3 +21,6 @@ assistant.tutorial.form.label.assistant=Assistant
 assistant.tutorial.form.label.course=Course
 assistant.tutorial.form.submit.save=Save
 assistant.tutorial.form.submit.delete=Delete
+
+assistant.tutorial.form.error.duplicated=Existing code
+assistant.tutorial.form.error.null-course=Choose a course

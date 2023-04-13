@@ -21,9 +21,10 @@
 	<acme:input-textbox code="assistant.tutorial.form.label.code" path="code"/>
 	<acme:input-double code="assistant.tutorial.form.label.estimatedTotalTime" path="estimatedTotalTime"/>
 	<acme:input-textarea code="assistant.tutorial.form.label.goals" path="goals"/>
-	<acme:input-textbox code="assistant.tutorial.form.label.assistant" path="assistant.supervisor"/>
 
 	<acme:input-select code="assistant.tutorial.form.label.course" path="course" choices="${courses}"/>
+
+<acme:hidden-data path="published"/>
 	
 	<jstl:if test="${_command == 'create'}">
 		<acme:submit code="assistant.tutorial.form.submit.save" action="/assistant/tutorial/create"/>
