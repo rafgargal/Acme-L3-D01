@@ -19,7 +19,15 @@
 	<acme:input-textbox code="lecturer.course.form.label.code" path="code"/>	
 	<acme:input-textbox code="lecturer.course.form.label.title" path="title"/>
 	<acme:input-textarea code="lecturer.course.form.label.cAbstract" path="cAbstract"/>
-	<acme:input-textbox code="lecturer.course.form.label.draftMode" path="draftMode"/>
+	<acme:input-textbox code="lecturer.course.form.label.draftMode" path="draftMode" readonly="true"/>
 	<acme:input-money code="lecturer.course.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="lecturer.course.form.label.furtherInfo" path="furtherInfo"/>
+	
+	<acme:submit test="${_command == 'create'}" code="lecturer.course.button.create" action="/lecturer/course/create"/>
+	
+	<jstl:if test="${_command != 'create' && draftMode == true }">	
+		<acme:submit code="lecturer.course.button.update" action="/lecturer/course/update"/>
+		<acme:submit code="lecturer.course.button.delete" action="/lecturer/course/delete"/>
+		<acme:submit code="lecturer.course.button.publish" action="/lecturer/course/publish"/>		
+	</jstl:if>
 </acme:form>

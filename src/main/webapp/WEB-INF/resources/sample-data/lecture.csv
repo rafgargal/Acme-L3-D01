@@ -1,11 +1,11 @@
-key,key:lecturer,title,l-abstract,learning-time,body,activity-type,further-info
-lecture-01,lecturer-01,Titulo de ejemplo,Esto es una lectura de ejemplo,25.5,Cuerpo de ejemplo,THEORETICAL,
-lecture-02,lecturer-02,Titulo de ejemplo con el maximo de caracteresssssssssssssssssssssssssssssss,Esto es una lectura de ejemplo,12,Cuerpo de ejemplo,HANDS_ON,https://ev.us.es/
-lecture-03,lecturer-01,T,Esto es una lectura de ejemplo,9.75,Cuerpo de ejemplo,THEORETICAL,https://www.contarcaracteres.com/
-lecture-04,lecturer-02,Titulo de ejemplo,Esto es una lectura de ejemplo con el máximo de caracteresssssssssssssssssssssssssssssssssssssssssss,100,Cuerpo de ejemplo,THEORETICAL,
-lecture-05,lecturer-01,Titulo de ejemplo,E,2.5,Cuerpo de ejemplo,HANDS_ON,https://www.us.es/
-lecture-06,lecturer-02,Titulo de ejemplo,Esto es una lectura de ejemplo,999,Cuerpo de ejemplo con el maximo de caracteressssssssssssssssssssssssssssssssssssssssssssssssssssssss,HANDS_ON,
-lecture-07,lecturer-01,Titulo de ejemplo,Esto es una lectura de ejemplo,1,C,THEORETICAL,https://www.google.com/
-lecture-08,lecturer-02,Titulo de ejemplo,Esto es una lectura de ejemplo,1234.56,Cuerpo de ejemplo,HANDS_ON,
-lecture-09,lecturer-01,Titulo de ejemplo,Esto es una lectura de ejemplo,55,Cuerpo de ejemplo,THEORETICAL,
-lecture-10,lecturer-02,Titulo de ejemplo,Esto es una lectura de ejemplo,33.33,Cuerpo de ejemplo,THEORETICAL,https://www.fernandoalonso.com/
+key,key:lecturer,title,l-abstract,learning-time,body,activity-type,further-info,draft-mode
+lecture-01,lecturer-01,Titulo de ejemplo,Esto es una lectura de ejemplo,25.5,Cuerpo de ejemplo,THEORETICAL,,false
+lecture-02,lecturer-02,Titulo de ejemplo con el maximo de caracteresssssssssssssssssssssssssssssss,Esto es una lectura de ejemplo,12,Cuerpo de ejemplo,HANDS_ON,https://ev.us.es/,false
+lecture-03,lecturer-01,T,Esto es una lectura de ejemplo,9.75,Cuerpo de ejemplo,THEORETICAL,https://www.contarcaracteres.com/,false
+lecture-04,lecturer-02,Titulo de ejemplo,Esto es una lectura de ejemplo con el máximo de caracteresssssssssssssssssssssssssssssssssssssssssss,100,Cuerpo de ejemplo,THEORETICAL,,false
+lecture-05,lecturer-01,Titulo de ejemplo,E,2.5,Cuerpo de ejemplo,HANDS_ON,https://www.us.es/,false
+lecture-06,lecturer-02,Titulo de ejemplo,Esto es una lectura de ejemplo,999,Cuerpo de ejemplo con el maximo de caracteressssssssssssssssssssssssssssssssssssssssssssssssssssssss,HANDS_ON,,false
+lecture-07,lecturer-01,Titulo de ejemplo,Esto es una lectura de ejemplo,1,C,THEORETICAL,https://www.google.com/,true
+lecture-08,lecturer-02,Titulo de ejemplo,Esto es una lectura de ejemplo,1234.56,Cuerpo de ejemplo,HANDS_ON,,false
+lecture-09,lecturer-01,Titulo de ejemplo,Esto es una lectura de ejemplo,55,Cuerpo de ejemplo,THEORETICAL,,false
+lecture-10,lecturer-02,Titulo de ejemplo,Esto es una lectura de ejemplo,33.33,Cuerpo de ejemplo,THEORETICAL,https://www.fernandoalonso.com/,true

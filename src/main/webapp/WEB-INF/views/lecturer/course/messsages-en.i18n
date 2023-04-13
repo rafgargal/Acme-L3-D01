@@ -17,3 +17,14 @@ lecturer.course.form.label.cAbstract = Abstract
 lecturer.course.form.label.draftMode = Draft mode
 lecturer.course.form.label.retailPrice = Retail price
 lecturer.course.form.label.furtherInfo = Further information
+
+lecturer.course.list.button.create = Create
+
+lecturer.course.button.create = Create
+lecturer.course.button.update = Update
+lecturer.course.button.publish = Publish
+lecturer.course.button.delete = Delete
+
+lecturer.course.form.error.duplicated = Duplicated
+lecturer.course.form.error.negative-retailPrice = Negative retail price
+lecturer.course.error.lecture-in-draft-mode = A lecture is in draft mode
