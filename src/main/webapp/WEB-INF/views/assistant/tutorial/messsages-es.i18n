@@ -27,3 +27,4 @@ assistant.tutorial.form.error.null-course=Elige un curso
 assistant.tutorial.form.message.published=PUBLICADO
 assistant.tutorial.form.message.not-published=NO PUBLICADO
 assistant.tutorial.form.submit.publish=Publicar
+assistant.tutorial.form.submit.update=Actualizar

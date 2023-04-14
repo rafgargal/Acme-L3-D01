@@ -72,5 +72,6 @@
 	</jstl:if>
 	<jstl:if test="${_command != 'create' && !published}">
 		<acme:submit code="assistant.tutorial.form.submit.delete" action="/assistant/tutorial/delete"/>
+		<acme:submit code="assistant.tutorial.form.submit.update" action="/assistant/tutorial/update"/>
 	</jstl:if>
 </acme:form>
