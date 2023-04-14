@@ -50,6 +50,11 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.bulletin = Bulletin
 master.menu.authenticated.course = Courses
 
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer = Lecturer
+master.menu.lecturer.course = My courses
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -59,7 +64,7 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.lecturer = Lecturer data
-master.menu.user-account.become-lecturer = Lecturer a consumer
+master.menu.user-account.become-lecturer = Become a lecturer
 master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
 

@@ -50,6 +50,11 @@ master.menu.authenticated = Autenticado
 master.menu.authenticated.bulletin = Boletín
 master.menu.authenticated.course = Cursos
 
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer = Profesor
+master.menu.lecturer.course = Mis cursos
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

@@ -1,0 +1,32 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+lecturer.course.list.label.title = Title
+lecturer.course.list.label.retailPrice = Retail price
+
+lecturer.course.form.label.code = Code
+lecturer.course.form.label.title = Title
+lecturer.course.form.label.cAbstract = Abstract
+lecturer.course.form.label.draftMode = Draft mode
+lecturer.course.form.label.retailPrice = Retail price
+lecturer.course.form.label.furtherInfo = Further information
+lecturer.course.form.label.activityType = Course type
+
+lecturer.course.list.button.create = Create
+
+lecturer.course.button.create = Create
+lecturer.course.button.update = Update
+lecturer.course.button.publish = Publish
+lecturer.course.button.delete = Delete
+
+lecturer.course.form.error.duplicated = Duplicated
+lecturer.course.form.error.negative-retailPrice = Negative retail price
+lecturer.course.error.lecture-in-draft-mode = A lecture is in draft mode
+lecturer.course.error.theoretical-course = Theoretical courses are rejected
