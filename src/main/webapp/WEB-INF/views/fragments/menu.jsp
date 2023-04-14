@@ -46,7 +46,6 @@
 		
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
 			<acme:menu-suboption code="master.menu.assistant.my-tutorials" action="/assistant/tutorial/list"/>
-			<acme:menu-separator/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">

@@ -61,6 +61,8 @@
 			</div>
 		</jstl:otherwise>
 	</jstl:choose>
+	
+	<acme:button code="assistant.tutorial.form.button.course" action="/any/course/show?id=${course}"/>
 
 <acme:hidden-data path="published"/>
 	
