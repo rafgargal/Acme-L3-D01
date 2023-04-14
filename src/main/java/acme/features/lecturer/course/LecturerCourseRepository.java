@@ -12,6 +12,7 @@ import acme.entities.auditing.Audit;
 import acme.entities.course.Course;
 import acme.entities.course.LectureCourse;
 import acme.entities.enrolments.Enrolment;
+import acme.entities.tutorial.Tutorial;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Lecturer;
 
@@ -50,6 +51,9 @@ public interface LecturerCourseRepository extends AbstractRepository {
 
 	@Query("select a from Activity a where a.enrolment.id = :id")
 	List<Activity> findAllActivityByEnrolmentId(int id);
+
+	@Query("select t from Tutorial t where t.course.id = :id")
+	List<Tutorial> findAllTutorialByCourseId(int id);
 
 	@Query("select count(lc) from LectureCourse lc where lc.lecture.activityType = :type and lc.course.id = :id")
 	Integer numOfLecturesOfOneTypeByCourseId(int id, ActivityType type);

@@ -11,6 +11,7 @@ import acme.entities.auditing.Audit;
 import acme.entities.course.Course;
 import acme.entities.course.LectureCourse;
 import acme.entities.enrolments.Enrolment;
+import acme.entities.tutorial.Tutorial;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
@@ -79,10 +80,12 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 		List<Audit> la;
 		List<Enrolment> le;
 		List<Activity> la2;
+		List<Tutorial> lt;
 
 		llc = this.repository.findAllLectureCourseByCourseId(object.getId());
 		la = this.repository.findAllAuditByCourseId(object.getId());
 		le = this.repository.findAllEnrolmentByCourseId(object.getId());
+		lt = this.repository.findAllTutorialByCourseId(object.getId());
 		for (final Enrolment e : le) {
 			la2 = this.repository.findAllActivityByEnrolmentId(e.getId());
 			this.repository.deleteAll(la2);
@@ -90,6 +93,7 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 		this.repository.deleteAll(llc);
 		this.repository.deleteAll(la);
 		this.repository.deleteAll(le);
+		this.repository.deleteAll(lt);
 
 		this.repository.delete(object);
 	}
