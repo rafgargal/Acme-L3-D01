@@ -14,6 +14,8 @@
 	<acme:input-money code="lecturer.course.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="lecturer.course.form.label.furtherInfo" path="furtherInfo"/>
 	<acme:input-textbox code="lecturer.course.form.label.activityType" path="activityType" readonly="true"/>
+	
+	<acme:button code="lecturer.course.button.lectures" action="/lecturer/lecture/list?courseId=${id}"/>
 
 	<acme:submit test="${_command == 'create'}" code="lecturer.course.button.create" action="/lecturer/course/create"/>		
 	
