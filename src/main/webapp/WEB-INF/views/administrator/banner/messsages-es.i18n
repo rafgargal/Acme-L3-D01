@@ -18,3 +18,10 @@ administrator.banner.form.label.displayPeriodEnd = Fin visualización
 administrator.banner.form.label.pictureLink = Link fotografía
 administrator.banner.form.label.slogan = Eslogan
 administrator.banner.form.label.webDocLink = Link documentos
+
+administrator.banner.list.button.create = Crear
+administrator.banner.form.button.update = Actualizar
+administrator.banner.form.button.delete = Borrar
+administrator.banner.form.button.create = Crear
+
+administrator.banner.form.error.displayPeriodEnd-too-soon = Fin visualización muy temprano (al menos 1 semana)
