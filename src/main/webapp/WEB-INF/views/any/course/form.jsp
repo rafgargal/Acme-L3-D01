@@ -9,5 +9,6 @@
 	<acme:input-textbox code="any.course.form.label.cAbstract" path="cAbstract"/>
 	<acme:input-textbox code="any.course.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-textbox code="any.course.form.label.furtherInfo" path="furtherInfo"/>
+	<acme:input-textbox code="any.course.form.label.lecturers" path="lecturers"/>
 	
 </acme:form>
