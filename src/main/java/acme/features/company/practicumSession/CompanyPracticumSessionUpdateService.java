@@ -2,6 +2,7 @@
 package acme.features.company.practicumSession;
 
 import java.time.temporal.ChronoUnit;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -66,13 +67,13 @@ public class CompanyPracticumSessionUpdateService extends AbstractService<Compan
 
 		if (!super.getBuffer().getErrors().hasErrors("endDate"))
 			super.state(MomentHelper.isLongEnough(session.getStartDate(), session.getEndDate(), 7, ChronoUnit.DAYS), "endDate", "company.practicum.error.label.difference");
-		/*
-		 * if (!super.getBuffer().getErrors().hasErrors("startDate")) {
-		 * Date minimunDate;
-		 * minimunDate = MomentHelper.deltaFromCurrentMoment(7, ChronoUnit.DAYS);
-		 * super.state(MomentHelper.isAfter(session.getStartDate(), minimunDate), "startDate", "company.practicum.error.label.startDate");
-		 * }
-		 */
+
+		if (!super.getBuffer().getErrors().hasErrors("startDate")) {
+			Date minimunDate;
+			minimunDate = MomentHelper.deltaFromCurrentMoment(7, ChronoUnit.DAYS);
+			super.state(MomentHelper.isAfter(session.getStartDate(), minimunDate), "startDate", "company.practicum.error.label.startDate");
+		}
+
 	}
 
 	@Override

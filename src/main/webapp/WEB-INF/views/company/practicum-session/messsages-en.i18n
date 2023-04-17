@@ -8,3 +8,5 @@ company.practicum.form.label.startDate = Start date
 company.practicum.form.label.endDate = End date
 company.practicum.form.label.moreInfo = More information
 company.practicum.error.label.endDate =The end date cannot be earlier than the start date.
+company.practicum.error.label.startDate = The date must be later than one week from the current date.
+company.practicum.error.label.difference = There should be a week's difference between the two dates.
