@@ -7,3 +7,4 @@ company.practicum.practicumSession.list.label.title = Title
 company.practicum.form.label.startDate = Start date
 company.practicum.form.label.endDate = End date
 company.practicum.form.label.moreInfo = More information
+company.practicum.error.label.endDate =The end date cannot be earlier than the start date.

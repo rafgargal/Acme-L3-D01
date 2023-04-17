@@ -7,3 +7,4 @@ company.practicum.practicumSession.list.label.summary = Resumen
 company.practicum.form.label.startDate = Fecha de inicio
 company.practicum.form.label.endDate = Fecha final
 company.practicum.form.label.moreInfo = Mas informacion
+company.practicum.error.label.endDate =La fecha final no puede ser anterior a la fecha de inicio

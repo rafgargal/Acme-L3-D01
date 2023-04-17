@@ -11,7 +11,7 @@
 	<acme:input-textbox code="company.practicum.form.label.moreInfo" path="moreInfoLink"/>
 	
 	<jstl:choose>
-		<jstl:when test="${_command == 'show'}">	
+		<jstl:when test="${_command == 'show' || _command == 'update'}">	
 			<acme:submit code="company.practicum.form.button.delete" action="/company/practicum-session/delete"/>
 			<acme:submit code="company.practicum.form.button.update" action="/company/practicum-session/update"/>		
 		</jstl:when>

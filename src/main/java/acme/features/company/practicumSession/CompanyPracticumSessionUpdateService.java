@@ -1,10 +1,14 @@
 
 package acme.features.company.practicumSession;
 
+import java.time.temporal.ChronoUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.practicumSessions.PracticumSession;
+import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
@@ -54,7 +58,21 @@ public class CompanyPracticumSessionUpdateService extends AbstractService<Compan
 
 	@Override
 	public void validate(final PracticumSession session) {
+
 		assert session != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("endDate"))
+			super.state(MomentHelper.isAfter(session.getEndDate(), session.getStartDate()), "endDate", "company.practicum.error.label.endDate");
+
+		if (!super.getBuffer().getErrors().hasErrors("endDate"))
+			super.state(MomentHelper.isLongEnough(session.getStartDate(), session.getEndDate(), 7, ChronoUnit.DAYS), "endDate", "company.practicum.error.label.difference");
+		/*
+		 * if (!super.getBuffer().getErrors().hasErrors("startDate")) {
+		 * Date minimunDate;
+		 * minimunDate = MomentHelper.deltaFromCurrentMoment(7, ChronoUnit.DAYS);
+		 * super.state(MomentHelper.isAfter(session.getStartDate(), minimunDate), "startDate", "company.practicum.error.label.startDate");
+		 * }
+		 */
 	}
 
 	@Override
@@ -64,7 +82,12 @@ public class CompanyPracticumSessionUpdateService extends AbstractService<Compan
 	}
 	@Override
 	public void unbind(final PracticumSession session) {
+
 		assert session != null;
+		Tuple tuple;
+		tuple = super.unbind(session, "title", "summary", "startDate", "endDate", "moreInfoLink");
+
+		super.getResponse().setData(tuple);
 
 	}
 }
