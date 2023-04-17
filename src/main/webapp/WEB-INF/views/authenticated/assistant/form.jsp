@@ -22,4 +22,5 @@
 	<acme:input-url code="authenticated.assistant.form.label.furtherInfo" path="furtherInfo"/>
 	
 	<acme:submit test="${_command == 'create'}" code="authenticated.assistant.form.button.create" action="/authenticated/assistant/create"/>
+	<acme:submit test="${_command == 'update'}" code="authenticated.assistant.form.button.update" action="/authenticated/assistant/update"/>
 </acme:form>
