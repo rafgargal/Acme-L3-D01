@@ -1,0 +1,25 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+assistant.session.list.label.title=Title
+assistant.session.list.label.abstract=Abstract
+assistant.session.list.label.type=Type
+
+assistant.session.form.label.title=Title
+assistant.session.form.label.sAbstract=Abstract
+assistant.session.form.label.startDateTime=Start date
+assistant.session.form.label.startDateTime=End date
+assistant.session.form.label.furtherInfo=Further information
+assistant.session.form.label.type=Type
+
+assistant.session.list.button.create=Create new Session
+assistant.session.form.submit.delete=Delete
+assistant.session.form.submit.save=Save
+assistant.session.form.submit.update=Update

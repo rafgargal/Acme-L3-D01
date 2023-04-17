@@ -20,12 +20,15 @@ assistant.tutorial.form.label.assistant=Asistente
 assistant.tutorial.form.label.course=Curso
 assistant.tutorial.form.submit.save=Guardar
 assistant.tutorial.form.submit.delete=Borrar
+assistant.tutorial.list.label.code=Código
 
 assistant.tutorial.form.error.duplicated=Código ya existente
 assistant.tutorial.form.error.null-course=Elige un curso
 
 assistant.tutorial.form.message.published=PUBLICADO
 assistant.tutorial.form.message.not-published=NO PUBLICADO
+assistant.tutorial.form.message.cannotPublish=No puedes publicar un tutorial sin sesiones
 assistant.tutorial.form.submit.publish=Publicar
 assistant.tutorial.form.submit.update=Actualizar
 assistant.tutorial.form.button.course=Ir al curso
+assistant.tutorial.form.button.sessions=Ver sesiones
