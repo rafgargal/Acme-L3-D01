@@ -36,6 +36,13 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 	}
 
 	@Override
+	public void validate(final Activity object) {
+		assert object != null;
+		//		if (!super.getBuffer().getErrors().hasErrors("endDate"))
+		//			super.state(MomentHelper.isAfter(object.getEndDate(), object.getStartDate()), "endDate", "student.activity.error.endDate");
+	}
+
+	@Override
 	public void load() {
 		int id;
 		Activity activity;
@@ -45,10 +52,14 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 
 		super.getBuffer().setData(activity);
 	}
-
 	@Override
-	public void validate(final Activity object) {
+	public void bind(final Activity object) {
 		assert object != null;
+
+		final int enrolmentId;
+		final Enrolment enrolment;
+
+		super.bind(object, "title", "summary", "activityType", "startDate", "endDate", "moreInfo");
 	}
 
 	@Override
@@ -74,16 +85,6 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 		tuple.put("enrolmentId", enrolmentId);
 
 		super.getResponse().setData(tuple);
-	}
-
-	@Override
-	public void bind(final Activity object) {
-		assert object != null;
-
-		final int enrolmentId;
-		final Enrolment enrolment;
-
-		super.bind(object, "title", "summary", "activityType", "startDate", "endDate", "moreInfo");
 	}
 
 }

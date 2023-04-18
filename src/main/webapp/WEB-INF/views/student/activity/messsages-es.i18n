@@ -15,3 +15,5 @@ student.activity.form.label.moreInfo = Más información
 student.activity.form.button.update = Actualizar
 student.activity.form.button.delete = Eliminar
 
+student.activity.error.endDate = No es una fecha valida
+
