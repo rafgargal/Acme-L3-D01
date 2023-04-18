@@ -73,6 +73,7 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 			lowerNibble = object.getLowerNibble();
 
 			super.state(lowerNibble.length() != 0, "lowerNibble", "student.enrolment.error.lowerNibble.null");
+			super.state(lowerNibble.length() == 16, "lowerNibble", "student.enrolment.error.lowerNibble.notValidNumber");
 		}
 
 	}

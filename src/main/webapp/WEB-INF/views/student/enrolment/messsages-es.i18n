@@ -17,3 +17,5 @@ student.enrolment.form.label.lowerNibble = Número de la tarjeta
 
 student.enrolment.error.holderName.null = No puede esta vacio
 student.enrolment.error.lowerNibble.null =No puede esta vacio
+
+student.enrolment.error.lowerNibble.notValidNumber = No es un número válido

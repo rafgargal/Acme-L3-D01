@@ -19,3 +19,5 @@ student.enrolment.form.label.lowerNibble = Card number
 student.enrolment.error.holderName.null = Can not be null
 student.enrolment.error.lowerNibble.null = Can not be null
 
+student.enrolment.error.lowerNibble.notValidNumber = Not valid card number
+

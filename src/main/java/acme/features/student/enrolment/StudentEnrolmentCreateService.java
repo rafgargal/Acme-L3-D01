@@ -59,6 +59,7 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 
 		super.bind(object, "code", "motivation", "goals");
 		object.setCourse(course);
+		object.setDraftMode(true);
 	}
 
 	@Override
