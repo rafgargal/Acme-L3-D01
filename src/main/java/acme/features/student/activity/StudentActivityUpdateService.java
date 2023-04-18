@@ -10,6 +10,7 @@ import acme.entities.enrolments.Enrolment;
 import acme.features.student.enrolment.StudentEnrolmentRepository;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
@@ -38,8 +39,8 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 	@Override
 	public void validate(final Activity object) {
 		assert object != null;
-		//		if (!super.getBuffer().getErrors().hasErrors("endDate"))
-		//			super.state(MomentHelper.isAfter(object.getEndDate(), object.getStartDate()), "endDate", "student.activity.error.endDate");
+		if (!super.getBuffer().getErrors().hasErrors("endDate"))
+			super.state(MomentHelper.isAfter(object.getEndDate(), object.getStartDate()), "endDate", "student.activity.error.endDate");
 	}
 
 	@Override
