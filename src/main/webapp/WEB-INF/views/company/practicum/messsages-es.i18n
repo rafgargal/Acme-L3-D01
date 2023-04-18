@@ -25,3 +25,6 @@ company.practicum.list.label.code = Código
 company.practicum.list.label.title = Título
 company.practicum.list.label.summary = Resumen
 company.practicum.form.label.course = Curso
+company.practicum.list.label.draftMode = Borrador
+
+company.practicum.form.button.publish = Publicar

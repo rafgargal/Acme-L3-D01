@@ -12,10 +12,15 @@
 	<acme:input-select code="company.practicum.form.label.course" path="course" choices="${courses}"/>
 	
 	<jstl:choose>
-		<jstl:when test="${_command == 'show'}">
+		<jstl:when test="${_command == 'show' && draftMode == true}">
 			<acme:button code="company.practicum.form.button.practicum-sessions" action="/company/practicum-session/list?masterId=${id}"/>	
 			<acme:submit code="company.practicum.form.button.delete" action="/company/practicum/delete"/>
-			<acme:submit code="company.practicum.form.button.update" action="/company/practicum/update"/>		
+			<acme:submit code="company.practicum.form.button.update" action="/company/practicum/update"/>	
+			<acme:button code="company.practicum.form.button.publish" action="/company/practicum/publish?id=${id}"/>		
+		</jstl:when>
+		
+		<jstl:when test="${_command == 'show' && draftMode == false}">
+			<acme:button code="company.practicum.form.button.practicum-sessions" action="/company/practicum-session/list?masterId=${id}"/>		
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="company.practicum.form.button.create" action="/company/practicum/create"/>
