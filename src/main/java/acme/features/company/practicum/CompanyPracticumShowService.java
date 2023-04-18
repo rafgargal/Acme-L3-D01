@@ -64,7 +64,7 @@ public class CompanyPracticumShowService extends AbstractService<Company, Practi
 		courses = this.practicumRepository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", practicum.getCourse());
 
-		tuple = super.unbind(practicum, "code", "title", "summary", "goals");
+		tuple = super.unbind(practicum, "code", "title", "summary", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 		super.getResponse().setData(tuple);

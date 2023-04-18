@@ -44,6 +44,7 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 
 		practicum = new Practicum();
 		practicum.setCompany(company);
+		practicum.setDraftMode(true);
 
 		super.getBuffer().setData(practicum);
 
@@ -83,7 +84,7 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 		courses = this.practicumRepository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", practicum.getCourse());
 
-		tuple = super.unbind(practicum, "code", "title", "summary", "goals");
+		tuple = super.unbind(practicum, "code", "title", "summary", "goals", "draftMode");
 		tuple.put("courses", choices);
 		super.getResponse().setData(tuple);
 	}

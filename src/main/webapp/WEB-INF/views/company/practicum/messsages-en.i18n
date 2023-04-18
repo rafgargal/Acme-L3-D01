@@ -23,4 +23,5 @@ company.practicum.list.label.code = Code
 company.practicum.list.label.title = Title
 company.practicum.list.label.summary = Summary
 company.practicum.form.label.course = Course
+company.practicum.list.label.draftMode = Draft
 
