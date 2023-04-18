@@ -1,0 +1,10 @@
+any.offer.list.label.heading = Título
+any.offer.list.label.summary = Resumen
+
+any.course.form.label.instantiationMoment = Moment de comienzo
+any.course.form.label.heading = Titulo
+any.course.form.label.summary = Resumen
+any.course.form.label.availabilityPeriodInit = Inicio periodo disponibilidad
+any.course.form.label.availabilityPeriodFin = Fin periodo disponibilidad
+any.course.form.label.price = Precio
+any.course.form.label.link = URL

@@ -1,0 +1,10 @@
+any.offer.list.label.heading = Heading
+any.offer.list.label.summary = Summary
+
+any.course.form.label.instantiationMoment = Instantiation moment
+any.course.form.label.heading = Heading
+any.course.form.label.summary = Summary
+any.course.form.label.availabilityPeriodInit = Availability period init
+any.course.form.label.availabilityPeriodFin = Availability period fin
+any.course.form.label.price = Price
+any.course.form.label.link = Link
