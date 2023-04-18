@@ -6,6 +6,7 @@ import java.time.ZoneId;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.peep.Peep;
 import acme.framework.components.accounts.Any;
@@ -16,6 +17,7 @@ import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 
+@Service
 public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 
 	// Internal state ---------------------------------------------------------
