@@ -1,8 +1,7 @@
 
 package acme.features.any.peep;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,11 +44,15 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 		int userAccountId;
 		UserAccount userAccount;
 		final String nick;
+		final Date fecha;
+
+		final Calendar cal = Calendar.getInstance();
+
+		cal.add(Calendar.YEAR, -2);
+		fecha = cal.getTime();
 
 		principal = super.getRequest().getPrincipal();
 
-		final ZoneId defaultZoneId = ZoneId.systemDefault();
-		final LocalDate localDate = LocalDate.now();
 		userAccountId = principal.getAccountId();
 		userAccount = this.repository.findOneUserAccountById(userAccountId);
 
@@ -59,12 +62,12 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 			nick = userAccount.getIdentity().getName() + " " + userAccount.getIdentity().getSurname();
 
 		object = new Peep();
-		object.setMoment(Date.from(localDate.atStartOfDay(defaultZoneId).toInstant()));
-		object.setTitle(" ");
+		object.setMoment(fecha);
+		//object.setTitle(" ");
 		object.setNick(nick);
-		object.setMessage(" ");
-		object.setEmail(null);
-		object.setLink(null);
+		//object.setMessage(" ");
+		//object.setEmail(null);
+		//object.setLink(null);
 
 		super.getBuffer().setData(object);
 	}
@@ -90,6 +93,7 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 
 	@Override
 	public void unbind(final Peep object) {
+		assert object != null;
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "nick", "message", "email", "link");

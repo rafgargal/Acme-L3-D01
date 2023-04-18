@@ -8,6 +8,5 @@
 	<acme:list-column code="any.peep.list.label.moment" path="moment" width="40%"/>
 </acme:list>
 
-<jstl:if test="${_command == 'list-mine'}">
-	<acme:button code="any.peep.list.button.create" action="/any/peep/create"/>
-</jstl:if>
+
+<acme:button code="any.peep.list.button.create" action="/any/peep/create"/>
