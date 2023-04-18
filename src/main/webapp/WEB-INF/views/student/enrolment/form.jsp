@@ -18,6 +18,9 @@
 			
 			<acme:submit code="student.enrolment.form.button.update" action="/student/enrolment/update"/>
 
+			
+			
+
 		</jstl:when>
 		
 		<jstl:when test="${_command == 'create'}">
@@ -44,6 +47,8 @@
 			<acme:input-textbox code="student.enrolment.form.label.code" path="code"/>
 			<acme:input-textbox code="student.enrolment.form.label.motivation" path="motivation"/>
 			<acme:input-textbox code="student.enrolment.form.label.goals" path="goals"/>
+			
+			<acme:button code="student.activity.form.button.activities" action="/student/activity/list?enrolmentId=${id}"/>
 		</jstl:when>
 		
 				

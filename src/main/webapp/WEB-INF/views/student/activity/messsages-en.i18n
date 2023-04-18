@@ -1,0 +1,19 @@
+student.activity.form.button.activities = Activities
+student.activity.list.button.create = New Activity
+
+student.activity.list.label.title = Title
+student.activity.list.label.summary = Summary
+student.activity.list.label.activityType = Activity type
+student.activity.list.label.moreInfo = More info
+
+student.activity.form.label.title = Title
+student.activity.form.label.summary = Summary
+student.activity.form.label.activityType = Activity type
+student.activity.form.label.startDate = Start date
+student.activity.form.label.endDate = End date
+student.activity.form.label.moreInfo = More info
+
+student.activity.form.button.update = Update
+student.activity.form.button.delete = Delete
+
+
