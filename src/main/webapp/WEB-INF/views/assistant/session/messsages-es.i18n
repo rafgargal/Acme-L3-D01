@@ -23,3 +23,7 @@ assistant.session.list.button.create=Crear nueva sesión
 assistant.session.form.submit.delete=Borrar
 assistant.session.form.submit.save=Guardar
 assistant.session.form.submit.update=Actualizar
+
+assistant.session.form.error.one-day-ahead=La fecha de inicio debe ser al menos dentro de un día
+assistant.session.form.error.is-after=La fecha de fin debe ser posterior a la fecha de inicio
+assistant.session.form.error.hours=Debe haber entre 1 y 5 horas (ambas incluídas) entre la fecha de inicio y de fin

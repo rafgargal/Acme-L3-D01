@@ -23,3 +23,7 @@ assistant.session.list.button.create=Create new Session
 assistant.session.form.submit.delete=Delete
 assistant.session.form.submit.save=Save
 assistant.session.form.submit.update=Update
+
+assistant.session.form.error.one-day-ahead=The start date must be at least within one day
+assistant.session.form.error.is-after=End date is not after start date
+assistant.session.form.error.hours=There must be from 1 to 5 hours (both inclusive) between the start and end date

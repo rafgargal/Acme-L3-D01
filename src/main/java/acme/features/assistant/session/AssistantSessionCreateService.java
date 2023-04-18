@@ -1,6 +1,8 @@
 
 package acme.features.assistant.session;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -66,7 +68,23 @@ public class AssistantSessionCreateService extends AbstractService<Assistant, Se
 	public void validate(final Session object) {
 		assert object != null;
 
-		//TODO: CUSTOM CONSTRAINT WITH DATES
+		if (!super.getBuffer().getErrors().hasErrors("startDateTime")) {
+			final Date currentDate = new Date();
+
+			final Date oneDayAhead = new Date(currentDate.getTime() + 24 * 60 * 60 * 1000);
+
+			super.state(object.getStartDateTime().after(oneDayAhead), "startDateTime", "assistant.session.form.error.one-day-ahead");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("endDateTime")) {
+			super.state(object.getEndDateTime().after(object.getStartDateTime()), "endDateTime", "assistant.session.form.error.is-after");
+
+			final long timeDifference = object.getEndDateTime().getTime() - object.getStartDateTime().getTime();
+			final double hoursDifference = timeDifference / (60 * 60 * 1000 + 0.);
+
+			super.state(hoursDifference >= 1 && hoursDifference <= 5, "endDateTime", "assistant.session.form.error.hours");
+
+		}
 	}
 
 	@Override
