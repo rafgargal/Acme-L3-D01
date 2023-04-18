@@ -65,19 +65,18 @@ public class StudentEnrolmentShowService extends AbstractService<Student, Enrolm
 		SelectChoices choices;
 		Tuple tuple;
 
-		//Preguntar si tienen que salir todos los cursos o solamente los del estudiante
-		final int studentId = object.getStudent().getId();
+		final int id = object.getStudent().getId();
 
+		//courses = this.repository.findAllCoursesByStudentId(id);
 		courses = this.repository.findAllCourses();
-		final Collection<Course> coursesChoices = this.repository.findAllCoursesByStudentId(studentId);
-		choices = SelectChoices.from(coursesChoices, "code", object.getCourse());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
+		tuple = super.unbind(object, "code", "motivation", "goals", "lowerNibble", "holderName", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
-		tuple.put("courseCode", choices.getSelected().getLabel());
 
 		super.getResponse().setData(tuple);
+
 	}
 
 }

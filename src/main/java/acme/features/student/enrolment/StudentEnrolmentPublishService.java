@@ -97,14 +97,13 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 	public void bind(final Enrolment object) {
 		assert object != null;
 
-		String courseId;
-		Course course;
+		Integer enrolmentId;
+		Enrolment enrolment;
 
-		courseId = super.getRequest().getData("course", String.class);
-		course = this.repository.findCourseByCode(courseId);
+		enrolmentId = super.getRequest().getData("id", int.class);
+		enrolment = this.repository.findEnrolmentById(enrolmentId);
 
 		super.bind(object, "code", "motivation", "goal", "holderName", "lowerNibble");
-		object.setCourse(course);
 
 	}
 
@@ -115,13 +114,14 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 		Collection<Course> courses;
 		SelectChoices choices;
 
+		final int id = object.getStudent().getId();
+
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
 		Tuple tuple;
 
 		tuple = super.unbind(object, "code", "motivation", "goals", "lowerNibble", "holderName", "draftMode");
-		tuple.put("course", choices.getSelected().getLabel());
 		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);

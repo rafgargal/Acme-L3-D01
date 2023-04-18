@@ -77,10 +77,14 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 		SelectChoices choices;
 		Tuple tuple;
 
+		//		final int id = object.getStudent().getId();
+		//
+		//		courses = this.repository.findAllCoursesByStudentId(id);
+
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
-		tuple = super.unbind(object, "code", "motivation", "goals");
+		tuple = super.unbind(object, "code", "motivation", "goals", "lowerNibble", "holderName", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 
