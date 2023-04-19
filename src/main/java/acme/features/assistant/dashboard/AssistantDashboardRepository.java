@@ -3,6 +3,7 @@ package acme.features.assistant.dashboard;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -56,21 +57,30 @@ public interface AssistantDashboardRepository extends AbstractRepository {
 	@Query("select count(t) FROM Tutorial t where t.assistant.userAccount.id = :id")
 	Integer findNumberOfTutorialsByAssistantId(int id);
 
-	@Query("select avg(t.estimatedTotalTime) FROM Tutorial t where t.assistant.userAccount.id = :id")
-	Double findAverageTutorialTimeByAssistantId(int id);
-
-	@Query("select min(t.estimatedTotalTime) FROM Tutorial t where t.assistant.userAccount.id = :id")
-	Double findMinTutorialTimeByAssistantId(int id);
-
-	@Query("select max(t.estimatedTotalTime) FROM Tutorial t where t.assistant.userAccount.id = :id")
-	Double findMaxTutorialTimeByAssistantId(int id);
-
 	@Query("select t.estimatedTotalTime FROM Tutorial t where t.assistant.userAccount.id = :id")
 	List<Double> findAllTutorialTimesByAssistantId(int id);
 
+	default List<Double> findTutorialTimesByAssistantId(final int id) {
+		final List<Tutorial> tutorials = this.findTutorialsByAssistantId(id);
+
+		return tutorials.stream().mapToDouble(t -> this.findSessionsByTutorialId(t.getId()).stream().mapToDouble(s -> TimeUnit.MILLISECONDS.toHours(s.getEndDateTime().getTime() - s.getStartDateTime().getTime())).sum()).boxed().collect(Collectors.toList());
+	}
+
+	default Double findAverageTutorialTimeByAssistantId(final int id) {
+		return this.findTutorialTimesByAssistantId(id).stream().mapToDouble(x -> x).average().orElse(0.0);
+	}
+
 	default Double findDeviationTutorialTimeByAssistantId(final int id) {
 		final double avg = this.findAverageTutorialTimeByAssistantId(id);
-		return Math.sqrt(this.findAllTutorialTimesByAssistantId(id).stream().mapToDouble(x -> x).map(x -> x - avg).map(x -> x * x).average().orElse(0.0));
+		return Math.sqrt(this.findTutorialTimesByAssistantId(id).stream().mapToDouble(x -> x).map(x -> x - avg).map(x -> x * x).average().orElse(0.0));
+	}
+
+	default Double findMaxTutorialTimeByAssistantId(final int id) {
+		return this.findTutorialTimesByAssistantId(id).stream().mapToDouble(x -> x).max().orElse(0.0);
+	}
+
+	default Double findMinTutorialTimeByAssistantId(final int id) {
+		return this.findTutorialTimesByAssistantId(id).stream().mapToDouble(x -> x).min().orElse(0.0);
 	}
 
 	default Double findAverageSessionTimeByAssistantId(final int id) {
@@ -93,28 +103,5 @@ public interface AssistantDashboardRepository extends AbstractRepository {
 		final double avg = this.findAverageSessionTimeByAssistantId(id);
 		return Math.sqrt(sessions.stream().mapToDouble(s -> TimeUnit.MILLISECONDS.toHours(s.getEndDateTime().getTime() - s.getStartDateTime().getTime())).map(x -> x - avg).map(x -> x * x).average().orElse(0.0));
 	}
-
-	/*
-	 * @Query("select a from Auditor a where a.userAccount.id = :accountId")
-	 * Auditor findAuditorByAccountId(int accountId);
-	 * 
-	 * @Query("select count(a) from Audit a where a.auditor.id = :id")
-	 * Double totalNumberOfAudits(int id);
-	 * 
-	 * @Query("select avg(select count(ar) from AuditingRecord ar where ar.audit.id = a.id) from Audit a where a.auditor.id = :id")
-	 * Double averageNumberOfAuditingRecords(int id);
-	 * 
-	 * @Query("select count(ar) from AuditingRecord ar where ar.audit.auditor.id = :id group by ar.audit ")
-	 * List<Integer> numberOfRecordsByAudit(int id);
-	 * 
-	 * @Query("select min(select count(ar) from AuditingRecord ar where ar.audit.id = a.id) from Audit a where a.auditor.id = :id")
-	 * Double minimumNumberOfAuditingRecords(int id);
-	 * 
-	 * @Query("select max(select count(ar) from AuditingRecord ar where ar.audit.id = a.id) from Audit a where a.auditor.id = :id")
-	 * Double maximumNumberOfAuditingRecords(int id);
-	 * 
-	 * @Query("select ar from AuditingRecord ar where ar.audit.auditor.id = :id")
-	 * List<AuditingRecord> findAllAuditingRecordsByAuditorId(int id);
-	 */
 
 }

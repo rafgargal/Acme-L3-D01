@@ -8,24 +8,15 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-assistant.tutorial.list.button.create=Crear
-assistant.tutorial.list.label.title=Título
-assistant.tutorial.list.label.course=Curso
-assistant.tutorial.form.label.title=Título
-assistant.tutorial.form.label.tAbstract=Resumen
-assistant.tutorial.form.label.code=Código
-assistant.tutorial.form.label.estimatedTotalTime=Tiempo total estimado
-assistant.tutorial.form.label.goals=Objetivos
-assistant.tutorial.form.label.assistant=Asistente
-assistant.tutorial.form.label.course=Curso
-assistant.tutorial.form.submit.save=Guardar
-assistant.tutorial.form.submit.delete=Borrar
+assistant.dashboard.form.label.show-tutorials=Tutoriales
+assistant.dashboard.form.label.total-tutorials=Número total de tutoriales
+assistant.dashboard.form.label.tutorials-deviation=Desviación estándar de la duración
+assistant.dashboard.form.label.tutorials-min=Duración mínima
+assistant.dashboard.form.label.tutorials-max=Duración máxima
+assistant.dashboard.form.label.tutorials-average=Duración media
 
-assistant.tutorial.form.error.duplicated=Código ya existente
-assistant.tutorial.form.error.null-course=Elige un curso
-
-assistant.tutorial.form.message.published=PUBLICADO
-assistant.tutorial.form.message.not-published=NO PUBLICADO
-assistant.tutorial.form.submit.publish=Publicar
-assistant.tutorial.form.submit.update=Actualizar
-assistant.tutorial.form.button.course=Ir al curso
+assistant.dashboard.form.label.show-sessions=Sesiones de Tutoriales
+assistant.dashboard.form.label.sessions-deviation=Desviación estándar de la duración
+assistant.dashboard.form.label.sessions-min=Duración mínima
+assistant.dashboard.form.label.sessions-max=Duración máxima
+assistant.dashboard.form.label.sessions-average=Duración media

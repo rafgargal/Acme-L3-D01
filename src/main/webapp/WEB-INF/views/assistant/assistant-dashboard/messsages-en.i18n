@@ -8,25 +8,15 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-assistant.tutorial.list.button.create=Create
-assistant.tutorial.list.label.title=Title
-assistant.tutorial.list.label.course=Course
+assistant.dashboard.form.label.show-tutorials=Tutorials
+assistant.dashboard.form.label.total-tutorials=Total number of tutorials
+assistant.dashboard.form.label.tutorials-deviation=Standard deviation of duration
+assistant.dashboard.form.label.tutorials-min=Minimum duration
+assistant.dashboard.form.label.tutorials-max=Maximum duration
+assistant.dashboard.form.label.tutorials-average=Average duration
 
-assistant.tutorial.form.label.title=Title
-assistant.tutorial.form.label.tAbstract=Abstract
-assistant.tutorial.form.label.code=Code
-assistant.tutorial.form.label.estimatedTotalTime=Estimated total time
-assistant.tutorial.form.label.goals=Goals
-assistant.tutorial.form.label.assistant=Assistant
-assistant.tutorial.form.label.course=Course
-assistant.tutorial.form.submit.save=Save
-assistant.tutorial.form.submit.delete=Delete
-
-assistant.tutorial.form.error.duplicated=Existing code
-assistant.tutorial.form.error.null-course=Choose a course
-
-assistant.tutorial.form.message.published=PUBLISHED
-assistant.tutorial.form.message.not-published=NOT PUBLISHED
-assistant.tutorial.form.submit.publish=Publish
-assistant.tutorial.form.submit.update=Update
-assistant.tutorial.form.button.course=Go to course
+assistant.dashboard.form.label.show-sessions=Tutorial Sessions
+assistant.dashboard.form.label.sessions-deviation=Standard deviation of duration
+assistant.dashboard.form.label.sessions-min=Minimum duration
+assistant.dashboard.form.label.sessions-max=Maximum duration
+assistant.dashboard.form.label.sessions-average=Average duration
