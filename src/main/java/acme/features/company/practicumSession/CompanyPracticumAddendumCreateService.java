@@ -15,7 +15,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
 @Service
-public class CompanyPracticumSessionCreateService extends AbstractService<Company, PracticumSession> {
+public class CompanyPracticumAddendumCreateService extends AbstractService<Company, PracticumSession> {
 
 	@Autowired
 	protected CompanyPracticumSessionRepository repository;
@@ -38,7 +38,7 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 
 		practicumId = super.getRequest().getData("masterId", int.class);
 		practicum = this.repository.findPracticumById(practicumId);
-		status = practicum != null && super.getRequest().getPrincipal().hasRole(practicum.getCompany());
+		status = practicum != null && super.getRequest().getPrincipal().hasRole(practicum.getCompany()) && !practicum.getDraftMode();
 
 		super.getResponse().setAuthorised(status);
 
@@ -55,6 +55,7 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 
 		session = new PracticumSession();
 		session.setPracticum(practicum);
+		session.setAddendum(true);
 
 		super.getResponse().setGlobal("draftMode", practicum.getDraftMode());
 		super.getBuffer().setData(session);
@@ -85,7 +86,8 @@ public class CompanyPracticumSessionCreateService extends AbstractService<Compan
 			minimunDate = MomentHelper.deltaFromCurrentMoment(7, ChronoUnit.DAYS);
 			super.state(MomentHelper.isAfter(session.getStartDate(), minimunDate), "startDate", "company.practicum.error.label.startDate");
 		}
-
+		if (session.getPracticum().getDraftMode() == false)
+			super.state(super.getRequest().getData("check", boolean.class), "check", "company.practicum.error.label.check");
 	}
 
 	@Override

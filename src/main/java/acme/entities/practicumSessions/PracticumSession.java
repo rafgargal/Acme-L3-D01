@@ -47,6 +47,8 @@ public class PracticumSession extends AbstractEntity {
 	@URL
 	protected String			moreInfoLink;
 
+	protected boolean			addendum;
+
 	//Derived attributes
 
 	//Relationship

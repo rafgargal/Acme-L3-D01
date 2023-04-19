@@ -2,6 +2,7 @@
 package acme.features.company.practicumSession;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -21,4 +22,7 @@ public interface CompanyPracticumSessionRepository extends AbstractRepository {
 
 	@Query("SELECT p FROM Practicum p WHERE p.id = :id")
 	Practicum findPracticumById(int id);
+
+	@Query("SELECT p FROM PracticumSession p WHERE p.addendum = :bool AND p.practicum.id = :id")
+	Optional<PracticumSession> findAddendum(boolean bool, int id);
 }

@@ -47,11 +47,20 @@ public class CompanyPracticumSessionListService extends AbstractService<Company,
 
 		final Collection<PracticumSession> sessions;
 		final int practicumId;
+		boolean draftMode;
+		Practicum practicum;
+		Boolean addendumCheck;
 
 		practicumId = super.getRequest().getData("masterId", int.class);
+		addendumCheck = this.repository.findAddendum(true, practicumId).isPresent();
 		sessions = this.repository.findPracticumSessionsByPracticumId(practicumId);
+		practicum = this.repository.findPracticumById(practicumId);
+		draftMode = practicum.getDraftMode();
 		super.getBuffer().setData(sessions);
+
+		super.getResponse().setGlobal("addendumCheck", addendumCheck);
 		super.getResponse().setGlobal("masterId", practicumId);
+		super.getResponse().setGlobal("draftMode", draftMode);
 	}
 
 	@Override
@@ -61,8 +70,11 @@ public class CompanyPracticumSessionListService extends AbstractService<Company,
 		Tuple tuple;
 
 		practicumId = super.getRequest().getData("masterId", int.class);
-		tuple = super.unbind(sessions, "title", "summary");
+
+		tuple = super.unbind(sessions, "title", "summary", "addendum");
+		tuple.put("draftMode", sessions.getPracticum().getDraftMode());
 		tuple.put("masterId", practicumId);
+
 		super.getResponse().setData(tuple);
 	}
 }

@@ -10,3 +10,8 @@ company.practicum.form.label.moreInfo = Mas informacion
 company.practicum.error.label.endDate =La fecha final no puede ser anterior a la fecha de inicio
 company.practicum.error.label.startDate = La fecha tiene que ser posterior a una semana desde la fecha actual
 company.practicum.error.label.difference = Debe haber una semana de diferencia entre las dos fechas
+company.practicum.error.label.check = Necesita confirmacion
+
+company.practicum.practicumSession.list.label.addendum = Suplemento
+company.practicum.list.button.check = Confirmacion
+company.practicum.list.button.createAddendum = Create suplemento

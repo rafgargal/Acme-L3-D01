@@ -15,8 +15,12 @@
 			<acme:submit code="company.practicum.form.button.delete" action="/company/practicum-session/delete"/>
 			<acme:submit code="company.practicum.form.button.update" action="/company/practicum-session/update"/>		
 		</jstl:when>
-		<jstl:when test="${_command == 'create'}">
+		<jstl:when test="${_command == 'create' && draftMode == true}">
 			<acme:submit code="company.practicum.form.button.create" action="/company/practicum-session/create?masterId=${masterId}"/>
-		</jstl:when>		
+		</jstl:when>	
+		<jstl:when test="${(_command == 'create' ||_command == 'addendum') && draftMode == false}">	
+			<acme:input-checkbox code="company.practicum.list.button.check" path="check"/>
+			<acme:submit code="company.practicum.form.button.create" action="/company/practicum-session/addendum?masterId=${masterId}"/>
+		</jstl:when>
 	</jstl:choose>
 </acme:form>
