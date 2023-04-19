@@ -49,6 +49,7 @@ master.menu.consumer.favourite-link = Favourite link
 master.menu.authenticated = Authenticated
 master.menu.authenticated.bulletin = Bulletin
 master.menu.authenticated.course = Courses
+master.menu.authenticated.note = Notes
 
 # master.menu.lecturer ##########################################################
 
