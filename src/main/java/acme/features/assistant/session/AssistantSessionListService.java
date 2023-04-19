@@ -54,6 +54,7 @@ public class AssistantSessionListService extends AbstractService<Assistant, Sess
 		objects = this.repository.findSessionsByTutorialId(tutorialId);
 
 		super.getResponse().setGlobal("tutorialId", tutorialId);
+		super.getResponse().setGlobal("canCreateSession", !this.repository.findTutorialById(tutorialId).isPublished());
 
 		super.getBuffer().setData(objects);
 	}
@@ -65,6 +66,10 @@ public class AssistantSessionListService extends AbstractService<Assistant, Sess
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "sAbstract", "type");
+
+		final int tutorialId = super.getRequest().getData("tutorialId", int.class);
+		super.getResponse().setGlobal("tutorialId", tutorialId);
+		super.getResponse().setGlobal("canCreateSession", !this.repository.findTutorialById(tutorialId).isPublished());
 
 		super.getResponse().setData(tuple);
 	}

@@ -41,11 +41,7 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 
 		final int assistantIdFromLoggedUser = super.getRequest().getPrincipal().getActiveRoleId();
 
-		if (assistantIdFromTutorial == assistantIdFromLoggedUser)
-			super.getResponse().setAuthorised(true);
-		else
-			super.getResponse().setAuthorised(false);
-
+		super.getResponse().setAuthorised(assistantIdFromTutorial == assistantIdFromLoggedUser);
 	}
 
 	@Override

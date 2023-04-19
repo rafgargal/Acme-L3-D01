@@ -21,4 +21,6 @@
 	<acme:list-column code="assistant.session.list.label.type" path="type"/>
 </acme:list>
 
-<acme:button code="assistant.session.list.button.create" action="/assistant/session/create?tutorialId=${tutorialId}"/>
+<jstl:if test="${ canCreateSession }">
+	<acme:button code="assistant.session.list.button.create" action="/assistant/session/create?tutorialId=${tutorialId}"/>
+</jstl:if>

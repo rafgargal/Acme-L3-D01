@@ -3,6 +3,7 @@ package acme.features.assistant.tutorial;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -38,5 +39,9 @@ public interface AssistantTutorialRepository extends AbstractRepository {
 
 	@Query("select s from Session s where s.tutorial.id = :id")
 	List<Session> findSessionsByTutorialId(int id);
+
+	@Modifying
+	@Query("delete from Session s where s.tutorial.id = :id")
+	void deleteSessionsByTutorialId(int id);
 
 }

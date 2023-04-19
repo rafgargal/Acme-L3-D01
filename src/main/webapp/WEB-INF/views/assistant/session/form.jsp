@@ -28,7 +28,7 @@
 	<jstl:if test="${_command == 'create'}">
 		<acme:submit code="assistant.session.form.submit.save" action="/assistant/session/create?tutorialId=${ tutorialId }"/>
 	</jstl:if>
-	<jstl:if test="${_command != 'create'}">
+	<jstl:if test="${_command != 'create' && canDeleteOrUpdateSession}">
 		<acme:submit code="assistant.session.form.submit.delete" action="/assistant/session/delete"/>
 		<acme:submit code="assistant.session.form.submit.update" action="/assistant/session/update"/>
 	</jstl:if>
