@@ -1,5 +1,5 @@
 
-package acme.features.any.offers;
+package acme.features.authenticated.offers;
 
 import java.util.Collection;
 
@@ -7,15 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.offer.Offer;
-import acme.framework.components.accounts.Any;
+import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
 @Service
-public class AnyOfferListService extends AbstractService<Any, Offer> {
+public class AuthenticatedOfferListService extends AbstractService<Authenticated, Offer> {
 
 	@Autowired
-	protected AnyOfferRepository repository;
+	protected AuthenticatedOfferRepository repository;
 
 
 	@Override
@@ -25,11 +25,7 @@ public class AnyOfferListService extends AbstractService<Any, Offer> {
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = !super.getRequest().getPrincipal().getUsername().equals("anonymous");
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override

@@ -1,19 +1,19 @@
 
-package acme.features.any.offers;
+package acme.features.authenticated.offers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.offer.Offer;
-import acme.framework.components.accounts.Any;
+import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
 @Service
-public class AnyOfferShowService extends AbstractService<Any, Offer> {
+public class AuthenticatedOfferShowService extends AbstractService<Authenticated, Offer> {
 
 	@Autowired
-	protected AnyOfferRepository repository;
+	protected AuthenticatedOfferRepository repository;
 
 
 	@Override
@@ -27,12 +27,7 @@ public class AnyOfferShowService extends AbstractService<Any, Offer> {
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		status = !super.getRequest().getPrincipal().getUsername().equals("anonymous");
-
-		super.getResponse().setAuthorised(status);
-		//super.getResponse().setAuthorised(true);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -53,7 +48,6 @@ public class AnyOfferShowService extends AbstractService<Any, Offer> {
 		Tuple tuple;
 
 		tuple = super.unbind(object, "instantiationMoment", "heading", "summary", "availabilityPeriodInit", "availabilityPeriodFin", "price", "link");
-
 		super.getResponse().setData(tuple);
 	}
 

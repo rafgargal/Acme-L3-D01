@@ -1,5 +1,5 @@
 
-package acme.features.any.offers;
+package acme.features.authenticated.offers;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.entities.offer.Offer;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnyOfferRepository extends AbstractRepository {
+public interface AuthenticatedOfferRepository extends AbstractRepository {
 
 	@Query("select o from Offer o")
 	Collection<Offer> findAllOffers();

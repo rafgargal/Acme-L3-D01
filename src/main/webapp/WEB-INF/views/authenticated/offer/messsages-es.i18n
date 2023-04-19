@@ -1,0 +1,16 @@
+authenticated.offer.list.label.heading = Título
+authenticated.offer.list.label.summary = Resumen
+
+authenticated.course.form.label.instantiationMoment = Moment de comienzo
+authenticated.course.form.label.heading = Titulo
+authenticated.course.form.label.summary = Resumen
+authenticated.course.form.label.availabilityPeriodInit = Inicio periodo disponibilidad
+authenticated.course.form.label.availabilityPeriodFin = Fin periodo disponibilidad
+authenticated.course.form.label.price = Precio
+authenticated.course.form.label.link = URL
+
+authenticated.offer.form.button.delete = Eliminar
+authenticated.offer.form.button.update = Actualizar
+authenticated.offer.form.button.create = Crear
+
+authorise.offer.error.availabilityPeriodFin = No es posible utilizar esta fecha
