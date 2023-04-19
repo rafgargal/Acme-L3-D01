@@ -62,14 +62,19 @@
 		</jstl:otherwise>
 	</jstl:choose>
 	
+	<jstl:if test="${ !canPublish && !published }">
+		<div><acme:message code="assistant.tutorial.form.message.cannotPublish"/></div>
+	</jstl:if>
+	
 	<acme:button code="assistant.tutorial.form.button.course" action="/any/course/show?id=${course}"/>
+	<acme:button code="assistant.tutorial.form.button.sessions" action="/assistant/session/list?tutorialId=${id}"/>
 
 <acme:hidden-data path="published"/>
 	
 	<jstl:if test="${_command == 'create'}">
 		<acme:submit code="assistant.tutorial.form.submit.save" action="/assistant/tutorial/create"/>
 	</jstl:if>
-	<jstl:if test="${ !published }">
+	<jstl:if test="${ !published && canPublish}">
 		<acme:submit code="assistant.tutorial.form.submit.publish" action="/assistant/tutorial/publish"/>
 	</jstl:if>
 	<jstl:if test="${_command != 'create' && !published}">
