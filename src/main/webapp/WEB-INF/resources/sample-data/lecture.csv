@@ -9,3 +9,4 @@ lecture-07,lecturer-01,Titulo de ejemplo,Esto es una lectura de ejemplo,1,C,THEO
 lecture-08,lecturer-02,Titulo de ejemplo,Esto es una lectura de ejemplo,1234.56,Cuerpo de ejemplo,HANDS_ON,,false
 lecture-09,lecturer-01,Titulo de ejemplo,Esto es una lectura de ejemplo,55,Cuerpo de ejemplo,THEORETICAL,,false
 lecture-10,lecturer-02,Titulo de ejemplo,Esto es una lectura de ejemplo,33.33,Cuerpo de ejemplo,THEORETICAL,https://www.fernandoalonso.com/,true
+lecture-11,lecturer-01,Lección sin curso asociado,Esto es una lección que no está asociada a ningún curso,33.33,Cuerpo de ejemplo,HANDS_ON,,false
