@@ -41,11 +41,7 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 
 		final int assistantIdFromLoggedUser = super.getRequest().getPrincipal().getActiveRoleId();
 
-		if (assistantIdFromTutorial == assistantIdFromLoggedUser)
-			super.getResponse().setAuthorised(true);
-		else
-			super.getResponse().setAuthorised(false);
-
+		super.getResponse().setAuthorised(assistantIdFromTutorial == assistantIdFromLoggedUser);
 	}
 
 	@Override
@@ -94,6 +90,10 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 		tuple = super.unbind(object, "code", "estimatedTotalTime", "goals", "tAbstract", "title", "assistant.supervisor", "course", "course.title", "published");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
+
+		final boolean canPublish = this.repository.findSessionsByTutorialId(super.getRequest().getData("id", int.class)).size() > 0;
+
+		super.getResponse().setGlobal("canPublish", canPublish);
 
 		super.getResponse().setData(tuple);
 	}
