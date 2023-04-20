@@ -56,6 +56,10 @@
 		<acme:menu-option code="master.menu.lecturer" access="hasRole('Lecturer')">
 			<acme:menu-suboption code="master.menu.lecturer.course" action="/lecturer/course/list"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.Auditor" access="hasRole('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.audit" action="/auditor/audit/list"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
