@@ -49,8 +49,14 @@ public class AuthenticatedOfferCreateService extends AbstractService<Authenticat
 	public void validate(final Offer object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("availabilityPeriodInit"))
+			super.state(object.getAvailabilityPeriodInit() != null, "availabilityPeriodInit", "authorise.offer.error.availabilityPeriodFin");
+
 		if (!super.getBuffer().getErrors().hasErrors("availabilityPeriodFin"))
-			super.state(MomentHelper.isAfter(object.getAvailabilityPeriodFin(), object.getAvailabilityPeriodInit()), "availabilityPeriodFin", "authorise.offer.error.availabilityPeriodFin");
+			super.state(object.getAvailabilityPeriodFin() != null, "availabilityPeriodFin", "authorise.offer.error.availabilityPeriodFin");
+
+		if (!super.getBuffer().getErrors().hasErrors("availabilityPeriodFin"))
+			super.state(!MomentHelper.isAfter(object.getAvailabilityPeriodFin(), object.getAvailabilityPeriodInit()), "availabilityPeriodFin", "authorise.offer.error.availabilityPeriodFin");
 
 	}
 
