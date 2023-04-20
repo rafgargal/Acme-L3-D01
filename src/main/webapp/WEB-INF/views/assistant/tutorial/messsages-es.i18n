@@ -21,6 +21,7 @@ assistant.tutorial.form.label.course=Curso
 assistant.tutorial.form.submit.save=Guardar
 assistant.tutorial.form.submit.delete=Borrar
 assistant.tutorial.list.label.code=Código
+assistant.tutorial.form.label.published=Publicado
 
 assistant.tutorial.form.error.duplicated=Código ya existente
 assistant.tutorial.form.error.null-course=Elige un curso

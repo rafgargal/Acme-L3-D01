@@ -46,23 +46,13 @@
 	<acme:input-textbox code="assistant.tutorial.form.label.code" path="code"/>
 	<acme:input-double code="assistant.tutorial.form.label.estimatedTotalTime" path="estimatedTotalTime"/>
 	<acme:input-textarea code="assistant.tutorial.form.label.goals" path="goals"/>
+	<jstl:if test="${_command != 'create'}">
+		<acme:input-checkbox code="assistant.tutorial.form.label.published" path="published" readonly="true"/>
+	</jstl:if>
 
 	<acme:input-select code="assistant.tutorial.form.label.course" path="course" choices="${courses}"/>
 	
-	<jstl:if test="${_command != 'create'}">
-		<jstl:choose>
-			<jstl:when test="${ published }">
-				<div class="box published">
-					<acme:message code="assistant.tutorial.form.message.published"/>
-				</div>
-			</jstl:when>
-			<jstl:otherwise>
-				<div class="box not-published">
-					<acme:message code="assistant.tutorial.form.message.not-published"/>
-				</div>
-			</jstl:otherwise>
-		</jstl:choose>
-		
+	<jstl:if test="${_command != 'create'}">		
 		<jstl:if test="${ !canPublish && !published }">
 			<div><acme:message code="assistant.tutorial.form.message.cannotPublish"/></div>
 		</jstl:if>
