@@ -15,7 +15,7 @@ assistant.session.list.label.type=Tipo
 assistant.session.form.label.title=Título
 assistant.session.form.label.sAbstract=Resumen
 assistant.session.form.label.startDateTime=Fecha de comienzo
-assistant.session.form.label.startDateTime=Fecha de finalización
+assistant.session.form.label.endDateTime=Fecha de finalización
 assistant.session.form.label.furtherInfo=Más información
 assistant.session.form.label.type=Tipo
 

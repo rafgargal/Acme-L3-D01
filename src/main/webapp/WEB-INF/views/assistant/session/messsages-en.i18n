@@ -15,7 +15,7 @@ assistant.session.list.label.type=Type
 assistant.session.form.label.title=Title
 assistant.session.form.label.sAbstract=Abstract
 assistant.session.form.label.startDateTime=Start date
-assistant.session.form.label.startDateTime=End date
+assistant.session.form.label.endDateTime=End date
 assistant.session.form.label.furtherInfo=Further information
 assistant.session.form.label.type=Type
 
