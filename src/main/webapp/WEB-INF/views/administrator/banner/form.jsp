@@ -16,7 +16,12 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:form>
-	<acme:input-moment code="administrator.banner.form.label.instantiationOrUpdateMoment" path="instantiationOrUpdateMoment"/>	
+	<jstl:if test="${_command == 'create'}">
+	<acme:input-moment code="administrator.banner.form.label.instantiationOrUpdateMoment" path="instantiationOrUpdateMoment"/>
+	</jstl:if>
+	<jstl:if test="${_command != 'create'}">
+	<acme:input-moment code="administrator.banner.form.label.instantiationOrUpdateMoment" path="instantiationOrUpdateMoment" readonly="true"/>	
+	</jstl:if>
 	<acme:input-moment code="administrator.banner.form.label.displayPeriodStart" path="displayPeriodStart"/>
 	<acme:input-moment code="administrator.banner.form.label.displayPeriodEnd" path="displayPeriodEnd"/>
 	<acme:input-url code="administrator.banner.form.label.pictureLink" path="pictureLink"/>
