@@ -25,7 +25,7 @@ public class Peep extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	@NotNull
 	protected Date				moment;

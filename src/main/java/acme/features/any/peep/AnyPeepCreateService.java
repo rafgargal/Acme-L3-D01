@@ -1,7 +1,6 @@
 
 package acme.features.any.peep;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import acme.framework.components.accounts.Any;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.accounts.UserAccount;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -42,13 +42,10 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 		int userAccountId;
 		UserAccount userAccount;
 		final String nick;
-		final Date fecha;
+		Date fecha;
 
-		final Calendar cal = Calendar.getInstance();
-
-		cal.add(Calendar.YEAR, -2);
-		fecha = cal.getTime();
-
+		//para la fecha cogeremos la fecha en la que se encuentra el sistema
+		fecha = MomentHelper.getBaseMoment();
 		principal = super.getRequest().getPrincipal();
 
 		userAccountId = principal.getAccountId();
