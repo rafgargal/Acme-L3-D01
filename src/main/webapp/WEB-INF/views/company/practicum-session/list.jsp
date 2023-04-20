@@ -9,6 +9,13 @@
 		<acme:list-column code="company.practicum.practicumSession.list.label.addendum" path="addendum"/>
 	</acme:list>
 </jstl:if>
+<jstl:if test = "${addendumCheck == false}">
+	<acme:list>
+		<acme:list-column code="company.practicum.practicumSession.list.label.title" path="title"/>
+		<acme:list-column code="company.practicum.practicumSession.list.label.summary" path="summary"/>
+	</acme:list>
+</jstl:if>
+
 <jstl:choose>
 		<jstl:when test="${draftMode == true}">	
 			<acme:button code="company.practicum.list.button.create" action="/company/practicum-session/create?masterId=${masterId}"/>

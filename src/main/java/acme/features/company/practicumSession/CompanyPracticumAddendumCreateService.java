@@ -35,10 +35,13 @@ public class CompanyPracticumAddendumCreateService extends AbstractService<Compa
 		boolean status;
 		int practicumId;
 		Practicum practicum;
+		boolean addendumCheck;
 
 		practicumId = super.getRequest().getData("masterId", int.class);
 		practicum = this.repository.findPracticumById(practicumId);
-		status = practicum != null && super.getRequest().getPrincipal().hasRole(practicum.getCompany()) && !practicum.getDraftMode();
+		addendumCheck = this.repository.findAddendum(true, practicumId).isPresent();
+
+		status = practicum != null && super.getRequest().getPrincipal().hasRole(practicum.getCompany()) && !practicum.getDraftMode() && !addendumCheck;
 
 		super.getResponse().setAuthorised(status);
 

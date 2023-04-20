@@ -74,6 +74,15 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 	@Override
 	public void validate(final Practicum object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			final int id = super.getRequest().getData("id", int.class);
+			final String objectCode = object.getCode();
+			final Practicum pr = this.practicumRepository.findPracticumByCode(objectCode);
+
+			final Practicum actual = this.practicumRepository.findPracticumById(id);
+			super.state(pr == actual || pr == null, "code", "company.practicum.error.label.code");
+		}
 	}
 
 	@Override
