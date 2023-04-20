@@ -95,6 +95,10 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 
+		final boolean canPublish = this.repository.findSessionsByTutorialId(super.getRequest().getData("id", int.class)).size() > 0;
+
+		super.getResponse().setGlobal("canPublish", canPublish);
+
 		super.getResponse().setData(tuple);
 	}
 

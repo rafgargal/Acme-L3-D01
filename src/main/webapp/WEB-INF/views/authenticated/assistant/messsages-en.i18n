@@ -14,3 +14,4 @@ authenticated.assistant.form.label.expertiseFields=Expertise fields
 authenticated.assistant.form.label.furtherInfo=Further info
 
 authenticated.assistant.form.button.create=Register
+authenticated.assistant.form.button.update=Update
