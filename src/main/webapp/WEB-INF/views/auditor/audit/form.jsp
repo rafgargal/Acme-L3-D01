@@ -13,7 +13,7 @@
 	<acme:input-textarea code="auditor.audit.form.label.strongPoints" path="strongPoints"/>
 	<acme:input-textbox code="auditor.audit.form.label.mark" path="mark" readonly="true"/>	
 	<acme:input-textbox code="auditor.audit.form.label.auditor" path="auditor" readonly="true"/>
-	<acme:input-select code="auditor.audit.form.label.course" path="course" choices="${courses}"/>
+	<acme:input-select code="auditor.audit.form.label.course" path="course.title" choices="${courses}"/>
 	<acme:input-textbox code="auditor.audit.form.label.draftMode" path="draftMode" readonly="true"/>
 
 	<acme:submit test="${_command == 'create'}" code="auditor.audit.button.create" action="/auditor/audit/create"/>		
