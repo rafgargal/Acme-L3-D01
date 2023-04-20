@@ -18,4 +18,7 @@ public interface AuthenticatedTutorialRepository extends AbstractRepository {
 	@Query("select t from Tutorial t")
 	List<Tutorial> findAllTutorial();
 
+	@Query("select t from Tutorial t where t.published = TRUE")
+	List<Tutorial> findAllPublishedTutorials();
+
 }
