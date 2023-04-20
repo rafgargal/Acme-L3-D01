@@ -50,6 +50,8 @@ public class AssistantSessionShowService extends AbstractService<Assistant, Sess
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findSessionById(id);
 
+		super.getResponse().setGlobal("canDeleteOrUpdateSession", !object.getTutorial().isPublished());
+
 		super.getBuffer().setData(object);
 	}
 
@@ -64,6 +66,8 @@ public class AssistantSessionShowService extends AbstractService<Assistant, Sess
 		tuple = super.unbind(object, "title", "sAbstract", "startDateTime", "endDateTime", "furtherInformation");
 		tuple.put("type", choices.getSelected().getKey());
 		tuple.put("types", choices);
+
+		super.getResponse().setGlobal("canDeleteOrUpdateSession", !object.getTutorial().isPublished());
 
 		super.getResponse().setData(tuple);
 	}
