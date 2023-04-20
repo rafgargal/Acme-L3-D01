@@ -1,15 +1,12 @@
 
 package acme.features.student.enrolment;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
 import acme.entities.enrolments.Enrolment;
 import acme.framework.components.accounts.Principal;
-import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
@@ -72,21 +69,12 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 	@Override
 	public void unbind(final Enrolment object) {
 		assert object != null;
-
-		Collection<Course> courses;
-		SelectChoices choices;
 		Tuple tuple;
 
-		//		final int id = object.getStudent().getId();
-		//
-		//		courses = this.repository.findAllCoursesByStudentId(id);
-
-		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "code", object.getCourse());
+		final Course course = object.getCourse();
 
 		tuple = super.unbind(object, "code", "motivation", "goals", "lowerNibble", "holderName", "draftMode");
-		tuple.put("course", choices.getSelected().getKey());
-		tuple.put("courses", choices);
+		tuple.put("course", course.getCode());
 
 		super.getResponse().setData(tuple);
 	}
@@ -95,11 +83,9 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 	public void bind(final Enrolment object) {
 		assert object != null;
 
-		int courseId;
 		Course course;
 
-		courseId = super.getRequest().getData("course", int.class);
-		course = this.repository.findCourseById(courseId);
+		course = this.repository.findCourseById(object.getCourse().getId());
 
 		super.bind(object, "code", "motivation", "goals");
 		object.setCourse(course);
