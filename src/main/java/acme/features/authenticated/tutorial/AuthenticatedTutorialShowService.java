@@ -31,7 +31,10 @@ public class AuthenticatedTutorialShowService extends AbstractService<Authentica
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+
+		final int tutorialId = super.getRequest().getData("id", int.class);
+
+		super.getResponse().setAuthorised(this.repository.findOneTutorialById(tutorialId).isPublished());
 	}
 
 	@Override
