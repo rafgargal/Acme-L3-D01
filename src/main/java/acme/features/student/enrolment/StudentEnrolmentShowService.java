@@ -65,7 +65,6 @@ public class StudentEnrolmentShowService extends AbstractService<Student, Enrolm
 		SelectChoices choices;
 		Tuple tuple;
 
-		//Preguntar si tienen que salir todos los cursos o solamente los del estudiante
 		final int studentId = object.getStudent().getId();
 
 		courses = this.repository.findAllCourses();
