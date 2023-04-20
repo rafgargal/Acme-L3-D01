@@ -49,21 +49,23 @@
 
 	<acme:input-select code="assistant.tutorial.form.label.course" path="course" choices="${courses}"/>
 	
-	<jstl:choose>
-		<jstl:when test="${ published }">
-			<div class="box published">
-				<acme:message code="assistant.tutorial.form.message.published"/>
-			</div>
-		</jstl:when>
-		<jstl:otherwise>
-			<div class="box not-published">
-				<acme:message code="assistant.tutorial.form.message.not-published"/>
-			</div>
-		</jstl:otherwise>
-	</jstl:choose>
-	
-	<jstl:if test="${ !canPublish && !published }">
-		<div><acme:message code="assistant.tutorial.form.message.cannotPublish"/></div>
+	<jstl:if test="${_command != 'create'}">
+		<jstl:choose>
+			<jstl:when test="${ published }">
+				<div class="box published">
+					<acme:message code="assistant.tutorial.form.message.published"/>
+				</div>
+			</jstl:when>
+			<jstl:otherwise>
+				<div class="box not-published">
+					<acme:message code="assistant.tutorial.form.message.not-published"/>
+				</div>
+			</jstl:otherwise>
+		</jstl:choose>
+		
+		<jstl:if test="${ !canPublish && !published }">
+			<div><acme:message code="assistant.tutorial.form.message.cannotPublish"/></div>
+		</jstl:if>
 	</jstl:if>
 	
 	<acme:button code="assistant.tutorial.form.button.course" action="/any/course/show?id=${course}"/>
