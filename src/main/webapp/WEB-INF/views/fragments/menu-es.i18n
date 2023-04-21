@@ -78,7 +78,7 @@ master.menu.lecturer.course = Mis cursos
 
 master.menu.auditor = Auditor
 master.menu.auditor.audit = Mis Audits
-
+master.menu.auditor.auditingRecord= Mis Auditing Records
 
 # master.menu.user-account ####################################################
 
