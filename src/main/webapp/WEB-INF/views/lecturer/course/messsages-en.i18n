@@ -25,6 +25,7 @@ lecturer.course.button.create = Create
 lecturer.course.button.update = Update
 lecturer.course.button.publish = Publish
 lecturer.course.button.delete = Delete
+lecturer.course.button.lectures = Their lectures
 
 lecturer.course.form.error.duplicated = Duplicated
 lecturer.course.form.error.negative-retailPrice = Negative retail price

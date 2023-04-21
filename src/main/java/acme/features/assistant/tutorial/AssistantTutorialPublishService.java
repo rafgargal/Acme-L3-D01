@@ -2,11 +2,13 @@
 package acme.features.assistant.tutorial;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
+import acme.entities.tutorial.Session;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -32,6 +34,7 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 	@Override
 	public void authorise() {
 		// Cannot publish if tutorial doesn't belong to you or tutorial has been published
+		// Or it hasn't at least one session
 		super.getResponse().setAuthorised(true);
 		final int tutorialId = super.getRequest().getData("id", int.class);
 		final Tutorial tutorial = this.repository.findTutorialById(tutorialId);
@@ -40,7 +43,14 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 
 		final int assistantIdFromLoggedUser = super.getRequest().getPrincipal().getActiveRoleId();
 
-		super.getResponse().setAuthorised(assistantIdFromTutorial == assistantIdFromLoggedUser && !tutorial.isPublished());
+		final List<Session> sessions = this.repository.findSessionsByTutorialId(tutorialId);
+
+		if (sessions == null) {
+			super.getResponse().setAuthorised(false);
+			return;
+		}
+
+		super.getResponse().setAuthorised(assistantIdFromTutorial == assistantIdFromLoggedUser && !tutorial.isPublished() && !sessions.isEmpty());
 	}
 
 	@Override

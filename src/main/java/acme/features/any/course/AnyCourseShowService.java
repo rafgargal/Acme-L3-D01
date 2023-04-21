@@ -41,7 +41,9 @@ public class AnyCourseShowService extends AbstractService<Any, Course> {
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findOneCourseById(id);
+		final boolean anonymous = super.getRequest().getPrincipal().getUsername().equals("anonymous");
 
+		super.getResponse().setGlobal("anonymous", anonymous);
 		super.getBuffer().setData(object);
 	}
 

@@ -1,0 +1,22 @@
+# messages-en.i18n
+
+company.practicum.list.button.create = Create
+company.practicum.form.button.create = Create
+company.practicum.form.button.delete = Delete
+company.practicum.form.button.update = Update
+company.practicum.form.label.code = Code
+company.practicum.form.label.title = Title
+company.practicum.form.label.summary = Summary
+company.practicum.form.label.goals = Goal
+
+company.practicum.form.button.practicum-sessions = Practicum Sessions
+
+company.practicum.list.label.code = Code
+company.practicum.list.label.title = Title
+company.practicum.list.label.summary = Summary
+company.practicum.form.label.course = Course
+company.practicum.list.label.draftMode = Draft
+
+company.practicum.form.button.publish = Publish
+company.practicum.error.label.code = The code already exists
+
