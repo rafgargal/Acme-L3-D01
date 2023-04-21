@@ -1,3 +1,4 @@
+
 <%@page language="java"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -10,7 +11,5 @@
 	<acme:input-url code="authenticated.student.form.label.moreInfo" path="moreInfo"/>
 
 	<acme:submit test="${_command == 'create'}" code="authenticated.student.form.button.create" action="/authenticated/student/create"/>
-	<jstl:if test="${_command == 'update'}">
-		<acme:submit code="authenticated.student.form.button.update" action="/authenticated/student/update"/>
-	</jstl:if>	
+
 </acme:form>

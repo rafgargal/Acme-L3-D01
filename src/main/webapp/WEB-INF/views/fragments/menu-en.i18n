@@ -92,6 +92,9 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+master.menu.user-account.become-student = Become a student
+
 master.menu.user-account.lecturer = Lecturer data
 master.menu.user-account.become-lecturer = Lecturer a consumer
 master.menu.user-account.company.create = Become a company
@@ -107,3 +110,4 @@ master.menu.user-account.become-assistant = Become an assistant
 master.menu.assistant = Assistant
 master.menu.assistant.my-tutorials = My tutorials
 master.menu.assistant.my-dashboard=Dashboard
+
