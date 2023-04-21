@@ -2,7 +2,6 @@
 package acme.features.administrator.banner;
 
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,11 +53,10 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	public void validate(final Banner object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("displayPeriodEnd")) {
-			Date minDisplayPeriodEnd;
-
-			minDisplayPeriodEnd = MomentHelper.deltaFromCurrentMoment(7, ChronoUnit.DAYS);
-			super.state(MomentHelper.isAfterOrEqual(object.getDisplayPeriodEnd(), minDisplayPeriodEnd), "displayPeriodEnd", "administrator.banner.form.error.displayPeriodEnd-too-soon");
+		if (!super.getBuffer().getErrors().hasErrors("displayPeriodStart") || !super.getBuffer().getErrors().hasErrors("displayPeriodEnd")) {
+			super.state(MomentHelper.isAfterOrEqual(object.getDisplayPeriodStart(), object.getInstantiationOrUpdateMoment()), "displayPeriodStart", "administrator.banner.form.error.displayPeriodStart-before-instantiationOrUpdateMoment");
+			super.state(MomentHelper.isAfter(object.getDisplayPeriodEnd(), object.getDisplayPeriodStart()), "displayPeriodEnd", "administrator.banner.form.error.displayPeriodEnd-before-displayPeriodStart");
+			super.state(MomentHelper.isLongEnough(object.getDisplayPeriodStart(), object.getDisplayPeriodEnd(), 7, ChronoUnit.DAYS), "*", "administrator.banner.form.error.displayPeriodEnd-too-soon");
 		}
 	}
 

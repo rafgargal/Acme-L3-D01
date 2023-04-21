@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.banner.Banner;
 import acme.framework.components.accounts.Any;
-import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -23,15 +22,18 @@ public class RandomBannerService extends AbstractService<Any, Banner> {
 
 	// AbstractService interface ---------------------------
 
+
 	public Banner getRandomBanner() {
 		List<Banner> objects;
 
 		objects = this.repository.findActiveBanners(new Date());
+		Banner object = null;
 
 		// Choose one randomly
-		final Random rand = new Random();
-		final Banner object = objects.get(rand.nextInt(objects.size()));
-
+		if (!objects.isEmpty()) {
+			final Random rand = new Random();
+			object = objects.get(rand.nextInt(objects.size()));
+		}
 		return object;
 	}
 

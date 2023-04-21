@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-﻿# master.menu #################################################################
+# master.menu #################################################################
 
 master.menu.home = Inicio
 master.menu.sign-up = Registrarse
@@ -46,6 +46,11 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+
+# master.menu.company ################################################################
+master.menu.company = Empresa
+master.menu.company.my-practica = Mis practicas
+
 # master.menu.authenticated ##########################################################
 
 master.menu.authenticated = Autenticado
@@ -54,6 +59,11 @@ master.menu.authenticated.bulletin = Boletín
 master.menu.authenticated.tutorial = Tutorial
 
 master.menu.authenticated.course = Cursos
+
+master.menu.authenticated.offer = Ofertas
+
+master.menu.authenticated.note = Notas
+
 
 # master.menu.lecturer ##########################################################
 
@@ -65,6 +75,7 @@ master.menu.lecturer.course = Mis cursos
 master.menu.auditor = Auditor
 master.menu.auditor.audit = Mis Audits
 
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
@@ -73,8 +84,28 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+master.menu.user-account.become-student = Hazte estudiante
+
+
+
+# master.menu.student ##########################################################
+
+master.menu.student = Estudiante
+master.menu.student.my-enrolment = Mis registros
+
+master.menu.student.courses = Ver cursos
+
+master.menu.user-account.student = Actualizar estudiante
+
 master.menu.user-account.lecturer = Datos de profesor
 master.menu.user-account.become-lecturer = Hazte profesor
+master.menu.user-account.company.create = Hazte empresa
+master.menu.user-account.company.update = Edita la empresa
+
+authenticated.company.form.button.update = update
+
+
 master.menu.user-account.assistant = Datos de asistente
 master.menu.user-account.become-assistant = Hazte asistente
 
@@ -83,3 +114,6 @@ master.menu.user-account.become-assistant = Hazte asistente
 master.menu.assistant = Asistente
 master.menu.assistant.my-tutorials = Mis tutoriales
 master.menu.assistant.my-dashboard=Panel
+
+
+

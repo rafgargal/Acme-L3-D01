@@ -49,6 +49,21 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+
+# master.menu.student ##########################################################
+
+master.menu.student = Student
+master.menu.student.my-enrolment = My enrolments
+
+master.menu.student.courses = View courses
+
+master.menu.user-account.student = Update student
+
+
+# master.menu.company ################################################################
+master.menu.company = Company
+master.menu.company.my-practica = My practicums
+
 # master.menu.authenticated ##########################################################
 
 master.menu.authenticated = Authenticated
@@ -57,6 +72,10 @@ master.menu.authenticated.bulletin = Bulletin
 master.menu.authenticated.tutorial = Tutorial
 
 master.menu.authenticated.course = Courses
+
+master.menu.authenticated.offer = Offers
+
+master.menu.authenticated.note = Notes
 
 # master.menu.lecturer ##########################################################
 
@@ -68,6 +87,7 @@ master.menu.lecturer.course = My courses
 master.menu.auditor = Auditor
 master.menu.auditor.audit = My Audits
 
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -76,7 +96,15 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+master.menu.user-account.become-student = Become a student
+
 master.menu.user-account.lecturer = Lecturer data
+master.menu.user-account.become-lecturer = Lecturer a consumer
+master.menu.user-account.company.create = Become a company
+master.menu.user-account.company.update = Edit the company
+
+authenticated.company.form.button.update = Actualizar
 master.menu.user-account.become-lecturer = Become a lecturer
 master.menu.user-account.assistant = Assistant data
 master.menu.user-account.become-assistant = Become an assistant
@@ -86,3 +114,4 @@ master.menu.user-account.become-assistant = Become an assistant
 master.menu.assistant = Assistant
 master.menu.assistant.my-tutorials = My tutorials
 master.menu.assistant.my-dashboard=Dashboard
+
