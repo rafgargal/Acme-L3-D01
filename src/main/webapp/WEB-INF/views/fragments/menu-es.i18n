@@ -77,6 +77,12 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.lecturer = Datos de profesor
 master.menu.user-account.become-lecturer = Hazte profesor
+master.menu.user-account.company.create = Hazte empresa
+master.menu.user-account.company.update = Edita la empresa
+
+authenticated.company.form.button.update = update
+
+
 master.menu.user-account.assistant = Datos de asistente
 master.menu.user-account.become-assistant = Hazte asistente
 
@@ -85,3 +91,4 @@ master.menu.user-account.become-assistant = Hazte asistente
 master.menu.assistant = Asistente
 master.menu.assistant.my-tutorials = Mis tutoriales
 master.menu.assistant.my-dashboard=Panel
+
