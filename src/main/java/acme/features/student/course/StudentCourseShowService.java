@@ -1,20 +1,19 @@
 
-package acme.features.any.student;
+package acme.features.student.course;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
-import acme.framework.components.accounts.Any;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
 @Service
-public class AnyStudentShowCoursesService extends AbstractService<Any, Course> {
+public class StudentCourseShowService extends AbstractService<Student, Course> {
 
 	@Autowired
-	protected AnyStudentRepository repository;
+	protected StudentCourseRepository repository;
 
 
 	@Override

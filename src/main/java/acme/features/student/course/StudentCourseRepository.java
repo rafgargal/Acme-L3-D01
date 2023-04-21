@@ -1,5 +1,5 @@
 
-package acme.features.any.student;
+package acme.features.student.course;
 
 import java.util.Collection;
 
@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import acme.entities.course.Course;
 import acme.framework.repositories.AbstractRepository;
 
-public interface AnyStudentRepository extends AbstractRepository {
+public interface StudentCourseRepository extends AbstractRepository {
 
 	@Query("select c from Course c")
 	Collection<Course> findAllCourses();

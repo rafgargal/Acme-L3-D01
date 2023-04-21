@@ -1,5 +1,5 @@
 
-package acme.features.any.student;
+package acme.features.student.course;
 
 import javax.annotation.PostConstruct;
 
@@ -7,17 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.course.Course;
-import acme.framework.components.accounts.Any;
 import acme.framework.controllers.AbstractController;
+import acme.roles.Student;
 
 @Controller
-public class AnyStudentController extends AbstractController<Any, Course> {
+public class StudentCourseController extends AbstractController<Student, Course> {
 
 	@Autowired
-	protected AnyStudentListAllCoursesService	listService;
+	protected StudentCourseListService	listService;
 
 	@Autowired
-	protected AnyStudentShowCoursesService		showService;
+	protected StudentCourseShowService	showService;
 
 
 	@PostConstruct
