@@ -1,0 +1,29 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+lecturer.lecture.list.label.title = Título
+lecturer.lecture.list.label.learningTime = Tiempo de aprendizaje
+lecturer.lecture.list.label.activityType = Tipo de lección
+
+lecturer.lecture.form.label.courseCode = Código del curso
+lecturer.lecture.form.label.title = Título
+lecturer.lecture.form.label.lAbstract = Resumen
+lecturer.lecture.form.label.learningTime = Tiempo de aprendizaje
+lecturer.lecture.form.label.body = Cuerpo
+lecturer.lecture.form.label.activityType = Tipo de lección
+lecturer.lecture.form.label.draftMode = Modo borrador
+
+lecturer.lecture.button.add = Añadir lección
+lecturer.lecture.button.create = Crear
+lecturer.lecture.button.update = Actualizar
+lecturer.lecture.button.delete = Borrar
+lecturer.lecture.button.publish = Publicar
+
+lecturer.lecture.error.learningTime-negative = Tiempo de aprendizaje negativo
