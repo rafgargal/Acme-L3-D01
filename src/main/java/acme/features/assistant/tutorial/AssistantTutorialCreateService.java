@@ -55,6 +55,7 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 		Course course;
 
 		courseId = super.getRequest().getData("course", int.class);
+		System.out.println(courseId);
 		course = this.repository.findCourseById(courseId);
 
 		super.bind(object, "code", "title", "tAbstract", "estimatedTotalTime", "goals");
