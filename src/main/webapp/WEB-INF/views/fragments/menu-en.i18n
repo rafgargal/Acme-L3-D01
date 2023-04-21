@@ -63,6 +63,10 @@ master.menu.authenticated.course = Courses
 master.menu.lecturer = Lecturer
 master.menu.lecturer.course = My courses
 
+# master.menu.auditor ##########################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.audit = My Audits
 
 # master.menu.user-account ####################################################
 
