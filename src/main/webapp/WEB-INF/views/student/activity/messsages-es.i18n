@@ -1,0 +1,19 @@
+student.activity.form.button.activities = Actividades
+student.activity.list.button.create = Nueva actividad
+
+student.activity.list.label.title = Titulo
+student.activity.list.label.summary = Resumen
+student.activity.list.label.activityType = Tipo de Actividad
+
+student.activity.form.label.title = Titulo
+student.activity.form.label.summary = Resumen
+student.activity.form.label.activityType = Tipo de Actividad
+student.activity.form.label.starDate = Fecha de comienzo
+student.activity.form.label.endDate = Fecha de fin
+student.activity.form.label.moreInfo = Más información
+
+student.activity.form.button.update = Actualizar
+student.activity.form.button.delete = Eliminar
+
+student.activity.error.endDate = No es una fecha valida
+
