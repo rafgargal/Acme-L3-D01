@@ -25,3 +25,5 @@ administrator.banner.form.button.delete = Delete
 administrator.banner.form.button.create = Create
 
 administrator.banner.form.error.displayPeriodEnd-too-soon = Display period end too soon (at least 1 week)
+administrator.banner.form.error.displayPeriodStart-before-instantiationOrUpdateMoment = Display period start is before instantiation moment
+administrator.banner.form.error.displayPeriodEnd-before-displayPeriodStart = Display period end is before display period start

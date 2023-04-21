@@ -60,11 +60,12 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 	public void validate(final Banner object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("displayPeriodEnd")) {
+		if (!super.getBuffer().getErrors().hasErrors("displayPeriodStart") || !super.getBuffer().getErrors().hasErrors("displayPeriodEnd")) {
 			Date minDisplayPeriodEnd;
-
 			minDisplayPeriodEnd = MomentHelper.deltaFromMoment(object.getDisplayPeriodStart(), 7, ChronoUnit.DAYS);
-			super.state(MomentHelper.isAfterOrEqual(object.getDisplayPeriodEnd(), minDisplayPeriodEnd), "displayPeriodEnd", "administrator.banner.form.error.displayPeriodEnd-too-soon");
+			super.state(MomentHelper.isAfterOrEqual(object.getDisplayPeriodEnd(), minDisplayPeriodEnd), "*", "administrator.banner.form.error.displayPeriodEnd-too-soon");
+			super.state(MomentHelper.isAfterOrEqual(object.getDisplayPeriodStart(), object.getInstantiationOrUpdateMoment()), "displayPeriodStart", "administrator.banner.form.error.displayPeriodStart-before-instantiationOrUpdateMoment");
+			super.state(MomentHelper.isAfter(object.getDisplayPeriodEnd(), object.getDisplayPeriodStart()), "displayPeriodEnd", "administrator.banner.form.error.displayPeriodEnd-before-displayPeriodStart");
 		}
 	}
 
