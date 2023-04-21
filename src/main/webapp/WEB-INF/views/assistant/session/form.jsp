@@ -1,14 +1,3 @@
-<%--
-- form.jsp
--
-- Copyright (C) 2012-2023 Rafael Corchuelo.
--
-- In keeping with the traditional purpose of furthering education and research, it is
-- the policy of the copyright owner to permit non-commercial use and redistribution of
-- this software. It has been tested carefully, but it is not guaranteed for any particular
-- purposes.  The copyright owner does not offer any warranties or representations, nor do
-- they accept any liabilities with respect to them.
---%>
 
 <%@page language="java"%>
 
@@ -20,7 +9,7 @@
 	<acme:input-textbox code="assistant.session.form.label.title" path="title"/>
 	<acme:input-textbox code="assistant.session.form.label.sAbstract" path="sAbstract"/>
 	<acme:input-moment code="assistant.session.form.label.startDateTime" path="startDateTime"/>
-	<acme:input-moment code="assistant.session.form.label.startDateTime" path="endDateTime"/>
+	<acme:input-moment code="assistant.session.form.label.endDateTime" path="endDateTime"/>
 	<acme:input-url code="assistant.session.form.label.furtherInfo" path="furtherInformation"/>
 
 	<acme:input-select code="assistant.session.form.label.type" path="type" choices="${types}"/>
