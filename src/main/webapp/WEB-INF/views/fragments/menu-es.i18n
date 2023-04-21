@@ -24,7 +24,10 @@ master.menu.anonymous.student3-favourite-link = 20503423G: León Madroñal, Juan
 master.menu.anonymous.student4-favourite-link = 29545666G: Martínez Cano, Juan
 master.menu.anonymous.student5-favourite-link = 78137010F: López Veiga, Juan Carlos
 master.menu.anonymous.course = Cursos
+
+master.menu.anonymous.peep = Peeps
 master.menu.administrator.create-bulletin = Publica un Boletín
+
 
 # master.menu.administrator ###################################################
 
@@ -59,6 +62,7 @@ master.menu.authenticated.bulletin = Boletín
 master.menu.authenticated.tutorial = Tutorial
 
 master.menu.authenticated.course = Cursos
+master.menu.authenticated.peep = Peeps
 
 master.menu.authenticated.offer = Ofertas
 
