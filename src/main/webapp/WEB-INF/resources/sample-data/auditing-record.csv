@@ -1,7 +1,7 @@
-key,subject,assessment,audit-period-inicial,audit-period-final,mark,link,key:audit
-auditing-record-01,Chemistry,"Walter White",2022/02/14 14:00,2022/2/14 15:00,A_PLUS,,audit-01
-auditing-record-02,Math,"Mathematical",2022/02/14 12:00,2022/05/15 15:00,C,https://ev.us.es/ultra/institution-page/,audit-01
-auditing-record-03,"Life the universe and everything","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",2021/02/14 14:00,2022/03/14 15:00,A,,audit-02
-auditing-record-04,"Failure Management","F",2019/02/14 12:00,2020/2/15 15:00,F,https://ev.us.es/ultra/institution-page/,audit-01
-auditing-record-05,"askldnihwhbvub","jnigtyftryvniu",2020/05/14 12:00,2020/08/15 15:00,C,https://ev.us.es/ultra/institution-page/,audit-01
-auditing-record-06,"Failure Management 2","F squared",2019/02/14 12:00,2020/2/15 15:00,F_MINUS,https://ev.us.es/ultra/institution-page/,audit-01
+key,subject,assessment,audit-period-inicial,audit-period-final,mark,link,key:audit,correction,draft-mode
+auditing-record-01,Chemistry,"Walter White",2022/02/14 14:00,2022/2/14 15:00,A_PLUS,,audit-01,false,true
+auditing-record-02,Math,"Mathematical",2022/02/14 12:00,2022/05/15 15:00,A,https://ev.us.es/ultra/institution-page/,audit-03,true,true
+auditing-record-03,"Life the universe and everything","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",2021/02/14 14:00,2022/03/14 15:00,C,,audit-02,true,true
+auditing-record-04,"Failure Management","F",2019/02/14 12:00,2020/2/15 15:00,F,https://ev.us.es/ultra/institution-page/,audit-01,false,false
+auditing-record-05,"askldnihwhbvub","jnigtyftryvniu",2020/05/14 12:00,2020/08/15 15:00,C,https://ev.us.es/ultra/institution-page/,audit-01,false,false
+auditing-record-06,"Failure Management 2","F squared",2019/02/14 12:00,2020/2/15 15:00,F_MINUS,https://ev.us.es/ultra/institution-page/,audit-01,true,true
