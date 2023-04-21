@@ -49,6 +49,11 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+
+# master.menu.company ################################################################
+master.menu.company = Company
+master.menu.company.my-practica = My practicums
+
 # master.menu.authenticated ##########################################################
 
 master.menu.authenticated = Authenticated
@@ -62,6 +67,7 @@ master.menu.authenticated.course = Courses
 
 master.menu.lecturer = Lecturer
 master.menu.lecturer.course = My courses
+
 
 
 # master.menu.user-account ####################################################
