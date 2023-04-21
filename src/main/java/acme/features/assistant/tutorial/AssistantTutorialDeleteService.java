@@ -84,6 +84,9 @@ public class AssistantTutorialDeleteService extends AbstractService<Assistant, T
 	public void perform(final Tutorial object) {
 		assert object != null;
 
+		// this.repository.findSessionsByTutorialId(object.getId()).stream().forEach(s -> this.repository.delete(s));
+		this.repository.deleteSessionsByTutorialId(object.getId());
+
 		this.repository.delete(object);
 	}
 

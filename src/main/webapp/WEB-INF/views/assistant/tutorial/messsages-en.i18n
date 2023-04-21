@@ -21,12 +21,15 @@ assistant.tutorial.form.label.assistant=Assistant
 assistant.tutorial.form.label.course=Course
 assistant.tutorial.form.submit.save=Save
 assistant.tutorial.form.submit.delete=Delete
+assistant.tutorial.list.label.code=Code
 
 assistant.tutorial.form.error.duplicated=Existing code
 assistant.tutorial.form.error.null-course=Choose a course
 
 assistant.tutorial.form.message.published=PUBLISHED
 assistant.tutorial.form.message.not-published=NOT PUBLISHED
+assistant.tutorial.form.message.cannotPublish=You cannot publish a tutorial without sessions
 assistant.tutorial.form.submit.publish=Publish
 assistant.tutorial.form.submit.update=Update
 assistant.tutorial.form.button.course=Go to course
+assistant.tutorial.form.button.sessions=View sessions
