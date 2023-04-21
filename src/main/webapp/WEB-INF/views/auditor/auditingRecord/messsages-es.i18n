@@ -1,0 +1,23 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+auditor.auditRecord.list.label.subject = Tema
+auditor.auditRecord.list.label.mark = Nota
+auditor.auditingRecord.list.label.auditPeriodInicial = Comienzo
+auditor.auditingRecord.list.label.auditPeriodFinal = Final
+auditor.auditRecord.list.label.draftMode = Es Borrador
+
+auditor.auditRecord.form.label.subject = Tema
+auditor.auditRecord.form.label.mark = Nota
+auditor.auditRecord.form.label.assessment=Evaluación
+auditor.auditRecord.form.label.link=Mas Info en
+auditor.auditingRecord.form.label.auditPeriodInicial = Comienzo
+auditor.auditingRecord.form.label.auditPeriodFinal = Final
+auditor.auditRecord.form.label.draftMode = Es Borrador
