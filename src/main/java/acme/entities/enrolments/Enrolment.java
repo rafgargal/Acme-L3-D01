@@ -41,6 +41,12 @@ public class Enrolment extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
+	protected boolean			draftMode;
+
+	protected String			holderName;
+
+	protected String			lowerNibble;
+
 	// Relationships ----------------------------------------------------------
 
 	@ManyToOne(optional = false)

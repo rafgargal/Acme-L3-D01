@@ -32,3 +32,5 @@ master.panic.label.status = Estado:
 master.panic.label.exceptions = Excepciones:
 master.panic.text.consult-log = Por favor, consulte el log para ver más detalles.
 
+# master.menu.company ################################################################
+master.menu.company = Empresa

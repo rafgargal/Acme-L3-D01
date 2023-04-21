@@ -27,6 +27,7 @@ public class AuthenticatedStudentController extends AbstractController<Authentic
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("create", this.createService);
+
 	}
 
 }

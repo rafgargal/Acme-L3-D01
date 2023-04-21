@@ -1,10 +1,10 @@
-key,code,motivation,goals,key:student,key:course
-enrolment-01,"ADV325","Z","A",student-01,course-01
-enrolment-02,"JKS234","texto para motivacion", "texto para goal",student-02,course-02
-enrolment-03,"OPW645","Test de motivation con valor medio= 38","Texto de prueba para el valor medio. Texto de prue",student-01,course-03
-enrolment-04,"QWE345","Esto es una prueba para llegar al valor maximo. Esto es una prueba para lle","Esto es una prueba para llegar al valor maximo. Esto es una prueba para llegar al valor maximo. Esto",student-04,course-01
-enrolment-05,"ASD657","test de motivacion","Esto es una prueba para llegar al valor maximo. Esto es una prueba para llegar al valor maximo. Esto",student-04,course-02
-enrolment-06,"FGH345","texto para motivacion","Esto es un texto de prueba lo suficientemente largo para un test. Esto es un texto",student-02,course-03
-enrolment-07,"JKL657","texto para motivacion","texto para goals",student-04,course-02
-enrolment-08,"UIO453","texto para motivacion","texto para goals",student-02,course-02
-enrolment-09,"RTE867","texto para motivacion","texto para goals",student-01,course-04
+key,code,motivation,goals,key:student,key:course,draftMode,holderName,lowerNibble
+enrolment-01,"ADV325","Z","A",student-01,course-01,true,null,null
+enrolment-02,"JKS234","texto para motivacion", "texto para goal",student-02,course-02,false,null,null
+enrolment-03,"OPW645","Test de motivation con valor medio= 38","Texto de prueba para el valor medio. Texto de prue",student-01,course-03,true,null,null
+enrolment-04,"QWE345","Esto es una prueba para llegar al valor maximo. Esto es una prueba para lle","Esto es una prueba para llegar al valor maximo. Esto es una prueba para llegar al valor maximo. Esto",student-04,course-01,true,null,null
+enrolment-05,"ASD657","test de motivacion","Esto es una prueba para llegar al valor maximo. Esto es una prueba para llegar al valor maximo. Esto",student-04,course-02,true,null,null
+enrolment-06,"FGH345","texto para motivacion","Esto es un texto de prueba lo suficientemente largo para un test. Esto es un texto",student-02,course-03,true,null,null
+enrolment-07,"JKL657","texto para motivacion","texto para goals",student-04,course-02,true,null,null
+enrolment-08,"UIO453","texto para motivacion","texto para goals",student-02,course-02,true,null,null
+enrolment-09,"RTE867","texto para motivacion","texto para goals",student-01,course-04,true,null,null

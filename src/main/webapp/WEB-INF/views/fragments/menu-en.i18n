@@ -23,6 +23,7 @@ master.menu.anonymous.student2-favourite-link = 54435001G: Bustamante Lucena, Ed
 master.menu.anonymous.student3-favourite-link = 20503423G: León Madroñal, Juan Carlos
 master.menu.anonymous.student4-favourite-link = 29545666G: Martínez Cano, Juan
 master.menu.anonymous.student5-favourite-link = 78137010F: López Veiga, Juan Carlos
+master.menu.anonymous.course = Courses
 
 # master.menu.administrator ###################################################
 
@@ -32,6 +33,11 @@ master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
+
+master.menu.administrator.create-bulletin = Post a Bulletin
+
+master.menu.administrator.banner = Banner
+
 
 # master.menu.provider ########################################################
 
@@ -43,6 +49,41 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+
+# master.menu.student ##########################################################
+
+master.menu.student = Student
+master.menu.student.my-enrolment = My enrolments
+
+master.menu.student.courses = View courses
+
+master.menu.user-account.student = Update student
+
+
+# master.menu.company ################################################################
+master.menu.company = Company
+master.menu.company.my-practica = My practicums
+
+# master.menu.authenticated ##########################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.bulletin = Bulletin
+
+master.menu.authenticated.tutorial = Tutorial
+
+master.menu.authenticated.course = Courses
+
+master.menu.authenticated.offer = Offers
+
+master.menu.authenticated.note = Notes
+
+# master.menu.lecturer ##########################################################
+
+master.menu.lecturer = Lecturer
+master.menu.lecturer.course = My courses
+
+
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -51,4 +92,22 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
 master.menu.user-account.become-student = Become a student
+
+master.menu.user-account.lecturer = Lecturer data
+master.menu.user-account.become-lecturer = Lecturer a consumer
+master.menu.user-account.company.create = Become a company
+master.menu.user-account.company.update = Edit the company
+
+authenticated.company.form.button.update = Actualizar
+master.menu.user-account.become-lecturer = Become a lecturer
+master.menu.user-account.assistant = Assistant data
+master.menu.user-account.become-assistant = Become an assistant
+
+# master.menu.assistant ####################################################
+
+master.menu.assistant = Assistant
+master.menu.assistant.my-tutorials = My tutorials
+master.menu.assistant.my-dashboard=Dashboard
+

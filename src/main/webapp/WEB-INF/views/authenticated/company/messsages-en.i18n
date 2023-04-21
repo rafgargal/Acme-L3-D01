@@ -1,0 +1,7 @@
+# messages-en.i18n
+
+authenticated.company.form.label.name = Name
+authenticated.company.form.label.VATnumber = VAT number
+authenticated.company.form.label.summary= Summary
+authenticated.company.form.label.moreInfoLink = More information
+authenticated.company.form.button.create = Create

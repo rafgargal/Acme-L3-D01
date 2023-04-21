@@ -1,0 +1,15 @@
+authenticated.note.list.label.title = Title
+authenticated.note.list.label.author = Author
+authenticated.note.list.label.message = Message
+
+authenticated.note.form.label.moment = Moment
+authenticated.note.form.label.title = Title
+authenticated.note.form.label.author = Author
+authenticated.note.form.label.message = Message
+authenticated.note.form.label.email = Email
+authenticated.note.form.label.furtherInfo = URL
+
+authenticated.note.error.label.check = You have to confirm this note
+authenticated.note.list.button.check = Confirm note
+authenticated.note.form.button.create = Create note
+authenticated.note.list.button.create = New note
