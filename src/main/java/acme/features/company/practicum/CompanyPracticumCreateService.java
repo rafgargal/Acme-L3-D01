@@ -66,6 +66,14 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 	@Override
 	public void validate(final Practicum object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Practicum existing;
+
+			existing = this.practicumRepository.findPracticumByCode(object.getCode());
+			super.state(existing == null, "code", "company.practicum.error.label.code");
+		}
+
 	}
 
 	@Override
