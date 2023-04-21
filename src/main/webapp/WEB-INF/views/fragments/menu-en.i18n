@@ -50,6 +50,13 @@ master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
 
+# master.menu.student ##########################################################
+
+master.menu.student = Student
+master.menu.student.my-enrolment = My enrolments
+master.menu.user-account.student = Update student
+
+
 # master.menu.company ################################################################
 master.menu.company = Company
 master.menu.company.my-practica = My practicums
@@ -67,6 +74,7 @@ master.menu.authenticated.course = Courses
 
 master.menu.lecturer = Lecturer
 master.menu.lecturer.course = My courses
+
 
 
 

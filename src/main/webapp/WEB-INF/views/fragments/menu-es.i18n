@@ -75,6 +75,14 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+
+# master.menu.student ##########################################################
+
+master.menu.student = Estudiante
+master.menu.student.my-enrolment = Mis registros
+master.menu.user-account.student = Actualizar estudiante
+
 master.menu.user-account.lecturer = Datos de profesor
 master.menu.user-account.become-lecturer = Hazte profesor
 master.menu.user-account.company.create = Hazte empresa
@@ -91,4 +99,5 @@ master.menu.user-account.become-assistant = Hazte asistente
 master.menu.assistant = Asistente
 master.menu.assistant.my-tutorials = Mis tutoriales
 master.menu.assistant.my-dashboard=Panel
+
 
