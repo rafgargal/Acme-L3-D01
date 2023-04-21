@@ -14,12 +14,17 @@ import acme.framework.controllers.AbstractController;
 public class AuthenticatedPracticumController extends AbstractController<Authenticated, Practicum> {
 
 	@Autowired
-	protected AuthenticatedPracticumListingService listingService;
+	protected AuthenticatedPracticumListingService	listingService;
+
+	@Autowired
+	protected AuthenticatedPracticumShowService		showService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listingService);
+		super.addBasicCommand("show", this.showService);
+
 	}
 
 }
