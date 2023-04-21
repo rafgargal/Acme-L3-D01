@@ -1,0 +1,8 @@
+
+authenticated.assistant.form.label.supervisor=Supervisor
+authenticated.assistant.form.label.resume=Resumen
+authenticated.assistant.form.label.expertiseFields=Campos de especialización
+authenticated.assistant.form.label.furtherInfo=Más información
+
+authenticated.assistant.form.button.create=Registrarse
+authenticated.assistant.form.button.update=Actualizar

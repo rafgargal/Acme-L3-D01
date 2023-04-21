@@ -1,0 +1,15 @@
+# messages-es.i18n
+
+
+student.course.list.label.code = Código
+student.course.list.label.title = Titulo
+student.course.list.label.cAbstract = Resumen
+student.course.list.label.furtherInfo = Más Información
+
+student.course.form.label.code = Código
+student.course.form.label.title = Titulo
+student.course.form.label.cAbstract = Resumen
+student.course.form.label.retailPrice = Precio
+student.course.form.label.furtherInfo = Más Información
+
+student.course.form.label.lecturers = Profesor

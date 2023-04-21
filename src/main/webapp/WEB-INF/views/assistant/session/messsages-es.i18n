@@ -1,0 +1,20 @@
+
+assistant.session.list.label.title=Título
+assistant.session.list.label.abstract=Resumen
+assistant.session.list.label.type=Tipo
+
+assistant.session.form.label.title=Título
+assistant.session.form.label.sAbstract=Resumen
+assistant.session.form.label.startDateTime=Fecha de comienzo
+assistant.session.form.label.endDateTime=Fecha de finalización
+assistant.session.form.label.furtherInfo=Más información
+assistant.session.form.label.type=Tipo
+
+assistant.session.list.button.create=Crear nueva sesión
+assistant.session.form.submit.delete=Borrar
+assistant.session.form.submit.save=Guardar
+assistant.session.form.submit.update=Actualizar
+
+assistant.session.form.error.one-day-ahead=La fecha de inicio debe ser al menos dentro de un día
+assistant.session.form.error.is-after=La fecha de fin debe ser posterior a la fecha de inicio
+assistant.session.form.error.hours=Debe haber entre 1 y 5 horas (ambas incluídas) entre la fecha de inicio y de fin

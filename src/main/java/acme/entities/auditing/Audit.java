@@ -56,4 +56,5 @@ public class Audit extends AbstractEntity {
 	@ManyToOne(optional = false)
 	protected Course			course;
 
+	protected Boolean			draftMode;
 }

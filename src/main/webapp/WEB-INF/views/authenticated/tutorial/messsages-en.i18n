@@ -1,0 +1,15 @@
+
+authenticated.tutorial.list.label.title=Title
+authenticated.tutorial.list.label.course=Course
+authenticated.tutorial.form.label.title=Title
+authenticated.tutorial.form.label.tAbstract=Abstract
+authenticated.tutorial.form.label.code=Code
+authenticated.tutorial.form.label.estimatedTotalTime=Estimated total time
+authenticated.tutorial.form.label.goals=Goals
+authenticated.tutorial.form.label.assistant=Assistant
+authenticated.tutorial.form.label.course=Course
+authenticated.tutorial.form.button.course=Go to course
+authenticated.tutorial.form.message.assistant=Assistant
+authenticated.tutorial.form.label.supervisor=Supervisor
+authenticated.tutorial.form.label.resume=Resume
+authenticated.tutorial.form.label.expertise-fields=Expertise fields

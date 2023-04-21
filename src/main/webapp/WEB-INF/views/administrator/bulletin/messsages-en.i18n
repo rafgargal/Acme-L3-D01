@@ -1,0 +1,8 @@
+
+administrator.bulletin.form.label.moment=Moment
+administrator.bulletin.form.label.title=Title
+administrator.bulletin.form.label.message=Message
+administrator.bulletin.form.label.critical=Critical
+administrator.bulletin.form.label.moreInfoLink=More information
+administrator.bulletin.form.button.create=Post
+administrator.bulletin.form.submit.confirm=Confirm

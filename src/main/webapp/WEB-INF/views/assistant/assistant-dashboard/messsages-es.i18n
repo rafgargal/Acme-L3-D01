@@ -1,0 +1,13 @@
+
+assistant.dashboard.form.label.show-tutorials=Tutoriales
+assistant.dashboard.form.label.total-tutorials=Número total de tutoriales
+assistant.dashboard.form.label.tutorials-deviation=Desviación estándar de la duración
+assistant.dashboard.form.label.tutorials-min=Duración mínima
+assistant.dashboard.form.label.tutorials-max=Duración máxima
+assistant.dashboard.form.label.tutorials-average=Duración media
+
+assistant.dashboard.form.label.show-sessions=Sesiones de Tutoriales
+assistant.dashboard.form.label.sessions-deviation=Desviación estándar de la duración
+assistant.dashboard.form.label.sessions-min=Duración mínima
+assistant.dashboard.form.label.sessions-max=Duración máxima
+assistant.dashboard.form.label.sessions-average=Duración media

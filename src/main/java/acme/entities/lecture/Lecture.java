@@ -49,6 +49,8 @@ public class Lecture extends AbstractEntity {
 	@URL
 	protected String			furtherInfo;
 
+	protected boolean			draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
