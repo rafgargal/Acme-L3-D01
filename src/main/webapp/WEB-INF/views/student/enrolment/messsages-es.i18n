@@ -1,13 +1,3 @@
-# messages-es.i18n
-#
-# Copyright (C) 2012-2023 Rafael Corchuelo.
-#
-# In keeping with the traditional purpose of furthering education and research, it is
-# the policy of the copyright owner to permit non-commercial use and redistribution of
-# this software. It has been tested carefully, but it is not guaranteed for any particular
-# purposes.  The copyright owner does not offer any warranties or representations, nor do
-# they accept any liabilities with respect to them.
-
 student.enrolment.form.label.code  = Código: 
 student.enrolment.list.label.code  = Código: 
 student.enrolment.form.label.motivation = Motivación
@@ -20,3 +10,10 @@ student.enrolment.form.button.delete = Eliminar
 student.enrolment.form.label.course = Curso
 
 student.enrolment.form.button.update = Actualizar
+student.enrolment.form.button.finalise = Finalizar
+
+student.enrolment.form.label.holderName = Nombre completo de la tarjeta
+student.enrolment.form.label.lowerNibble = Número de la tarjeta
+
+student.enrolment.error.holderName.null = No puede esta vacio
+student.enrolment.error.lowerNibble.null =No puede esta vacio

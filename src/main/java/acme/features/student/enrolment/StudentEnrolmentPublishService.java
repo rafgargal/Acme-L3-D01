@@ -15,7 +15,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
 @Service
-public class StudentEnrolmentShowService extends AbstractService<Student, Enrolment> {
+public class StudentEnrolmentPublishService extends AbstractService<Student, Enrolment> {
 
 	@Autowired
 	protected StudentEnrolmentRepository repository;
@@ -58,23 +58,70 @@ public class StudentEnrolmentShowService extends AbstractService<Student, Enrolm
 	}
 
 	@Override
+	public void validate(final Enrolment object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("holderName")) {
+			String holderName;
+			holderName = object.getHolderName();
+
+			super.state(holderName.length() != 0, "holderName", "student.enrolment.error.holderName.null");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("lowerNibble")) {
+			String lowerNibble;
+			lowerNibble = object.getLowerNibble();
+
+			super.state(lowerNibble.length() != 0, "lowerNibble", "student.enrolment.error.lowerNibble.null");
+		}
+
+	}
+
+	@Override
+	public void perform(final Enrolment object) {
+		assert object != null;
+
+		object.setDraftMode(false);
+
+		final String lowerNibble = super.getRequest().getData("lowerNibble", String.class);
+		object.setLowerNibble(lowerNibble.substring(12, 16));
+
+		final String holderName = super.getRequest().getData("holderName", String.class);
+		object.setHolderName(holderName);
+
+		this.repository.save(object);
+	}
+
+	@Override
+	public void bind(final Enrolment object) {
+		assert object != null;
+
+		String courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", String.class);
+		course = this.repository.findCourseByCode(courseId);
+
+		super.bind(object, "code", "motivation", "goal", "holderName", "lowerNibble");
+		object.setCourse(course);
+
+	}
+
+	@Override
 	public void unbind(final Enrolment object) {
 		assert object != null;
 
 		Collection<Course> courses;
 		SelectChoices choices;
-		Tuple tuple;
-
-		//Preguntar si tienen que salir todos los cursos o solamente los del estudiante
-		final int studentId = object.getStudent().getId();
 
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
-		tuple = super.unbind(object, "code", "motivation", "goals", "draftMode");
-		tuple.put("course", choices.getSelected().getKey());
+		Tuple tuple;
+
+		tuple = super.unbind(object, "code", "motivation", "goals", "lowerNibble", "holderName", "draftMode");
+		tuple.put("course", choices.getSelected().getLabel());
 		tuple.put("courses", choices);
-		tuple.put("courseCode", choices.getSelected().getLabel());
 
 		super.getResponse().setData(tuple);
 	}
