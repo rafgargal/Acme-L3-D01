@@ -1,6 +1,6 @@
-key,code,title,summary,goals,key:company,key:course
-practicum-01,DFG685,"P","P","D",company-01,course-01
-practicum-02,HGK292,"Esto es un texto para contar 75 caracteres. Esto es un texto para contar 75","Esto es un texto para contar 100 caracteres. Esto es un texto para contar 100 caracteres. Esto es un","Esto es un texto para contar 100 caracteres. Esto es un texto para contar 100 caracteres. Esto es un",company-02,course-02
-practicum-03,VAW020,"Esto es un texto para contar 35 ","Esto es un texto para contar 50 caracteres. ","Esto es un texto para contar 50 caracteres.",company-01,course-01
-practicum-04,POI456,"Esto es un texto","Esto es un texto para contar","Esto es un texto para contar",company-02,course-02
-practicum-05,ROB302,"Esto es un texto suficientemente largo para hacer test","Esto es un texto para contar 75 caracteres. Esto es un texto para contar 75","Esto es un texto para contar 75 caracteres. Esto es un texto para contar 75",company-01,course-01
+key,code,title,summary,goals,draftMode,key:company,key:course
+practicum-01,DFG685,"P","P","D",true,company-01,course-01
+practicum-02,HGK292,"Esto es un texto para contar 75 caracteres. Esto es un texto para contar 75","Esto es un texto para contar 100 caracteres. Esto es un texto para contar 100 caracteres. Esto es un","Esto es un texto para contar 100 caracteres. Esto es un texto para contar 100 caracteres. Esto es un",true,company-02,course-02
+practicum-03,VAW020,"Esto es un texto para contar 35 ","Esto es un texto para contar 50 caracteres. ","Esto es un texto para contar 50 caracteres.",true,company-01,course-01
+practicum-04,POI456,"Esto es un texto","Esto es un texto para contar","Esto es un texto para contar",false,company-02,course-02
+practicum-05,ROB302,"Esto es un texto suficientemente largo para hacer test","Esto es un texto para contar 75 caracteres. Esto es un texto para contar 75","Esto es un texto para contar 75 caracteres. Esto es un texto para contar 75",false,company-01,course-01

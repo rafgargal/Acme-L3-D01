@@ -47,6 +47,8 @@ public class Tutorial extends AbstractEntity {
 
 	protected double			estimatedTotalTime;
 
+	protected boolean			published;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
@@ -57,7 +59,7 @@ public class Tutorial extends AbstractEntity {
 	protected Assistant			assistant;
 
 	@Valid
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	protected Course			course;
 
 }

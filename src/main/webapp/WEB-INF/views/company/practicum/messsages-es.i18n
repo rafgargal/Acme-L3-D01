@@ -1,0 +1,21 @@
+
+#  ##############################################################
+company.practicum.list.button.create = Crear
+company.practicum.form.button.create = Crear
+company.practicum.form.button.delete = Borrar
+company.practicum.form.button.update = Actualizar
+company.practicum.form.label.code = Código
+company.practicum.form.label.title = Título
+company.practicum.form.label.summary = Resumen
+company.practicum.form.label.goals = Objetivo
+
+company.practicum.form.button.practicum-sessions = Sesiones de prácicas
+
+company.practicum.list.label.code = Código
+company.practicum.list.label.title = Título
+company.practicum.list.label.summary = Resumen
+company.practicum.form.label.course = Curso
+company.practicum.list.label.draftMode = Borrador
+
+company.practicum.form.button.publish = Publicar
+company.practicum.error.label.code = El codigo ya existe
