@@ -18,4 +18,7 @@ public interface AnyCourseRepository extends AbstractRepository {
 	@Query("select c from Course c")
 	List<Course> findAllCourse();
 
+	@Query("select c from Course c where c.draftMode is false")
+	List<Course> findAllPublishedCourse();
+
 }
