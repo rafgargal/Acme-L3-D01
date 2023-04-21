@@ -98,6 +98,7 @@ public class AuditorAuditPublishService extends AbstractService<Auditor, Audit> 
 
 		tuple = super.unbind(object, "code", "lecturer.audit.form.error.duplicated");
 		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);
 	}

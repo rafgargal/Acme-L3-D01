@@ -10,8 +10,6 @@ import acme.entities.auditing.Audit;
 import acme.entities.course.Course;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
-import acme.framework.controllers.HttpMethod;
-import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
 
@@ -34,7 +32,6 @@ public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void authorise() {
 		boolean status;
-
 		status = super.getRequest().getPrincipal().hasRole(Auditor.class);
 
 		super.getResponse().setAuthorised(status);
@@ -52,6 +49,7 @@ public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 		object = new Audit();
 		object.setAuditor(auditor);
 		object.setDraftMode(true);
+
 		super.getBuffer().setData(object);
 	}
 
@@ -59,13 +57,11 @@ public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 	public void bind(final Audit object) {
 		assert object != null;
 
-		int courseId;
-		Course course;
-
-		courseId = super.getRequest().getData("course", int.class);
-		course = this.repository.findCourseById(courseId);
+		final int courseId = super.getRequest().getData("course", int.class);
+		final Course course = this.repository.findCourseById(courseId);
 
 		super.bind(object, "code", "conclusion", "weakPoints", "strongPoints", "mark", "draftMode");
+
 		object.setCourse(course);
 	}
 
@@ -97,23 +93,19 @@ public class AuditorAuditCreateService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void unbind(final Audit object) {
 		assert object != null;
-
 		Collection<Course> courses;
 		SelectChoices choices;
 		Tuple tuple;
-
 		courses = this.repository.findAllCourses();
+
 		choices = SelectChoices.from(courses, "title", object.getCourse());
 
 		tuple = super.unbind(object, "code", "conclusion", "weakPoints", "strongPoints", "mark", "draftMode");
+
 		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
+
 		super.getResponse().setData(tuple);
 	}
 
-	@Override
-	public void onSuccess() {
-
-		if (super.getRequest().getMethod().equals(HttpMethod.POST))
-			PrincipalHelper.handleUpdate();
-	}
 }

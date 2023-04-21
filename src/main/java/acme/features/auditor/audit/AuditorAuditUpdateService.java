@@ -15,6 +15,7 @@ import acme.roles.Auditor;
 
 @Service
 public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
+
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
@@ -73,12 +74,15 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void validate(final Audit object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Audit existing;
-
-			existing = this.repository.findOneAuditByCode(object.getCode());
-			super.state(existing == null, "code", "lecturer.audit.form.error.duplicated");
-		}
+		/*
+		 * if (!super.getBuffer().getErrors().hasErrors("code")) {
+		 * Audit existing;
+		 * 
+		 * existing = this.repository.findOneAuditByCode(object.getCode());
+		 * super.state(existing == null, "code", "lecturer.audit.form.error.duplicated");
+		 * 
+		 * }
+		 */
 
 	}
 
@@ -102,6 +106,7 @@ public class AuditorAuditUpdateService extends AbstractService<Auditor, Audit> {
 
 		tuple = super.unbind(object, "code", "lecturer.audit.form.error.duplicated");
 		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);
 	}

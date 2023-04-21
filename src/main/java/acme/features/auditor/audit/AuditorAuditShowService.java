@@ -68,7 +68,9 @@ public class AuditorAuditShowService extends AbstractService<Auditor, Audit> {
 
 		tuple = super.unbind(object, "code", "course.title", "auditor", "mark", "weakPoints", "strongPoints", "conclusion", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 
 		super.getResponse().setData(tuple);
 	}
+
 }

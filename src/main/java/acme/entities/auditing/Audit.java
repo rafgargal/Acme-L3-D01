@@ -57,5 +57,4 @@ public class Audit extends AbstractEntity {
 	protected Course			course;
 
 	protected Boolean			draftMode;
-
 }
