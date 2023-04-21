@@ -1,0 +1,22 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+assistant.dashboard.form.label.show-tutorials=Tutoriales
+assistant.dashboard.form.label.total-tutorials=Número total de tutoriales
+assistant.dashboard.form.label.tutorials-deviation=Desviación estándar de la duración
+assistant.dashboard.form.label.tutorials-min=Duración mínima
+assistant.dashboard.form.label.tutorials-max=Duración máxima
+assistant.dashboard.form.label.tutorials-average=Duración media
+
+assistant.dashboard.form.label.show-sessions=Sesiones de Tutoriales
+assistant.dashboard.form.label.sessions-deviation=Desviación estándar de la duración
+assistant.dashboard.form.label.sessions-min=Duración mínima
+assistant.dashboard.form.label.sessions-max=Duración máxima
+assistant.dashboard.form.label.sessions-average=Duración media

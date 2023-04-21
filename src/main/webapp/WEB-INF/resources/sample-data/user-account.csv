@@ -10,7 +10,9 @@ user-account-company-01,true,"UserIdentity{name: 'Company1', surname: 'Acme', em
 user-account-company-02,true,"UserIdentity{name: 'Company2', surname: 'Acme', email: 'company2@acme.com'}",company2,company2
 user-account-administrator-02,true,"UserIdentity{name: 'Administrator1', surname: 'Acme', email: 'administrator1@acme.com'}",administrator1,administrator1
 user-account-administrator-03,true,"UserIdentity{name: 'Administrator2', surname: 'Acme', email: 'administrator2@acme.com'}",administrator2,administrator2
+
 user-account-student-01,true,"UserIdentity{name: 'student1', surname: '1', email: 'student1@alum.us.es'}",student1,student1
 user-account-student-02,true,"UserIdentity{name: 'student2', surname: '2', email: 'student2@alum.us.es'}",student2,student2
 user-account-student-03,true,"UserIdentity{name: 'student1', surname: '1', email: 'student3@alum.us.es'}",student3,student3
 user-account-student-04,true,"UserIdentity{name: 'student2', surname: '2', email: 'student4@alum.us.es'}",student4,student4
+

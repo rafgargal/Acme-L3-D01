@@ -16,6 +16,23 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
+<jstl:if test="${banner != null }">
+	<div style="width:90%; margin: auto; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-bottom: 20px;">
+
+		<a href="${banner.webDocLink}" style="flex: 0 1 500px; position: relative;">
+			<img src="${banner.pictureLink}" alt="${banner.slogan}" style="width:100%"/>
+			<div style="position: absolute; bottom: 0; background-color: grey; color: white; padding: 2px; font-size: 12px;">
+				<acme:message code="master.welcome.advertisement"/>
+			</div>
+		</a>
+
+		<div style="flex: 0 1 470px; font-weight: 600;">
+			<acme:print value="${banner.slogan}" />
+		</div>
+
+	</div>
+</jstl:if>
+
 <acme:footer-panel>
 	<acme:footer-subpanel code="master.footer.title.about">
 		<acme:footer-option icon="fa fa-building" code="master.footer.label.company" action="/master/company"/>

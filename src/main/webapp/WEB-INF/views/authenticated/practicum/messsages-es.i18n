@@ -1,0 +1,7 @@
+# messages-es.i18n
+
+
+authenticated.practicum.list.label.code = Codigo
+authenticated.practicum.list.label.title = Titulo
+authenticated.practicum.list.label.summary = Resumen
+authenticated.practicum.list.label.company = Empresa
