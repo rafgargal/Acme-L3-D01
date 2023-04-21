@@ -72,6 +72,9 @@ master.menu.authenticated.bulletin = Bulletin
 master.menu.authenticated.tutorial = Tutorial
 
 master.menu.authenticated.course = Courses
+
+master.menu.authenticated.offer = Offers
+
 master.menu.authenticated.note = Notes
 
 # master.menu.lecturer ##########################################################
