@@ -1,0 +1,15 @@
+authenticated.offer.list.label.heading = Heading
+authenticated.offer.list.label.summary = Summary
+
+authenticated.offer.form.label.instantiationMoment = Instantiation moment
+authenticated.offer.form.label.heading = Heading
+authenticated.offer.form.label.summary = Summary
+authenticated.offer.form.label.availabilityPeriodInit = Availability period init
+authenticated.offer.form.label.availabilityPeriodFin = Availability period fin
+authenticated.offer.form.label.price = Price
+authenticated.offer.form.label.link = Link
+authenticated.offer.form.button.delete = Delete
+authenticated.offer.form.button.update = Update
+authenticated.offer.form.button.create = Create
+
+authorise.offer.error.availabilityPeriodFin = Invalid Date

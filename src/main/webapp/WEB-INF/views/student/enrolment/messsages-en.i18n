@@ -1,0 +1,23 @@
+student.enrolment.form.label.code = code
+student.enrolment.list.label.code = code: 
+student.enrolment.form.label.motivation= motivation
+student.enrolment.list.label.motivation= motivation
+student.enrolment.form.label.goals = goals
+student.enrolment.list.label.goals = goals
+student.enrolment.form.button.create = Create
+student.enrolment.list.button.create = Create
+student.enrolment.form.button.delete = Delete
+student.enrolment.form.label.course = Course
+
+student.enrolment.form.button.update = Update
+
+student.enrolment.form.button.finalise = Finalise
+
+student.enrolment.form.label.holderName = Holder's full name
+student.enrolment.form.label.lowerNibble = Card number
+
+student.enrolment.error.holderName.null = Can not be null
+student.enrolment.error.lowerNibble.null = Can not be null
+
+student.enrolment.error.lowerNibble.notValidNumber = Not valid card number
+

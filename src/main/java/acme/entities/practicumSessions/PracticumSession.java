@@ -37,13 +37,17 @@ public class PracticumSession extends AbstractEntity {
 	protected String			summary;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date				startDate;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date				endDate;
 
 	@URL
 	protected String			moreInfoLink;
+
+	protected boolean			addendum;
 
 	//Derived attributes
 

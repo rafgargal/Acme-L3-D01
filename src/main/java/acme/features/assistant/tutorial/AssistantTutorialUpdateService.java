@@ -75,10 +75,12 @@ public class AssistantTutorialUpdateService extends AbstractService<Assistant, T
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Tutorial existing;
 
+			final Tutorial nonUpdateTutorial = this.repository.findTutorialById(object.getId());
+
 			existing = this.repository.findTutorialByCode(object.getCode());
 
 			// Code must be new or the same than the 'old' tutorial
-			super.state(existing == null || existing.getCode().equals(object.getCode()), "code", "assistant.tutorial.form.error.duplicated");
+			super.state(existing == null || existing.getCode().equals(nonUpdateTutorial.getCode()), "code", "assistant.tutorial.form.error.duplicated");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("course")) {
 			final Course existing = object.getCourse();

@@ -8,7 +8,7 @@
 	<acme:input-textbox code="assistant.session.form.label.title" path="title"/>
 	<acme:input-textbox code="assistant.session.form.label.sAbstract" path="sAbstract"/>
 	<acme:input-moment code="assistant.session.form.label.startDateTime" path="startDateTime"/>
-	<acme:input-moment code="assistant.session.form.label.startDateTime" path="endDateTime"/>
+	<acme:input-moment code="assistant.session.form.label.endDateTime" path="endDateTime"/>
 	<acme:input-url code="assistant.session.form.label.furtherInfo" path="furtherInformation"/>
 
 	<acme:input-select code="assistant.session.form.label.type" path="type" choices="${types}"/>
