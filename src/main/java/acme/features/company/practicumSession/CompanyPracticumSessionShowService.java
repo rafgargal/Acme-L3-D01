@@ -4,6 +4,7 @@ package acme.features.company.practicumSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.practicum.Practicum;
 import acme.entities.practicumSessions.PracticumSession;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
@@ -42,10 +43,14 @@ public class CompanyPracticumSessionShowService extends AbstractService<Company,
 	@Override
 	public void load() {
 		PracticumSession session;
-		int practicumId;
-		practicumId = super.getRequest().getData("id", int.class);
-		session = this.repository.findPracticumSessionById(practicumId);
+		final int id;
+		boolean draftMode;
+		id = super.getRequest().getData("id", int.class);
+		session = this.repository.findPracticumSessionById(id);
+		final Practicum practicum = this.repository.findPracticumById(session.getPracticum().getId());
+		draftMode = practicum.getDraftMode();
 
+		super.getResponse().setGlobal("draftMode", draftMode);
 		super.getBuffer().setData(session);
 	}
 
