@@ -59,6 +59,7 @@ master.menu.authenticated.bulletin = Boletín
 master.menu.authenticated.tutorial = Tutorial
 
 master.menu.authenticated.course = Cursos
+master.menu.authenticated.note = Notas
 
 # master.menu.lecturer ##########################################################
 
