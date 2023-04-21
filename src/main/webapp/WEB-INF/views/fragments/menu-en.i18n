@@ -54,6 +54,9 @@ master.menu.consumer.favourite-link = Favourite link
 
 master.menu.student = Student
 master.menu.student.my-enrolment = My enrolments
+
+master.menu.student.courses = View courses
+
 master.menu.user-account.student = Update student
 
 
@@ -74,7 +77,6 @@ master.menu.authenticated.course = Courses
 
 master.menu.lecturer = Lecturer
 master.menu.lecturer.course = My courses
-
 
 
 
