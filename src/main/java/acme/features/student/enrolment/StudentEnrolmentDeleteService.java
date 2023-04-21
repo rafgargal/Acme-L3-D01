@@ -79,11 +79,9 @@ public class StudentEnrolmentDeleteService extends AbstractService<Student, Enro
 	public void bind(final Enrolment object) {
 		assert object != null;
 
-		int courseId;
 		Course course;
 
-		courseId = super.getRequest().getData("course", int.class);
-		course = this.repository.findCourseById(courseId);
+		course = this.repository.findCourseById(object.getCourse().getId());
 
 		super.bind(object, "code", "motivation", "goals");
 		object.setCourse(course);
