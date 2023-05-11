@@ -69,7 +69,10 @@ public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lect
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("learningTime"))
-			super.state(object.getLearningTime() > 0, "learningTime", "lecturer.lecture.error.learningTime-negative");
+			if (object.getLearningTime() != null)
+				super.state(object.getLearningTime() > 0, "learningTime", "lecturer.lecture.error.learningTime-negative");
+			else
+				super.state(object.getLearningTime() != null, "learningTime", "javax.validation.constraints.NotNull.message");
 
 	}
 
