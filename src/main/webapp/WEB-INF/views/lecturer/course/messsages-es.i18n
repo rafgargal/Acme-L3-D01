@@ -29,5 +29,6 @@ lecturer.course.button.lectures = Sus lecciones
 
 lecturer.course.form.error.duplicated = Duplicado
 lecturer.course.form.error.negative-retailPrice = Precio negativo
-lecturer.course.error.lecture-in-draft-mode = Hay lectuas en modo borrador
+lecturer.course.error.lecture-in-draft-mode = Hay lecciones en modo borrador
 lecturer.course.error.theoretical-course = Los cursos teóricos son rechazados
+lecturer.course.error.course-without-lecture = El curso no tiene lecciones
