@@ -19,7 +19,7 @@ public interface LecturerLectureCourseRepository extends AbstractRepository {
 	@Query("select c from Course c where c.id = :id")
 	Course findOneCourseById(int id);
 
-	@Query("select distinct(l) from Lecture l where l not in (select l from Lecture l left join LectureCourse lc on l.id = lc.lecture.id where lc.course.id != :courseId) and l.lecturer.id = :lecturerId")
+	@Query("select l from Lecture l where l.lecturer.id = :lecturerId and l.id not in (select lc.lecture.id from LectureCourse lc where lc.course.id = :courseId)")
 	List<Lecture> findAllLectureForACourse(int courseId, int lecturerId);
 
 }
