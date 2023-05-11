@@ -63,6 +63,13 @@ public class AuthenticatedCompanyCreateService extends AbstractService<Authentic
 	@Override
 	public void validate(final Company company) {
 		assert company != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("VATnumber")) {
+			Company existing;
+
+			existing = this.repository.findCompanyByVATnumber(company.getVATnumber());
+			super.state(existing == null, "VATnumber", "company.practicum.error.label.VATnumber");
+		}
 	}
 
 	@Override
