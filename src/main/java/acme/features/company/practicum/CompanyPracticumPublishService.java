@@ -56,7 +56,6 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 		id = super.getRequest().getData("id", int.class);
 		practicum = this.practicumRepository.findPracticumById(id);
 
-		practicum.setDraftMode(false);
 		super.getBuffer().setData(practicum);
 
 	}
@@ -64,12 +63,14 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	@Override
 	public void bind(final Practicum practicum) {
 		assert practicum != null;
-
 		int courseId;
+		Course course;
 
 		courseId = super.getRequest().getData("course", int.class);
+		course = this.practicumRepository.findCourseById(courseId);
 
-		super.bind(practicum, "code", "title", "summary", "goals", "draftMode");
+		super.bind(practicum, "code", "title", "summary", "goals");
+		practicum.setCourse(course);
 	}
 
 	@Override
@@ -80,6 +81,8 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	@Override
 	public void perform(final Practicum practicum) {
 		assert practicum != null;
+
+		practicum.setDraftMode(false);
 
 		this.practicumRepository.save(practicum);
 	}

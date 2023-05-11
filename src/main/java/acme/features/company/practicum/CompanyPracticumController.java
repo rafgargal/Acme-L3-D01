@@ -39,7 +39,7 @@ public class CompanyPracticumController extends AbstractController<Company, Prac
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("delete", this.deleteService);
 		super.addBasicCommand("update", this.updateService);
-		super.addCustomCommand("publish", "create", this.publishService);
+		super.addCustomCommand("publish", "update", this.publishService);
 	}
 
 }
