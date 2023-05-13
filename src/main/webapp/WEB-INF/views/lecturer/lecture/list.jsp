@@ -9,4 +9,10 @@
 	<acme:list-column code="lecturer.lecture.list.label.activityType" path="activityType" width="30%"/>
 </acme:list>
 
-<acme:button code="lecturer.lecture.button.add" action="/lecturer/lecture-course/add?courseId=${courseId}"/>
+<jstl:if test="${_command != 'listAll'}">
+	<acme:button code="lecturer.lecture.button.add" action="/lecturer/lecture-course/add?courseId=${courseId}"/>
+</jstl:if>
+
+<jstl:if test="${_command == 'listAll'}">
+	<acme:button code="lecturer.lecture.button.create" action="/lecturer/lecture/createFree"/>
+</jstl:if>

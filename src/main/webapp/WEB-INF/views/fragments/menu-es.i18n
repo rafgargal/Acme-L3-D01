@@ -73,6 +73,7 @@ master.menu.authenticated.note = Notas
 
 master.menu.lecturer = Profesor
 master.menu.lecturer.course = Mis cursos
+master.menu.lecturer.lecture = Mis lecciones
 
 # master.menu.auditor ##########################################################
 

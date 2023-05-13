@@ -1,7 +1,6 @@
 
 package acme.features.lecturer.lecture;
 
-import org.apache.commons.lang3.SerializationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +14,7 @@ import acme.framework.services.AbstractService;
 import acme.roles.Lecturer;
 
 @Service
-public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lecture> {
+public class LecturerLectureCreateFreeService extends AbstractService<Lecturer, Lecture> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -27,21 +26,14 @@ public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lect
 
 	@Override
 	public void check() {
-		boolean status;
-
-		status = super.getRequest().hasData("id", int.class);
-
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override
 	public void authorise() {
 		boolean status;
-		Lecture lecture;
 
-		lecture = this.repository.findOneLectureById(super.getRequest().getData("id", int.class));
-
-		status = lecture != null && super.getRequest().getPrincipal().hasRole(lecture.getLecturer());
+		status = super.getRequest().getPrincipal().hasRole(Lecturer.class);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -49,10 +41,15 @@ public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lect
 	@Override
 	public void load() {
 		Lecture object;
-		int id;
+		int userAccountId;
+		Lecturer lecturer;
 
-		id = super.getRequest().getData("id", int.class);
-		object = SerializationUtils.clone(this.repository.findOneLectureById(id));
+		userAccountId = super.getRequest().getPrincipal().getActiveRoleId();
+		lecturer = this.repository.findOneLecturerById(userAccountId);
+
+		object = new Lecture();
+		object.setLecturer(lecturer);
+		object.setDraftMode(true);
 		super.getBuffer().setData(object);
 	}
 
@@ -61,7 +58,6 @@ public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lect
 		assert object != null;
 
 		super.bind(object, "title", "lAbstract", "learningTime", "body", "activityType", "furtherInfo", "draftMode");
-
 	}
 
 	@Override
@@ -90,7 +86,8 @@ public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lect
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "lAbstract", "learningTime", "body", "activityType", "furtherInfo", "draftMode");
-		tuple.put("types", SelectChoices.from(ActivityType.class, object.getActivityType()));
+
+		tuple.put("activityTypes", SelectChoices.from(ActivityType.class, object.getActivityType()));
 
 		super.getResponse().setData(tuple);
 	}

@@ -12,4 +12,4 @@ lecturer.lectureCourse.label.course = Curso
 lecturer.lectureCourse.label.lecture = Lección
 
 lecturer.lectureCourse.button.add = Añadir
-lecturer.lectureCourse.button.create = Crear nueva lección
+lecturer.lectureCourse.button.create = Crear y añadir una nueva lección

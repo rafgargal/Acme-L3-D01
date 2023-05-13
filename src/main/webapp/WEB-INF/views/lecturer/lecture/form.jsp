@@ -24,8 +24,9 @@
 
 	<acme:submit test="${_command == 'create' && courseCode!=null}" code="lecturer.lecture.button.create" action="/lecturer/lecture/create?courseId=${courseId}"/>		
 	<acme:submit test="${_command == 'create' && courseCode==null}" code="lecturer.lecture.button.create" action="/lecturer/lecture/create"/>
+	<acme:submit test="${_command == 'createFree'}" code="lecturer.lecture.button.create" action="/lecturer/lecture/createFree"/>
 	
-	<jstl:if test="${_command != 'create' && draftMode == true }">	
+	<jstl:if test="${_command != 'create' && _command != 'createFree' && draftMode == true }">	
 		<acme:submit code="lecturer.lecture.button.update" action="/lecturer/lecture/update"/>
 		<acme:submit code="lecturer.lecture.button.delete" action="/lecturer/lecture/delete"/>		
 		<acme:submit code="lecturer.lecture.button.publish" action="/lecturer/lecture/publish"/>		

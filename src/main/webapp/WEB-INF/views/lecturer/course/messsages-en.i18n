@@ -31,3 +31,4 @@ lecturer.course.form.error.duplicated = Duplicated
 lecturer.course.form.error.negative-retailPrice = Negative retail price
 lecturer.course.error.lecture-in-draft-mode = A lecture is in draft mode
 lecturer.course.error.theoretical-course = Theoretical courses are rejected
+lecturer.course.error.course-without-lecture = The course must have lectures
