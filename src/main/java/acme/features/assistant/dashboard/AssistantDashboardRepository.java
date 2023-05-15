@@ -57,6 +57,9 @@ public interface AssistantDashboardRepository extends AbstractRepository {
 	@Query("select count(t) FROM Tutorial t where t.assistant.userAccount.id = :id")
 	Integer findNumberOfTutorialsByAssistantId(int id);
 
+	@Query("select count(s) FROM Session s where s.tutorial.assistant.userAccount.id = :id")
+	Integer findNumberOfSessionsByAssistantId(int id);
+
 	@Query("select t.estimatedTotalTime FROM Tutorial t where t.assistant.userAccount.id = :id")
 	List<Double> findAllTutorialTimesByAssistantId(int id);
 

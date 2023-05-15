@@ -11,3 +11,5 @@ assistant.dashboard.form.label.sessions-deviation=Standard deviation of duration
 assistant.dashboard.form.label.sessions-min=Minimum duration
 assistant.dashboard.form.label.sessions-max=Maximum duration
 assistant.dashboard.form.label.sessions-average=Average duration
+assistant.dashboard.form.label.no-tutorials=You have no tutorials
+assistant.dashboard.form.label.no-sessions=You have no sessions
