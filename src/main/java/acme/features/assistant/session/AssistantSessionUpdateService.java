@@ -11,6 +11,7 @@ import acme.entities.tutorial.Session;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
@@ -70,7 +71,7 @@ public class AssistantSessionUpdateService extends AbstractService<Assistant, Se
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("startDateTime")) {
-			final Date currentDate = new Date();
+			final Date currentDate = MomentHelper.getBaseMoment();
 
 			final Date oneDayAhead = new Date(currentDate.getTime() + 24 * 60 * 60 * 1000);
 
