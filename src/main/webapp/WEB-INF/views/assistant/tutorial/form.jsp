@@ -22,8 +22,10 @@
 		</jstl:if>
 	</jstl:if>
 	
-	<acme:button code="assistant.tutorial.form.button.course" action="/any/course/show?id=${course}"/>
-	<acme:button code="assistant.tutorial.form.button.sessions" action="/assistant/session/list?tutorialId=${id}"/>
+	<jstl:if test="${_command != 'create'}">
+		<acme:button code="assistant.tutorial.form.button.course" action="/any/course/show?id=${course}"/>
+		<acme:button code="assistant.tutorial.form.button.sessions" action="/assistant/session/list?tutorialId=${id}"/>
+	</jstl:if>
 
 <acme:hidden-data path="published"/>
 	
