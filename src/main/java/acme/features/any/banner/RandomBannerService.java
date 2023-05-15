@@ -1,7 +1,6 @@
 
 package acme.features.any.banner;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.banner.Banner;
 import acme.framework.components.accounts.Any;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -26,7 +26,7 @@ public class RandomBannerService extends AbstractService<Any, Banner> {
 	public Banner getRandomBanner() {
 		List<Banner> objects;
 
-		objects = this.repository.findActiveBanners(new Date());
+		objects = this.repository.findActiveBanners(MomentHelper.getBaseMoment());
 		Banner object = null;
 
 		// Choose one randomly

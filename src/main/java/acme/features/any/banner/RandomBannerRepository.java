@@ -13,6 +13,6 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface RandomBannerRepository extends AbstractRepository {
 
-	@Query("select b from Banner b where b.displayPeriodStart <= :date  and b.displayPeriodEnd > :date")
+	@Query("select b from Banner b where b.displayPeriodStart <= :date and b.displayPeriodEnd > :date")
 	List<Banner> findActiveBanners(Date date);
 }
