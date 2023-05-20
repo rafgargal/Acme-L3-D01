@@ -36,7 +36,7 @@ public class LecturerCourseShowTest extends TestHarness {
 
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("abstract", cAbstract);
+		super.checkInputBoxHasValue("cAbstract", cAbstract);
 		super.checkInputBoxHasValue("draftMode", draftMode);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("furtherInfo", furtherInfo);
