@@ -98,7 +98,7 @@ public class StudentEnrolmentDeleteService extends AbstractService<Student, Enro
 		final Course course = object.getCourse();
 
 		tuple = super.unbind(object, "code", "motivation", "goals");
-		tuple.put("courses", course.getCode());
+		tuple.put("coursesRead", course.getCode());
 
 		super.getResponse().setData(tuple);
 	}

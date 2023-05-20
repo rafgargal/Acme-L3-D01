@@ -92,7 +92,8 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 		object.setDraftMode(false);
 
 		final String lowerNibble = super.getRequest().getData("lowerNibble", String.class);
-		object.setLowerNibble(lowerNibble.substring(12, 16));
+		final String lastNumber = lowerNibble.substring(lowerNibble.length() - 4);
+		object.setLowerNibble(lastNumber);
 
 		final String holderName = super.getRequest().getData("holderName", String.class);
 		object.setHolderName(holderName);
@@ -125,7 +126,7 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 		Tuple tuple;
 
 		tuple = super.unbind(object, "code", "motivation", "goals", "lowerNibble", "holderName", "draftMode");
-		tuple.put("courses", course.getCode());
+		tuple.put("coursesRead", course.getCode());
 		tuple.put("cvc", cvc);
 		tuple.put("expiryDate", expiryDate);
 
