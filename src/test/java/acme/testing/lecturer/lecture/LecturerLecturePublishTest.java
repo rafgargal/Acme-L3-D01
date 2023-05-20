@@ -56,8 +56,7 @@ public class LecturerLecturePublishTest extends TestHarness {
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.clickOnSubmit("Publish");
-		super.checkAlertExists(false);
+		super.checkNotSubmitExists("Publish");
 
 		super.signOut();
 	}

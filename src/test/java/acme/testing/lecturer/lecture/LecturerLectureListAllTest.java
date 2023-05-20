@@ -23,7 +23,7 @@ public class LecturerLectureListAllTest extends TestHarness {
 
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, learningTime);
-		super.checkColumnHasValue(recordIndex, 1, activityType);
+		super.checkColumnHasValue(recordIndex, 2, activityType);
 
 		super.signOut();
 	}

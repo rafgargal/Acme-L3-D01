@@ -23,7 +23,7 @@ public class LecturerLectureShowTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/lecturer/lecture/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title, final String lAbstract, final String draftMode, final String learningTime, final String body, final String activityType) {
+	public void test100Positive(final int recordIndex, final String title, final String lAbstract, final String learningTime, final String body, final String activityType, final String draftMode) {
 		// HINT: this test signs in as a lecturer, then lists the lectures,
 		// HINT+ and checks that the listing shows the expected data.
 
@@ -35,7 +35,7 @@ public class LecturerLectureShowTest extends TestHarness {
 		super.clickOnListingRecord(recordIndex);
 
 		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("abstract", lAbstract);
+		super.checkInputBoxHasValue("lAbstract", lAbstract);
 		super.checkInputBoxHasValue("learningTime", learningTime);
 		super.checkInputBoxHasValue("body", body);
 		super.checkInputBoxHasValue("activityType", activityType);

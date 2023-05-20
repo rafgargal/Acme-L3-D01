@@ -11,7 +11,7 @@ public class LecturerLectureCreateFreeTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/lecturer/lecture/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title, final String lAbstract, final String draftMode, final String learningTime, final String body, final String activityType) {
+	public void test100Positive(final int recordIndex, final String title, final String lAbstract, final String learningTime, final String body, final String activityType) {
 		// HINT: this test authenticates as a lecturer and then lists his or her
 		// HINT: lectures, creates a new one, and check that it's been created properly.
 
@@ -22,7 +22,7 @@ public class LecturerLectureCreateFreeTest extends TestHarness {
 
 		super.clickOnButton("Create");
 		super.fillInputBoxIn("title", title);
-		super.fillInputBoxIn("abstract", lAbstract);
+		super.fillInputBoxIn("lAbstract", lAbstract);
 		super.fillInputBoxIn("learningTime", learningTime);
 		super.fillInputBoxIn("body", body);
 		super.fillInputBoxIn("activityType", activityType);
@@ -38,18 +38,17 @@ public class LecturerLectureCreateFreeTest extends TestHarness {
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("abstract", lAbstract);
+		super.checkInputBoxHasValue("lAbstract", lAbstract);
 		super.checkInputBoxHasValue("learningTime", learningTime);
 		super.checkInputBoxHasValue("body", body);
 		super.checkInputBoxHasValue("activityType", activityType);
-		super.checkInputBoxHasValue("draftMode", draftMode);
 
 		super.signOut();
 	}
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/lecturer/lecture/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test200Negative(final int recordIndex, final String code, final String title, final String lAbstract, final String learningTime, final String body, final String activityType) {
+	public void test200Negative(final int recordIndex, final String title, final String lAbstract, final String learningTime, final String body, final String activityType) {
 		// HINT: this test attempts to create lectures with incorrect data.
 
 		super.signIn("lecturer1", "lecturer1");
@@ -59,7 +58,7 @@ public class LecturerLectureCreateFreeTest extends TestHarness {
 		super.checkFormExists();
 
 		super.fillInputBoxIn("title", title);
-		super.fillInputBoxIn("abstract", lAbstract);
+		super.fillInputBoxIn("lAbstract", lAbstract);
 		super.fillInputBoxIn("learningTime", learningTime);
 		super.fillInputBoxIn("body", body);
 		super.fillInputBoxIn("activityType", activityType);
