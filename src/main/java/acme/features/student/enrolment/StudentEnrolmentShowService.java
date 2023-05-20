@@ -60,12 +60,10 @@ public class StudentEnrolmentShowService extends AbstractService<Student, Enrolm
 
 		Tuple tuple;
 
-
 		final Course course = object.getCourse();
 
-
 		tuple = super.unbind(object, "code", "motivation", "goals", "lowerNibble", "holderName", "draftMode");
-		tuple.put("course", course.getCode());
+		tuple.put("courses", course.getCode());
 
 		super.getResponse().setData(tuple);
 

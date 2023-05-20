@@ -91,16 +91,14 @@ public class StudentEnrolmentDeleteService extends AbstractService<Student, Enro
 	public void unbind(final Enrolment object) {
 		assert object != null;
 
-		Collection<Course> courses;
-		SelectChoices choices;
+		final Collection<Course> courses;
+		final SelectChoices choices;
 		Tuple tuple;
 
-		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "code", object.getCourse());
+		final Course course = object.getCourse();
 
 		tuple = super.unbind(object, "code", "motivation", "goals");
-		tuple.put("course", choices.getSelected().getKey());
-		tuple.put("courses", choices);
+		tuple.put("courses", course.getCode());
 
 		super.getResponse().setData(tuple);
 	}

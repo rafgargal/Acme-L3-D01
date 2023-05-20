@@ -5,14 +5,16 @@
 
 <acme:form>
 	<acme:input-textbox code="student.enrolment.form.label.code" path="code"/>
+	<acme:input-textbox code="student.enrolment.form.label.course" path="courses" readonly="true"/>
 	<acme:input-textbox code="student.enrolment.form.label.motivation" path="motivation"/>
 	<acme:input-textbox code="student.enrolment.form.label.goals" path="goals"/>
 
 	<jstl:choose>	 	
 		<jstl:when test="${(_command == 'show'||_command == 'update'||_command == 'delete'||_command == 'publish') && draftMode == true}">
-			<acme:input-textbox code="student.enrolment.form.label.course" path="course" readonly="true"/>
 			<acme:input-textbox code="student.enrolment.form.label.holderName" path="holderName"/>
 			<acme:input-textbox code="student.enrolment.form.label.lowerNibble" path="lowerNibble"/>
+			<acme:input-textbox code="student.enrolment.form.label.expiryDate" path="expiryDate"/>
+ 			<acme:input-textbox code="student.enrolment.form.label.cvc" path="cvc"/>
 			<acme:submit code="student.enrolment.form.button.finalise" action="/student/enrolment/publish"/>
 			<acme:submit code="student.enrolment.form.button.update" action="/student/enrolment/update"/>
 			<acme:submit code="student.enrolment.form.button.delete" action="/student/enrolment/delete"/>
