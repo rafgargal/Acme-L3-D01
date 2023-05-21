@@ -26,3 +26,5 @@ student.enrolment.form.label.cvc = CVC
 student.enrolment.error.expiryDate.matches = Not valid format
 
 student.enrolment.error.cvc.matches = Not valid format
+
+student.enrolment.error.code = Code duplicate

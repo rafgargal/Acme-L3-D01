@@ -1,6 +1,11 @@
 
 package acme.features.student.enrolment;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +13,7 @@ import acme.entities.course.Course;
 import acme.entities.enrolments.Enrolment;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
@@ -68,7 +74,6 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 		if (!super.getBuffer().getErrors().hasErrors("lowerNibble")) {
 			String lowerNibble;
 			lowerNibble = object.getLowerNibble();
-
 			super.state(lowerNibble.length() != 0, "lowerNibble", "student.enrolment.error.lowerNibble.null");
 			super.state(lowerNibble.length() >= 13, "lowerNibble", "student.enrolment.error.lowerNibble.notValidNumber");
 			super.state(lowerNibble.length() <= 18, "lowerNibble", "student.enrolment.error.lowerNibble.notValidNumber");
@@ -79,10 +84,17 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 			super.state(cvc.length() != 0 && cvc.matches("^\\d{3}$"), "cvc", "student.enrolment.error.cvc.matches");
 
 		final String expiryDate = super.getRequest().getData("expiryDate", String.class);
-
-		if (!super.getBuffer().getErrors().hasErrors("expiryDate"))
-			super.state(expiryDate.length() != 0 && expiryDate.matches("^\\d{2}\\/\\d{2}$"), "expiryDate", "student.enrolment.error.expiryDate.matches");
-
+		final DateFormat format = new SimpleDateFormat("MM/yy");
+		try {
+			final Date dateParse = format.parse(expiryDate);
+			final int mes = Integer.parseInt(expiryDate.split("/")[0]);
+			if (mes < 1 || mes > 12)
+				super.state(false, "expiryDate", "student.enrolment.error.expiryDate.matches");
+			if (MomentHelper.isBefore(dateParse, MomentHelper.getCurrentMoment()))
+				super.state(false, "expiryDate", "student.enrolment.error.expiryDate.matches");
+		} catch (final ParseException e) {
+			super.state(false, "expiryDate", "student.enrolment.error.expiryDate.matches");
+		}
 	}
 
 	@Override
