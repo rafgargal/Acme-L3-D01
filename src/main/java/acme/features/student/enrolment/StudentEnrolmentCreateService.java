@@ -32,7 +32,9 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 
 	@Override
 	public void validate(final Enrolment object) {
-		//completar
+		final Collection<String> allCodes = this.repository.findAllEnrolmentCode();
+		if (!super.getBuffer().getErrors().hasErrors("lowerNibble"))
+			super.state(!allCodes.contains(object.getCode()), "code", "student.enrolment.error.code");
 	}
 
 	@Override
