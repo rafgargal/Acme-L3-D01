@@ -23,6 +23,7 @@
 		
 		<jstl:when test="${_command == 'show' && draftMode == false}">
 		<acme:input-textbox code="student.enrolment.form.label.course" path="coursesRead" readonly="true"/>
+		<acme:button code="student.activity.form.button.activities" action="/student/activity/list?enrolmentId=${id}"/>
 		</jstl:when>
     
 		<jstl:when test="${_command == 'create'}">
