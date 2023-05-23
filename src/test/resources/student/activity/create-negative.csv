@@ -1,0 +1,6 @@
+recordIndex,title,summary,activityType,startDate,endDate,moreInfo
+1,,newActivity,THEORY,2022/03/22 11:00,2022/03/22 16:00,https://paginaprueba.com
+1,NewActivity,,THEORY,2022/03/22 11:00,2022/03/22 16:00,https://paginaprueba.com
+1,NewActivity,newActivity,---,2022/03/22 11:00,2022/03/22 16:00,https://paginaprueba.com
+1,NewActivity,newActivity,THEORY,,2022/03/22 16:00,https://paginaprueba.com
+1,NewActivity,newActivity,THEORY,2022/03/22 11:00,,https://paginaprueba.com
