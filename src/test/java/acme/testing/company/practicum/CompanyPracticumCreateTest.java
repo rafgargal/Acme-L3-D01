@@ -3,17 +3,19 @@ package acme.testing.company.practicum;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
 public class CompanyPracticumCreateTest extends TestHarness {
 
 	@ParameterizedTest
-	public void test100Positive(final int recordIndex, final String code, final String title, final String summary, final String goals) {
+	@CsvFileSource(resources = "/company/practicum/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test100Positive(final int recordIndex, final String code, final String title, final String summary, final String goals, final String course) {
 
 		super.signIn("company1", "company1");
 
-		super.clickOnMenu("Company", "My company");
+		super.clickOnMenu("Company", "My practicums");
 		super.checkListingExists();
 
 		super.clickOnButton("Create");
@@ -21,9 +23,10 @@ public class CompanyPracticumCreateTest extends TestHarness {
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("summary", summary);
 		super.fillInputBoxIn("goals", goals);
+		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Create");
 
-		super.clickOnMenu("Company", "My company");
+		super.clickOnMenu("Company", "My practicums");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, code);
@@ -35,8 +38,9 @@ public class CompanyPracticumCreateTest extends TestHarness {
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("summary", summary);
 		super.checkInputBoxHasValue("goals", goals);
+		super.checkInputBoxHasValue("course", course);
 
-		super.clickOnButton("PracticumSesssions");
+		super.clickOnButton("Practicum Sessions");
 		super.checkListingExists();
 		super.checkListingEmpty();
 
@@ -45,11 +49,12 @@ public class CompanyPracticumCreateTest extends TestHarness {
 	}
 
 	@ParameterizedTest
+	@CsvFileSource(resources = "/company/practicum/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test200Negative(final int recordIndex, final String code, final String title, final String summary, final String goals) {
 
 		super.signIn("company1", "company1");
 
-		super.clickOnMenu("Company", "My company");
+		super.clickOnMenu("Company", "My practicums");
 		super.checkListingExists();
 
 		super.clickOnButton("Create");
