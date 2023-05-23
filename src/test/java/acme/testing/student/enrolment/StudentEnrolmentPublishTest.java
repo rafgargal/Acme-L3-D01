@@ -64,6 +64,21 @@ public class StudentEnrolmentPublishTest extends TestHarness {
 		super.signOut();
 	}
 
+	@ParameterizedTest
+	@CsvFileSource(resources = "/student/enrolment/publish-negative2.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test201Negative(final int recordIndex, final String code, final String holderName, final String lowerNibble, final String expiryDate, final String CVC) {
+		super.signIn("student1", "student1");
+
+		super.clickOnMenu("Student", "My enrolments");
+		super.checkListingExists();
+
+		super.clickOnListingRecord(recordIndex);
+		super.checkFormExists();
+		super.checkNotSubmitExists("Finalise");
+
+		super.signOut();
+	}
+
 	@Test
 	public void test300Hacking() {
 		// HINT: this test tries to publish a enrolment with a role other than "Student".
