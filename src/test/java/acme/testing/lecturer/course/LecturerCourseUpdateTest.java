@@ -23,7 +23,7 @@ public class LecturerCourseUpdateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/lecturer/course/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title, final String cAbstract, final String retailPrice, final String furtherInfo, final String draftMode, final String activityType) {
+	public void test100Positive(final int recordIndex, final String code, final String title, final String cAbstract, final String retailPrice, final String furtherInfo) {
 		// HINT: this test logs in as a lecturer, lists his or her courses, 
 		// HINT+ selects one of them, updates it, and then checks that 
 		// HINT+ the update has actually been performed.
@@ -39,7 +39,7 @@ public class LecturerCourseUpdateTest extends TestHarness {
 		super.checkFormExists();
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
-		super.fillInputBoxIn("abstract", cAbstract);
+		super.fillInputBoxIn("cAbstract", cAbstract);
 		super.fillInputBoxIn("retailPrice", retailPrice);
 		super.fillInputBoxIn("furtherInfo", furtherInfo);
 		super.clickOnSubmit("Update");
@@ -53,11 +53,9 @@ public class LecturerCourseUpdateTest extends TestHarness {
 		super.checkFormExists();
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("abstract", cAbstract);
-		super.checkInputBoxHasValue("draftMode", draftMode);
+		super.checkInputBoxHasValue("cAbstract", cAbstract);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("furtherInfo", furtherInfo);
-		super.checkInputBoxHasValue("activityType", activityType);
 
 		super.signOut();
 	}
@@ -78,7 +76,7 @@ public class LecturerCourseUpdateTest extends TestHarness {
 		super.checkFormExists();
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
-		super.fillInputBoxIn("abstract", cAbstract);
+		super.fillInputBoxIn("cAbstract", cAbstract);
 		super.fillInputBoxIn("retailPrice", retailPrice);
 		super.fillInputBoxIn("furtherInfo", furtherInfo);
 		super.clickOnSubmit("Update");

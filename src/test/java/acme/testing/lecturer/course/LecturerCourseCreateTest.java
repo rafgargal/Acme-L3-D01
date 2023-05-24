@@ -11,7 +11,7 @@ public class LecturerCourseCreateTest extends TestHarness {
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/lecturer/course/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String code, final String title, final String cAbstract, final String draftMode, final String retailPrice, final String furtherInfo, final String activityType) {
+	public void test100Positive(final int recordIndex, final String code, final String title, final String cAbstract, final String retailPrice, final String furtherInfo) {
 		// HINT: this test authenticates as a lecturer and then lists his or her
 		// HINT: courses, creates a new one, and check that it's been created properly.
 
@@ -23,7 +23,7 @@ public class LecturerCourseCreateTest extends TestHarness {
 		super.clickOnButton("Create");
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
-		super.fillInputBoxIn("abstract", cAbstract);
+		super.fillInputBoxIn("cAbstract", cAbstract);
 		super.fillInputBoxIn("retailPrice", retailPrice);
 		super.fillInputBoxIn("furtherInfo", furtherInfo);
 		super.clickOnSubmit("Create");
@@ -38,11 +38,9 @@ public class LecturerCourseCreateTest extends TestHarness {
 		super.checkFormExists();
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("abstract", cAbstract);
-		super.checkInputBoxHasValue("draftMode", draftMode);
+		super.checkInputBoxHasValue("cAbstract", cAbstract);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("furtherInfo", furtherInfo);
-		super.checkInputBoxHasValue("activityType", activityType);
 
 		super.clickOnButton("Their lectures");
 		super.checkListingExists();
@@ -64,7 +62,7 @@ public class LecturerCourseCreateTest extends TestHarness {
 
 		super.fillInputBoxIn("code", code);
 		super.fillInputBoxIn("title", title);
-		super.fillInputBoxIn("abstract", cAbstract);
+		super.fillInputBoxIn("cAbstract", cAbstract);
 		super.fillInputBoxIn("retailPrice", retailPrice);
 		super.fillInputBoxIn("furtherInfo", furtherInfo);
 		super.clickOnSubmit("Create");
