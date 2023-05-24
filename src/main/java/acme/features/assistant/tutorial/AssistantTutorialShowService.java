@@ -56,27 +56,6 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 	}
 
 	@Override
-	public void bind(final Tutorial object) {
-
-		assert object != null;
-
-		int courseId;
-		Course course;
-
-		courseId = super.getRequest().getData("course", int.class);
-		course = this.repository.findCourseById(courseId);
-
-		super.bind(object, "code", "title", "tAbstract", "estimatedTotalTime", "goals", "published");
-		object.setCourse(course);
-
-	}
-
-	@Override
-	public void validate(final Tutorial object) {
-		assert object != null;
-	}
-
-	@Override
 	public void unbind(final Tutorial object) {
 		assert object != null;
 
