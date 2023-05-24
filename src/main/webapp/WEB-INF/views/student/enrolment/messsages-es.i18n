@@ -19,3 +19,11 @@ student.enrolment.error.holderName.null = No puede esta vacio
 student.enrolment.error.lowerNibble.null =No puede esta vacio
 
 student.enrolment.error.lowerNibble.notValidNumber = No es un número válido
+student.enrolment.form.label.expiryDate = Fecha de Caducidad
+student.enrolment.form.label.cvc = CVC
+
+student.enrolment.error.expiryDate.matches = Formato Incorrecto
+
+student.enrolment.error.cvc.matches = Formato Incorrecto
+
+student.enrolment.error.code = Código duplicado

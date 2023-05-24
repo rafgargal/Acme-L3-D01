@@ -1,0 +1,7 @@
+recordIndex,title,l-abstract,learning-time,body,activity-type,draft-mode
+0,Lección sin curso asociado,Esto es una lección que no está asociada a ningún curso,33.33,Cuerpo de ejemplo,HANDS_ON,false
+1,T,Esto es una lectura de ejemplo,9.75,Cuerpo de ejemplo,THEORETICAL,false
+2,Titulo de ejemplo,Esto es una lectura de ejemplo,55.00,Cuerpo de ejemplo,THEORETICAL,false
+3,Titulo de ejemplo,Esto es una lectura de ejemplo,1.00,C,THEORETICAL,true
+4,Titulo de ejemplo,E,2.50,Cuerpo de ejemplo,HANDS_ON,false
+5,Titulo de ejemplo,Esto es una lectura de ejemplo,25.50,Cuerpo de ejemplo,THEORETICAL,true

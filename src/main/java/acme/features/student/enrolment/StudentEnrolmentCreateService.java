@@ -32,7 +32,9 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 
 	@Override
 	public void validate(final Enrolment object) {
-		//completar
+		final Collection<String> allCodes = this.repository.findAllEnrolmentCode();
+		if (!super.getBuffer().getErrors().hasErrors("lowerNibble"))
+			super.state(!allCodes.contains(object.getCode()), "code", "student.enrolment.error.code");
 	}
 
 	@Override
@@ -80,10 +82,11 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 		courses = this.repository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
-		tuple = super.unbind(object, "code", "motivation", "goals");
+		tuple = super.unbind(object, "code", "motivation", "goals", "course");
+		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
-
 		super.getResponse().setData(tuple);
+
 	}
 
 }

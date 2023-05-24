@@ -8,3 +8,4 @@ enrolment-06,"FGH345","texto para motivacion","Esto es un texto de prueba lo suf
 enrolment-07,"JKL657","texto para motivacion","texto para goals",student-04,course-02,true,null,null
 enrolment-08,"UIO453","texto para motivacion","texto para goals",student-02,course-02,true,null,null
 enrolment-09,"RTE867","texto para motivacion","texto para goals",student-01,course-04,true,null,null
+enrolment-10,"ADV425","texto motivacion cerrado","texto gaol cerrado",student-01,course-05,false,Eduardo Bustamante,123

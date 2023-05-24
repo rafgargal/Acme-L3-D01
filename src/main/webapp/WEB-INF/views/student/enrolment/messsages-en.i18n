@@ -20,4 +20,11 @@ student.enrolment.error.holderName.null = Can not be null
 student.enrolment.error.lowerNibble.null = Can not be null
 
 student.enrolment.error.lowerNibble.notValidNumber = Not valid card number
+student.enrolment.form.label.expiryDate = ExpiryDate
+student.enrolment.form.label.cvc = CVC
 
+student.enrolment.error.expiryDate.matches = Not valid format
+
+student.enrolment.error.cvc.matches = Not valid format
+
+student.enrolment.error.code = Code duplicate
