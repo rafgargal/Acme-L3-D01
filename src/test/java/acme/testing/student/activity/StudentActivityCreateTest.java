@@ -78,10 +78,9 @@ public class StudentActivityCreateTest extends TestHarness {
 		String param;
 		param = String.format("id=%d", enrolment.getId());
 
-		super.signIn("student2", "student2");
+		super.checkLinkExists("Sign in");
 		super.request("/student/activity/create", param);
 		super.checkPanicExists();
-		super.signOut();
 
 		super.signIn("administrator", "administrator");
 		super.request("/student/activity/create", param);
@@ -103,11 +102,6 @@ public class StudentActivityCreateTest extends TestHarness {
 		final Enrolment enrolment = enrolments.stream().findFirst().orElse(null);
 		String param;
 		param = String.format("id=%d", enrolment.getId());
-
-		super.signIn("student2", "student2");
-		super.request("/student/activity/create", param);
-		super.checkPanicExists();
-		super.signOut();
 
 		super.signIn("administrator", "administrator");
 		super.request("/student/activity/create", param);

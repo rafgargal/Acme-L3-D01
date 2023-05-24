@@ -12,15 +12,16 @@ import acme.entities.activities.Activity;
 import acme.entities.enrolments.Enrolment;
 import acme.testing.TestHarness;
 
-public class StudentActivityShowTest extends TestHarness {
+public class StudentActivityDeleteTest extends TestHarness {
 
 	@Autowired
 	protected StudentActivityTestRepository repository;
 
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/student/activity/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/student/activity/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String title, final String summary, final String activityType, final String startDate, final String endDate, final String moreInfo) {
+
 		super.signIn("student1", "student1");
 		super.clickOnMenu("Student", "My enrolments");
 
@@ -36,13 +37,16 @@ public class StudentActivityShowTest extends TestHarness {
 		super.checkInputBoxHasValue("activityType", activityType);
 		super.checkInputBoxHasValue("startDate", startDate);
 		super.checkInputBoxHasValue("endDate", endDate);
+		super.clickOnSubmit("Delete");
 
+		super.checkListingExists();
 		super.signOut();
 	}
 
 	@Test
 	public void test200Negative() {
-
+		// HINT: there aren't any negative tests for this feature because it
+		// HINT+ doesn't involve any forms.
 	}
 
 	@Test
@@ -60,21 +64,21 @@ public class StudentActivityShowTest extends TestHarness {
 		param = String.format("id=%d", activity.getId());
 
 		super.checkLinkExists("Sign in");
-		super.request("/student/activity/show", param);
+		super.request("/student/activity/delete", param);
 		super.checkPanicExists();
 
 		super.signIn("administrator", "administrator");
-		super.request("/student/activity/show", param);
+		super.request("/student/activity/delete", param);
 		super.checkPanicExists();
 		super.signOut();
 
 		super.signIn("student2", "student2");
-		super.request("/student/activity/show", param);
+		super.request("/student/activity/delete", param);
 		super.checkPanicExists();
 		super.signOut();
 
 		super.signIn("assistant1", "assistant1");
-		super.request("/student/activity/show", param);
+		super.request("/student/activity/delete", param);
 		super.checkPanicExists();
 		super.signOut();
 	}
