@@ -1,0 +1,8 @@
+recordIndex,tutorialIndex,title,s-abstract,type,start-date-time,end-date-time,further-information
+0,0,Titulo de ejemplo 1,Este es un tutorial de ejemplo,THEORETICAL,2022/08/01 16:00,2022/08/01 18:00,https://wikipedia.org/
+1,0,Titulo de ejemplo 2,Este es un tutorial de ejemplo,HANDS_ON,2022/08/01 16:00,2022/08/01 18:00,
+0,1,Titulo de ejemplo 1,Este es un tutorial de ejemplo,BALANCED,2022/08/01 16:00,2022/08/01 18:00,
+1,1,UA,Este es un tutorial de ejemplo,THEORETICAL,2022/08/01 16:00,2022/08/01 18:00,
+0,2,Cadena de 75 caracteres Cadena de 75 caracteres Cadena de 75 caracteres Cad,Este es un tutorial de ejemplo,THEORETICAL,2022/08/01 16:00,2022/08/01 18:00,
+1,2,Titulo de ejemplo,A,THEORETICAL,2022/08/01 16:00,2022/08/01 18:00,
+0,3,Titulo de ejemplo 1,Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres,THEORETICAL,2022/08/01 16:00,2022/08/01 18:00,
