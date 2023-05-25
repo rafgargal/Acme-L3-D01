@@ -8,9 +8,13 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.activities.Activity;
 import acme.entities.auditing.Audit;
+import acme.entities.auditing.AuditingRecord;
 import acme.entities.course.Course;
 import acme.entities.course.LectureCourse;
 import acme.entities.enrolments.Enrolment;
+import acme.entities.practicum.Practicum;
+import acme.entities.practicumSessions.PracticumSession;
+import acme.entities.tutorial.Session;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -81,19 +85,42 @@ public class LecturerCourseDeleteService extends AbstractService<Lecturer, Cours
 		List<Enrolment> le;
 		List<Activity> la2;
 		List<Tutorial> lt;
+		List<AuditingRecord> lar;
+		List<Session> ls;
+		List<Practicum> lp;
+		List<PracticumSession> lps;
 
 		llc = this.repository.findAllLectureCourseByCourseId(object.getId());
+
 		la = this.repository.findAllAuditByCourseId(object.getId());
-		le = this.repository.findAllEnrolmentByCourseId(object.getId());
+		for (final Audit a : la) {
+			lar = this.repository.findAllAuditingRecordByAuditId(a.getId());
+			this.repository.deleteAll(lar);
+		}
+
 		lt = this.repository.findAllTutorialByCourseId(object.getId());
+		for (final Tutorial t : lt) {
+			ls = this.repository.findAllSessionByTutorialId(t.getId());
+			this.repository.deleteAll(ls);
+		}
+
+		le = this.repository.findAllEnrolmentByCourseId(object.getId());
 		for (final Enrolment e : le) {
 			la2 = this.repository.findAllActivityByEnrolmentId(e.getId());
 			this.repository.deleteAll(la2);
 		}
+
+		lp = this.repository.findAllPracticumByCourseId(object.getId());
+		for (final Practicum p : lp) {
+			lps = this.repository.findAllPracticumSessionByPracticumId(p.getId());
+			this.repository.deleteAll(lps);
+		}
+
 		this.repository.deleteAll(llc);
 		this.repository.deleteAll(la);
 		this.repository.deleteAll(le);
 		this.repository.deleteAll(lt);
+		this.repository.deleteAll(lp);
 
 		this.repository.delete(object);
 	}
