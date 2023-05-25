@@ -28,8 +28,6 @@
 	<jstl:if test="${_command != 'create' && draftMode == true }">	
 		<acme:submit code="lecturer.course.button.update" action="/lecturer/course/update"/>
 		<acme:submit code="lecturer.course.button.delete" action="/lecturer/course/delete"/>
-	</jstl:if>
-	<jstl:if test="${_command != 'create' && draftMode == true && canPublish}">	
 		<acme:submit code="lecturer.course.button.publish" action="/lecturer/course/publish"/>		
 	</jstl:if>
 	
