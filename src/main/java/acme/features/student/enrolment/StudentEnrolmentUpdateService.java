@@ -1,6 +1,8 @@
 
 package acme.features.student.enrolment;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,7 +58,9 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 
 	@Override
 	public void validate(final Enrolment object) {
-		assert object != null;
+		final Collection<String> allCodes = this.repository.findAllEnrolmentCode();
+		if (!super.getBuffer().getErrors().hasErrors("code"))
+			super.state(!allCodes.contains(object.getCode()), "code", "student.enrolment.error.code");
 	}
 
 	@Override

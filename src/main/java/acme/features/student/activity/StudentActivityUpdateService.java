@@ -8,6 +8,7 @@ import acme.entities.activities.Activity;
 import acme.entities.activities.ActivityType;
 import acme.entities.enrolments.Enrolment;
 import acme.features.student.enrolment.StudentEnrolmentRepository;
+import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.helpers.MomentHelper;
@@ -32,17 +33,29 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 
 	@Override
 	public void authorise() {
-		final boolean status = true;
+		final boolean status;
+		final int id;
+		Activity activity;
+		Principal principal;
+		final Student student;
+		Enrolment object;
+
+		id = super.getRequest().getData("id", int.class);
+
+		activity = this.repository.findActivityById(id);
+		final Enrolment enrolment = activity.getEnrolment();
+		object = this.repository.findEnrolmentById(enrolment.getId());
+		principal = super.getRequest().getPrincipal();
+
+		status = object.getStudent().getId() == principal.getActiveRoleId();
+
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void validate(final Activity object) {
-		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("endDate"))
-			super.state(object.getEndDate() != null, "endDate", "student.activity.error.endDate");
-		if (!super.getBuffer().getErrors().hasErrors("startDate"))
-			super.state(object.getStartDate() != null, "startDate", "student.activity.error.endDate");
+			super.state(object.getEndDate() != null && object.getStartDate() != null, "endDate", "student.activity.error.date");
 		if (!super.getBuffer().getErrors().hasErrors("endDate"))
 			super.state(MomentHelper.isAfter(object.getEndDate(), object.getStartDate()), "endDate", "student.activity.error.endDate");
 	}

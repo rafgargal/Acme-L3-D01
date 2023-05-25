@@ -19,4 +19,6 @@ student.activity.form.button.delete = Delete
 
 student.activity.error.endDate = Not valid Date
 
+student.activity.error.date = Start/End date invalid
+
 

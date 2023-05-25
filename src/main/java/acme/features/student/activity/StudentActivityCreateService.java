@@ -46,6 +46,8 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 	@Override
 	public void validate(final Activity object) {
 		if (!super.getBuffer().getErrors().hasErrors("endDate"))
+			super.state(object.getEndDate() != null && object.getStartDate() != null, "endDate", "student.activity.error.date");
+		if (!super.getBuffer().getErrors().hasErrors("endDate"))
 			super.state(MomentHelper.isAfter(object.getEndDate(), object.getStartDate()), "endDate", "student.activity.error.endDate");
 	}
 
