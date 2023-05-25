@@ -55,7 +55,7 @@ public class LecturerCourseCreateService extends AbstractService<Lecturer, Cours
 	public void bind(final Course object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "cAbstract", "draftMode", "retailPrice", "furtherInfo");
+		super.bind(object, "code", "title", "cAbstract", "retailPrice", "furtherInfo");
 	}
 
 	@Override
@@ -87,7 +87,7 @@ public class LecturerCourseCreateService extends AbstractService<Lecturer, Cours
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "code", "title", "cAbstract", "draftMode", "retailPrice", "furtherInfo");
+		tuple = super.unbind(object, "code", "title", "cAbstract", "retailPrice", "furtherInfo");
 
 		super.getResponse().setData(tuple);
 	}
