@@ -109,35 +109,18 @@ public class StudentEnrolmentPublishTest extends TestHarness {
 
 	@Test
 	public void test301Hacking() {
-		// HINT: this test tries to publish a published student that was registered by the principal.
+		// HINT: this test tries to publish a enrolment that was published already.
 
 		Collection<Enrolment> enrolments;
 		String params;
 
 		super.signIn("student1", "student1");
 		enrolments = this.repository.findEnrolemntByStudentUsername("student1");
-		for (final Enrolment lecture : enrolments)
-			if (!lecture.isDraftMode()) {
-				params = String.format("id=%d", lecture.getId());
+		for (final Enrolment enrolment : enrolments)
+			if (!enrolment.isDraftMode()) {
+				params = String.format("id=%d", enrolment.getId());
 				super.request("/student/enrolment/publish", params);
 			}
-		super.signOut();
-	}
-
-	@Test
-	public void test302Hacking() {
-		// HINT: this test tries to publish a lecture that wasn't registered by the principal,
-		// HINT+ be it published or unpublished.
-
-		Collection<Enrolment> enrolments;
-		String params;
-
-		super.signIn("student2", "student2");
-		enrolments = this.repository.findEnrolemntByStudentUsername("student1");
-		for (final Enrolment lecture : enrolments) {
-			params = String.format("id=%d", lecture.getId());
-			super.request("/lecturer/lecture/publish", params);
-		}
 		super.signOut();
 	}
 

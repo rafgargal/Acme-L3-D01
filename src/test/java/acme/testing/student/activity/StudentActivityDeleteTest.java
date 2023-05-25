@@ -31,7 +31,7 @@ public class StudentActivityDeleteTest extends TestHarness {
 		super.checkFormExists();
 		super.clickOnButton("Activities");
 
-		super.clickOnListingRecord(0);
+		super.clickOnListingRecord(1);
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("summary", summary);
 		super.checkInputBoxHasValue("activityType", activityType);
@@ -40,6 +40,7 @@ public class StudentActivityDeleteTest extends TestHarness {
 		super.clickOnSubmit("Delete");
 
 		super.checkListingExists();
+
 		super.signOut();
 	}
 

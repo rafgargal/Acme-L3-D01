@@ -28,6 +28,9 @@ public class StudentActivityController extends AbstractController<Student, Activ
 	@Autowired
 	protected StudentActivityDeleteService	deleteService;
 
+	@Autowired
+	protected StudentActvityPublishService	publishService;
+
 
 	@PostConstruct
 	protected void initialise() {
@@ -35,6 +38,7 @@ public class StudentActivityController extends AbstractController<Student, Activ
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("update", this.updateService);
+		super.addCustomCommand("publish", "update", this.publishService);
 		super.addBasicCommand("delete", this.deleteService);
 	}
 }
