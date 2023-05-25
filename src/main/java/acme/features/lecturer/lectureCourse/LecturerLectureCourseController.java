@@ -16,13 +16,17 @@ public class LecturerLectureCourseController extends AbstractController<Lecturer
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected LecturerLectureCourseAddService addService;
+	protected LecturerLectureCourseAddService		addService;
+
+	@Autowired
+	protected LecturerLectureCourseDeleteService	deleteService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
+		super.addBasicCommand("delete", this.deleteService);
 		super.addCustomCommand("add", "create", this.addService);
 	}
 

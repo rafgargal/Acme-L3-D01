@@ -9,8 +9,9 @@
 	<acme:list-column code="lecturer.lecture.list.label.activityType" path="activityType" width="30%"/>
 </acme:list>
 
-<jstl:if test="${_command != 'listAll'}">
+<jstl:if test="${_command != 'listAll' && courseInDraftMode}">
 	<acme:button code="lecturer.lecture.button.add" action="/lecturer/lecture-course/add?courseId=${courseId}"/>
+	<acme:button code="lecturer.lecture.button.delete" action="/lecturer/lecture-course/delete?courseId=${courseId}"/>
 </jstl:if>
 
 <jstl:if test="${_command == 'listAll'}">
