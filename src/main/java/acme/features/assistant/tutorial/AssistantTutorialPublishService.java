@@ -1,7 +1,6 @@
 
 package acme.features.assistant.tutorial;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +9,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.course.Course;
 import acme.entities.tutorial.Session;
 import acme.entities.tutorial.Tutorial;
-import acme.framework.components.jsp.SelectChoices;
-import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
@@ -44,11 +41,6 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 		final int assistantIdFromLoggedUser = super.getRequest().getPrincipal().getActiveRoleId();
 
 		final List<Session> sessions = this.repository.findSessionsByTutorialId(tutorialId);
-
-		if (sessions == null) {
-			super.getResponse().setAuthorised(false);
-			return;
-		}
 
 		super.getResponse().setAuthorised(assistantIdFromTutorial == assistantIdFromLoggedUser && !tutorial.isPublished() && !sessions.isEmpty());
 	}
@@ -90,24 +82,6 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 		object.setPublished(true);
 
 		this.repository.save(object);
-	}
-
-	@Override
-	public void unbind(final Tutorial object) {
-		assert object != null;
-
-		Collection<Course> courses;
-		SelectChoices choices;
-		Tuple tuple;
-
-		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", object.getCourse());
-
-		tuple = super.unbind(object, "code", "estimatedTotalTime", "goals", "tAbstract", "title", "assistant.supervisor", "course", "course.title", "published", "id");
-		tuple.put("course", choices.getSelected().getKey());
-		tuple.put("courses", choices);
-
-		super.getResponse().setData(tuple);
 	}
 
 }
