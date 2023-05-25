@@ -50,7 +50,7 @@ public class LecturerCourseDeleteTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to delete a job with a role other than "Lecturer".
+		// HINT: this test tries to delete a course with a role other than "Lecturer".
 
 		Collection<Course> courses;
 		String params;
