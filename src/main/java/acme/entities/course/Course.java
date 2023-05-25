@@ -16,6 +16,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.datatypes.ActivityType;
+import acme.datatypes.ActivityType2;
 import acme.entities.lecture.Lecture;
 import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
@@ -66,8 +67,8 @@ public class Course extends AbstractEntity {
 		int theoreticalLectures = 0;
 		if (!lectures.isEmpty())
 			for (final Lecture l : lectures) {
-				final ActivityType lectureType = l.getActivityType();
-				if (lectureType.equals(ActivityType.HANDS_ON))
+				final ActivityType2 lectureType = l.getActivityType();
+				if (lectureType.equals(ActivityType2.HANDS_ON))
 					handsOnLectures++;
 				else
 					theoreticalLectures++;

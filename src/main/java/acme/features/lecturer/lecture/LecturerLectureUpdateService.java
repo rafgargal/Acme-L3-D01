@@ -5,7 +5,7 @@ import org.apache.commons.lang3.SerializationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActivityType2;
 import acme.entities.lecture.Lecture;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -90,7 +90,7 @@ public class LecturerLectureUpdateService extends AbstractService<Lecturer, Lect
 		Tuple tuple;
 
 		tuple = super.unbind(object, "title", "lAbstract", "learningTime", "body", "activityType", "furtherInfo", "draftMode");
-		tuple.put("types", SelectChoices.from(ActivityType.class, object.getActivityType()));
+		tuple.put("types", SelectChoices.from(ActivityType2.class, object.getActivityType()));
 
 		super.getResponse().setData(tuple);
 	}

@@ -11,7 +11,7 @@ import javax.validation.constraints.Positive;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActivityType2;
 import acme.framework.data.AbstractEntity;
 import acme.roles.Lecturer;
 import lombok.Getter;
@@ -44,7 +44,7 @@ public class Lecture extends AbstractEntity {
 	protected String			body;
 
 	@NotNull
-	protected ActivityType		activityType;
+	protected ActivityType2		activityType;
 
 	@URL
 	protected String			furtherInfo;
