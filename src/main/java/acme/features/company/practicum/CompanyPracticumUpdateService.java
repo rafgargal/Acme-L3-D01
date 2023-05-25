@@ -33,7 +33,7 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 	}
 	@Override
 	public void authorise() {
-		final boolean status;
+		boolean status;
 		Practicum practicum;
 		final Principal principal;
 		int practicumId;
@@ -42,8 +42,8 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 		practicum = this.practicumRepository.findPracticumById(practicumId);
 		principal = super.getRequest().getPrincipal();
 
-		status = practicum.getCompany().getId() == principal.getActiveRoleId();
-
+		status = practicum.getCompany().getId() == principal.getActiveRoleId() && practicum.getDraftMode();
+		;
 		super.getResponse().setAuthorised(status);
 
 	}

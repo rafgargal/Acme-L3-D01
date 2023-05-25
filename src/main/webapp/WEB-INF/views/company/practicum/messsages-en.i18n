@@ -19,4 +19,4 @@ company.practicum.list.label.draftMode = Draft
 
 company.practicum.form.button.publish = Publish
 company.practicum.error.label.code = The code already exists
-
+company.practicum.error.label.empty = You can´t publish a company without practicums sessions
