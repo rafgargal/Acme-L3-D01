@@ -37,4 +37,25 @@ public class AnyPeepCreateTest extends TestHarness {
 		super.signOut();
 	}
 
+	@ParameterizedTest
+	@CsvFileSource(resources = "/any/peep/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test200Negative(final int recordIndex, final String title, final String message, final String email, final String link) {
+
+		super.signIn("student1", "student1");
+
+		super.clickOnMenu("Authenticated", "Peeps");
+		super.checkListingExists();
+		super.clickOnButton("Publish");
+
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("message", message);
+		super.fillInputBoxIn("email", email);
+		super.fillInputBoxIn("link", link);
+		super.clickOnSubmit("Publish");
+
+		super.checkErrorsExist();
+
+		super.signOut();
+	}
+
 }
