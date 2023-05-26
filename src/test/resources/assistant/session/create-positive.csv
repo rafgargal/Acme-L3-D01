@@ -1,7 +1,7 @@
 recordIndex,tutorialIndex,title,s-abstract,type,start-date-time,end-date-time,further-information
 0,1,0 Test title Test title Test title Test title Test title Test title Test ti,Este es un tutorial de ejemplo,THEORETICAL,2022/08/01 16:00,2022/08/01 21:00,https://wikipedia.org/
-1,1,1 Test title Test title Test title Test title Test title Test title Test ti,Este es un tutorial de ejemplo,BALANCED,2022/08/01 16:00,2022/08/01 18:00,
-2,1,2 Test title Test title Test title Test title Test title Test title Test ti,Este es un tutorial de ejemplo,BALANCED,2022/08/01 00:00,2022/08/01 03:00,
+1,1,1 Test title Test title Test title Test title Test title Test title Test ti,Este es un tutorial de ejemplo,HANDS_ON,2022/08/01 16:00,2022/08/01 18:00,
+2,1,2 Test title Test title Test title Test title Test title Test title Test ti,Este es un tutorial de ejemplo,HANDS_ON,2022/08/01 00:00,2022/08/01 03:00,
 3,1,3 Test title Test title Test title Test title Test title Test title Test ti,Este es un tutorial de ejemplo,THEORETICAL,2022/08/01 16:00,2022/08/01 18:00,
 0,2,0 Test title Test title Test title Test title Test title Test title Test ti,Este es un tutorial de ejemplo,THEORETICAL,2022/08/01 16:00,2022/08/01 18:00,
 1,2,1 Test title Test title Test title Test title Test title Test title Test ti,A,THEORETICAL,2022/08/01 16:00,2022/08/01 18:00,

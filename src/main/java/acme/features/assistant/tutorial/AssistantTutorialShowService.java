@@ -64,7 +64,7 @@ public class AssistantTutorialShowService extends AbstractService<Assistant, Tut
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", object.getCourse());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
 
 		tuple = super.unbind(object, "code", "estimatedTotalTime", "goals", "tAbstract", "title", "assistant.supervisor", "course", "course.title", "published");
 		tuple.put("course", choices.getSelected().getKey());

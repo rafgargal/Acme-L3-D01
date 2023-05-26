@@ -44,7 +44,7 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 		object = this.repository.findEnrolmentById(enrolmentId);
 		principal = super.getRequest().getPrincipal();
 
-		status = object.getStudent().getId() == principal.getActiveRoleId();
+		status = object.getStudent().getId() == principal.getActiveRoleId() && object.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}

@@ -18,8 +18,6 @@ public interface AssistantSessionTestRepository extends AbstractRepository {
 	@Query("select t from Tutorial t where t.assistant.userAccount.username = :username order by t.code")
 	List<Tutorial> findManyTutorialsByAssistantUsernameOrderedByCode(final String username);
 
-	// =====================
-
 	@Query("select s from Session s where s.tutorial.assistant.userAccount.username = :username")
 	Collection<Session> findManySessionsByAssistantUsername(final String username);
 

@@ -55,7 +55,7 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 		Course course;
 
 		courseId = super.getRequest().getData("course", int.class);
-		System.out.println(courseId);
+
 		course = this.repository.findCourseById(courseId);
 
 		super.bind(object, "code", "title", "tAbstract", "estimatedTotalTime", "goals");
@@ -82,8 +82,6 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 	public void perform(final Tutorial object) {
 		assert object != null;
 
-		System.out.println("ENTRA EN PERform");
-
 		this.repository.save(object);
 	}
 
@@ -96,7 +94,7 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", object.getCourse());
+		choices = SelectChoices.from(courses, "code", object.getCourse());
 
 		tuple = super.unbind(object, "code", "estimatedTotalTime", "goals", "tAbstract", "title", "assistant.supervisor", "course", "course.title", "published", "id");
 		tuple.put("course", choices.getSelected().getKey());

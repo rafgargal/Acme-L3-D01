@@ -13,11 +13,12 @@
 		<acme:input-url code="student.activity.form.label.moreInfo" path="moreInfo"/>
 
 	<jstl:choose>
-		<jstl:when test="${(_command == 'show'||_command == 'update'||_command == 'delete')}">
+		<jstl:when test="${(_command == 'show'||_command == 'update'||_command == 'publish'||_command == 'delete') && draftMode == true}">
 			<acme:submit code="student.activity.form.button.update" action="/student/activity/update"/>
 			<acme:submit code="student.activity.form.button.delete" action="/student/activity/delete"/>
+			<acme:submit code="student.activity.form.button.publish" action="/student/activity/publish"/>
 		</jstl:when>
-	
+			
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="student.activity.list.button.create" action="/student/activity/create?enrolmentId=${enrolmentId}"/>
 		</jstl:when>

@@ -1,2 +1,9 @@
 recordIndex,code,motivation,goals,course
-0,AAA123,motivation0,goals0,ZZZ999
+0,AAA123,texto para motivacion,texto para goal,ZZZ999
+1,AAA124,Test de motivation con valor medio= 38,Texto de prueba para el valor medio. Texto de prue,ZZZ999
+2,AAA125,Esto es una prueba para llegar al valor maximo. Esto es una prueba para lle,Esto es una prueba para llegar al valor maximo. Esto es una prueba para llegar al valor maximo. Esto,ZZZ999
+3,AAA126,texto motivacion cerrado,texto goal cerrado,ZZZ999
+4,AAA127,Es un texto para poder probar,Es un texto para poder probar,ZZZ999
+5,AAA128,e,e,ZZZ999
+
+

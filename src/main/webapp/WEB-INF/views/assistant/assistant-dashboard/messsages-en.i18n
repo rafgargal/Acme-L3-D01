@@ -1,5 +1,5 @@
 
-assistant.dashboard.form.label.show-tutorials=Tutorials
+assistant.dashboard.form.label.show-tutorials=Tutorials (published)
 assistant.dashboard.form.label.total-tutorials=Total number of tutorials
 assistant.dashboard.form.label.tutorials-deviation=Standard deviation of duration
 assistant.dashboard.form.label.tutorials-min=Minimum duration

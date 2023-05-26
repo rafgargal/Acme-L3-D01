@@ -27,12 +27,13 @@ public class AssistantTutorialCreateTest extends TestHarness {
 		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Save");
 
+		super.checkNotErrorsExist();
+
 		super.clickOnMenu("Assistant", "My tutorials");
 		super.checkListingExists();
 
 		super.sortListing(2, "asc");
 		super.checkColumnHasValue(recordIndex, 0, title);
-		super.checkColumnHasValue(recordIndex, 1, course);
 		super.checkColumnHasValue(recordIndex, 2, code);
 
 		super.clickOnListingRecord(recordIndex);
@@ -55,7 +56,6 @@ public class AssistantTutorialCreateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test200Negative(final int recordIndex, final String title, final String tAbstract, final String code, final String estimatedTotalTime, final String goals, final String course) {
-		// HINT: this test attempts to create courses with incorrect data.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -79,8 +79,6 @@ public class AssistantTutorialCreateTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to create a course using principals with
-		// HINT+ inappropriate roles.
 
 		super.checkLinkExists("Sign in");
 		super.request("/assistant/tutorial/create");

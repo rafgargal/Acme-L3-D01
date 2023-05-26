@@ -1,7 +1,7 @@
 recordIndex,tutorialIndex,title,s-abstract,type
 0,0,Titulo de ejemplo 1,Este es un tutorial de ejemplo,THEORETICAL
 1,0,Titulo de ejemplo 2,Este es un tutorial de ejemplo,HANDS_ON
-0,1,Titulo de ejemplo 1,Este es un tutorial de ejemplo,BALANCED
+0,1,Titulo de ejemplo 1,Este es un tutorial de ejemplo,HANDS_ON
 1,1,UA,Este es un tutorial de ejemplo,THEORETICAL
 0,2,Cadena de 75 caracteres Cadena de 75 caracteres Cadena de 75 caracteres Cad,Este es un tutorial de ejemplo,THEORETICAL
 1,2,Titulo de ejemplo,A,THEORETICAL

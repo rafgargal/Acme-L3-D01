@@ -84,6 +84,7 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 	@Override
 	public void perform(final Activity object) {
 		assert object != null;
+		object.setDraftMode(true);
 
 		this.repository.save(object);
 	}

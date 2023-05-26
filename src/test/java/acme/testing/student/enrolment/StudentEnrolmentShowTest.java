@@ -45,8 +45,6 @@ public class StudentEnrolmentShowTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to create a lecture using principals with
-		// HINT+ inappropriate roles.
 
 		final Collection<Enrolment> enrolments;
 		String param;
