@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActivityType2;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -39,7 +39,7 @@ public class Session extends AbstractEntity {
 	protected String			sAbstract;
 
 	@NotNull
-	protected ActivityType		type;
+	protected ActivityType2		type;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)

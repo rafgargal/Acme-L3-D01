@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.entities.tutorial.Tutorial;
 import acme.testing.TestHarness;
 
-public class AssistantTutorialShowTest extends TestHarness {
+public class AssistantTutorialDeleteTest extends TestHarness {
 
 	// Internal state ---------------------------------------------------------
 
@@ -22,32 +22,52 @@ public class AssistantTutorialShowTest extends TestHarness {
 
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/assistant/tutorial/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void test100Positive(final int recordIndex, final String title, final String tAbstract, final String code, final String estimatedTotalTime, final String goals, final String course, final String published) {
+	@CsvFileSource(resources = "/assistant/tutorial/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test100Positive(final int recordIndex, final String code, final String followingCode) {
 
 		super.signIn("assistant1", "assistant1");
 
 		super.clickOnMenu("Assistant", "My tutorials");
+
 		super.checkListingExists();
+
 		super.sortListing(2, "asc");
-		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 2, code);
 
 		super.clickOnListingRecord(recordIndex);
-		super.checkFormExists();
+
 		super.checkInputBoxHasValue("code", code);
-		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("tAbstract", tAbstract);
-		super.checkInputBoxHasValue("published", published);
-		super.checkInputBoxHasValue("estimatedTotalTime", estimatedTotalTime);
-		super.checkInputBoxHasValue("goals", goals);
-		super.checkInputBoxHasValue("course", course);
+
+		super.checkSubmitExists("Delete");
+		super.clickOnSubmit("Delete");
+
+		super.checkNotErrorsExist();
+
+		super.clickOnMenu("Assistant", "My tutorials");
+		super.checkListingExists();
+
+		super.checkColumnHasValue(recordIndex, 2, followingCode);
 
 		super.signOut();
 	}
 
-	@Test
-	public void test200Negative() {
+	@ParameterizedTest
+	@CsvFileSource(resources = "/assistant/tutorial/delete-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test200Negative(final int recordIndex) {
+
+		super.signIn("assistant1", "assistant1");
+
+		super.clickOnMenu("Assistant", "My tutorials");
+
+		super.checkListingExists();
+
+		super.sortListing(2, "asc");
+
+		super.clickOnListingRecord(recordIndex);
+
+		super.checkNotSubmitExists("Delete");
+
+		super.signOut();
 	}
 
 	@Test
@@ -61,14 +81,14 @@ public class AssistantTutorialShowTest extends TestHarness {
 		super.checkLinkExists("Sign in");
 		for (final Tutorial tutorial : tutorials) {
 			param = String.format("id=%d", tutorial.getId());
-			super.request("/assistant/tutorial/show", param);
+			super.request("/assistant/tutorial/delete", param);
 			super.checkPanicExists();
 		}
 
 		super.signIn("assistant2", "assistant2");
 		for (final Tutorial tutorial : tutorials) {
 			param = String.format("id=%d", tutorial.getId());
-			super.request("/assistant/tutorial/show", param);
+			super.request("/assistant/tutorial/delete", param);
 			super.checkPanicExists();
 		}
 		super.signOut();
@@ -76,11 +96,10 @@ public class AssistantTutorialShowTest extends TestHarness {
 		super.signIn("lecturer1", "lecturer1");
 		for (final Tutorial tutorial : tutorials) {
 			param = String.format("id=%d", tutorial.getId());
-			super.request("/assistant/tutorial/show", param);
+			super.request("/assistant/tutorial/delete", param);
 			super.checkPanicExists();
 		}
 		super.signOut();
-
 	}
 
 }

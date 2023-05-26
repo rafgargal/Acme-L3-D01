@@ -23,7 +23,7 @@ public interface AssistantDashboardRepository extends AbstractRepository {
 	@Query("select t from Tutorial t")
 	List<Tutorial> findAllTutorials();
 
-	@Query("select t from Tutorial t where t.assistant.userAccount.id = :id")
+	@Query("select t from Tutorial t where t.assistant.userAccount.id = :id and t.published = true")
 	List<Tutorial> findTutorialsByAssistantId(int id);
 
 	@Query("select t from Tutorial t where t.code = :code")
@@ -32,10 +32,10 @@ public interface AssistantDashboardRepository extends AbstractRepository {
 	@Query("select s from Session s where s.id = :id")
 	Session findSessionById(int id);
 
-	@Query("select s from Session s")
+	@Query("select s from Session s where s.tutorial.published = true")
 	List<Session> findAllSessions();
 
-	@Query("select s from Session s where s.tutorial.assistant.userAccount.id = :id")
+	@Query("select s from Session s where s.tutorial.assistant.userAccount.id = :id and s.tutorial.published = true")
 	List<Session> findSessionsByAssistantId(int id);
 
 	@Query("select s from Session s where s.tutorial.id = :id")
@@ -54,13 +54,13 @@ public interface AssistantDashboardRepository extends AbstractRepository {
 	Course findCourseById(int id);
 
 	// ######################################
-	@Query("select count(t) FROM Tutorial t where t.assistant.userAccount.id = :id")
+	@Query("select count(t) FROM Tutorial t where t.assistant.userAccount.id = :id and t.published = true")
 	Integer findNumberOfTutorialsByAssistantId(int id);
 
-	@Query("select count(s) FROM Session s where s.tutorial.assistant.userAccount.id = :id")
+	@Query("select count(s) FROM Session s where s.tutorial.assistant.userAccount.id = :id and s.tutorial.published = true")
 	Integer findNumberOfSessionsByAssistantId(int id);
 
-	@Query("select t.estimatedTotalTime FROM Tutorial t where t.assistant.userAccount.id = :id")
+	@Query("select t.estimatedTotalTime FROM Tutorial t where t.assistant.userAccount.id = :id and t.published = true")
 	List<Double> findAllTutorialTimesByAssistantId(int id);
 
 	default List<Double> findTutorialTimesByAssistantId(final int id) {

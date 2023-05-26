@@ -1,11 +1,11 @@
 recordIndex,title,t-abstract,code,estimated-total-time,goals,course
-1,,Este es un tutorial de ejemplo actualizado,AAA0002,2.20,aprendizaje,T
-1,Titulo de ejemplo negativo Titulo de ejemplo negativo Titulo de ejemplo nega,Este es un tutorial de ejemplo actualizado,AAA0002,2.20,aprendizaje,T
-1,Titulo de ejemplo,Resumen de ejemplo negativo Resumen de ejemplo negativo Resumen de ejemplo negativo Resumen de ejempl,AAA0002,2.20,aprendizaje,T
-1,Titulo de ejemplo,,AAA0002,1.20,aprendizaje,T
-1,Titulo de ejemplo,Este es un tutorial de ejemplo,B01,2.20,"aprendizaje, desarrollo",T
-1,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0001,2.20,"aprendizaje, desarrollo",Titulo de ejemplo con el maximo de caracteresssssssssssssssssssssssssssssss
-1,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0002,0.00,"aprendizaje, desarrollo",Titulo de ejemplo con el maximo de caracteresssssssssssssssssssssssssssssss
-1,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0002,-1.00,"aprendizaje, desarrollo",Titulo de ejemplo con el maximo de caracteresssssssssssssssssssssssssssssss
-1,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0002,2.20,Ejemplo de objetivos negativo Ejemplo de objetivos negativo Ejemplo de objetivos negativo aEjemplo de,Titulo de ejemplo con el maximo de caracteresssssssssssssssssssssssssssssss
-1,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0002,2.20,,Titulo de ejemplo con el maximo de caracteresssssssssssssssssssssssssssssss
+1,,Este es un tutorial de ejemplo actualizado,AAA0002,2.20,aprendizaje,ABC003
+1,Titulo de ejemplo negativo Titulo de ejemplo negativo Titulo de ejemplo nega,Este es un tutorial de ejemplo actualizado,AAA0002,2.20,aprendizaje,ABC003
+1,Titulo de ejemplo,Resumen de ejemplo negativo Resumen de ejemplo negativo Resumen de ejemplo negativo Resumen de ejempl,AAA0002,2.20,aprendizaje,ABC003
+1,Titulo de ejemplo,,AAA0002,1.20,aprendizaje,ABC003
+1,Titulo de ejemplo,Este es un tutorial de ejemplo,B01,2.20,"aprendizaje, desarrollo",ABC003
+1,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0001,2.20,"aprendizaje, desarrollo",AB002
+1,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0002,0.00,"aprendizaje, desarrollo",AB002
+1,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0002,-1.00,"aprendizaje, desarrollo",AB002
+1,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0002,2.20,Ejemplo de objetivos negativo Ejemplo de objetivos negativo Ejemplo de objetivos negativo aEjemplo de,AB002
+1,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0002,2.20,,AB002
