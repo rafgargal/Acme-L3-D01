@@ -77,6 +77,23 @@ public class CompanyPracticumUpdateTest extends TestHarness {
 	}
 
 	@Test
+	public void test201Negative() {
+
+		super.signIn("company1", "company1");
+
+		super.clickOnMenu("Company", "My practicums");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+
+		super.clickOnListingRecord(1);
+		super.checkFormExists();
+
+		super.checkNotSubmitExists("Update");
+		super.signOut();
+
+	}
+
+	@Test
 	public void test300Hacking() {
 
 		Collection<Practicum> practicums;
