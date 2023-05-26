@@ -5,14 +5,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.activities.Activity;
+import acme.entities.activities.ActivityType;
 import acme.entities.enrolments.Enrolment;
 import acme.features.student.enrolment.StudentEnrolmentRepository;
 import acme.framework.components.accounts.Principal;
+import acme.framework.components.jsp.SelectChoices;
+import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
 
 @Service
-public class StudentActivityDeleteService extends AbstractService<Student, Activity> {
+public class StudentActvityPublishService extends AbstractService<Student, Activity> {
 
 	@Autowired
 	protected StudentEnrolmentRepository repository;
@@ -49,6 +53,14 @@ public class StudentActivityDeleteService extends AbstractService<Student, Activ
 	}
 
 	@Override
+	public void validate(final Activity object) {
+		if (!super.getBuffer().getErrors().hasErrors("endDate"))
+			super.state(object.getEndDate() != null && object.getStartDate() != null, "endDate", "student.activity.error.date");
+		if (!super.getBuffer().getErrors().hasErrors("endDate"))
+			super.state(MomentHelper.isAfter(object.getEndDate(), object.getStartDate()), "endDate", "student.activity.error.endDate");
+	}
+
+	@Override
 	public void load() {
 		int id;
 		Activity activity;
@@ -58,24 +70,6 @@ public class StudentActivityDeleteService extends AbstractService<Student, Activ
 
 		super.getBuffer().setData(activity);
 	}
-
-	@Override
-	public void validate(final Activity object) {
-		assert object != null;
-	}
-
-	@Override
-	public void perform(final Activity object) {
-		assert object != null;
-
-		this.repository.delete(object);
-	}
-
-	@Override
-	public void unbind(final Activity object) {
-		assert object != null;
-	}
-
 	@Override
 	public void bind(final Activity object) {
 		assert object != null;
@@ -84,6 +78,32 @@ public class StudentActivityDeleteService extends AbstractService<Student, Activ
 		final Enrolment enrolment;
 
 		super.bind(object, "title", "summary", "activityType", "startDate", "endDate", "moreInfo");
+	}
+
+	@Override
+	public void perform(final Activity object) {
+		assert object != null;
+		object.setDraftMode(false);
+
+		this.repository.save(object);
+	}
+
+	@Override
+	public void unbind(final Activity object) {
+		assert object != null;
+
+		SelectChoices choices;
+		Tuple tuple;
+
+		final int enrolmentId = object.getEnrolment().getId();
+
+		choices = SelectChoices.from(ActivityType.class, object.getActivityType());
+
+		tuple = super.unbind(object, "title", "summary", "activityType", "startDate", "endDate", "moreInfo", "draftMode");
+		tuple.put("activities", choices);
+		tuple.put("enrolmentId", enrolmentId);
+
+		super.getResponse().setData(tuple);
 	}
 
 }

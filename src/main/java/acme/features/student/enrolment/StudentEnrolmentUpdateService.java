@@ -1,8 +1,6 @@
 
 package acme.features.student.enrolment;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +38,7 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 		object = this.repository.findEnrolmentById(enrolmentId);
 		principal = super.getRequest().getPrincipal();
 
-		status = object.getStudent().getId() == principal.getActiveRoleId();
+		status = object.getStudent().getId() == principal.getActiveRoleId() && object.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -58,9 +56,12 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 
 	@Override
 	public void validate(final Enrolment object) {
-		final Collection<String> allCodes = this.repository.findAllEnrolmentCode();
-		if (!super.getBuffer().getErrors().hasErrors("code"))
-			super.state(!allCodes.contains(object.getCode()), "code", "student.enrolment.error.code");
+		final Enrolment enrolment = this.repository.findEnrolmentByCode(object.getCode());
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			final Enrolment nonUpdateEnrolment = this.repository.findEnrolmentById(object.getId());
+			super.state(enrolment == null || enrolment.getCode().equals(nonUpdateEnrolment.getCode()), "code", "student.enrolment.error.code");
+		}
+
 	}
 
 	@Override

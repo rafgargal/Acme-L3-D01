@@ -27,3 +27,5 @@ student.enrolment.error.expiryDate.matches = Formato Incorrecto
 student.enrolment.error.cvc.matches = Formato Incorrecto
 
 student.enrolment.error.code = Código duplicado
+
+student.activity.form.button.publish = Finalizar

@@ -27,8 +27,11 @@ public interface StudentEnrolmentRepository extends AbstractRepository {
 	@Query("select c from Course c where c.draftMode = false")
 	Collection<Course> findAllCoursesWithoutDrafrMode();
 
-	@Query("select e.code from Enrolment e")
-	Collection<String> findAllEnrolmentCode();
+	@Query("select e from Enrolment e where e.code = :code")
+	Enrolment findEnrolmentByCode(String code);
+
+	@Query("SELECT e.code from Enrolment e")
+	Collection<String> findAllCodesFromEnrolments();
 
 	@Query("select e.course from Enrolment e where e.student.id = :id")
 	Collection<Course> findAllCoursesByStudentId(int id);
@@ -50,5 +53,8 @@ public interface StudentEnrolmentRepository extends AbstractRepository {
 
 	@Query("select s from Student s where s.id=:id")
 	Student findStudentByPrincipalId(int id);
+
+	@Query("select e.code from Enrolment e")
+	Collection<String> findAllEnrolmentCode();
 
 }
