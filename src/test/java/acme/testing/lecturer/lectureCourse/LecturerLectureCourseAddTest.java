@@ -69,7 +69,7 @@ public class LecturerLectureCourseAddTest extends TestHarness {
 		Collection<Course> courses;
 		String param;
 
-		courses = this.repository.findManyCoursesByLecturerUsurname("lecturer1");
+		courses = this.repository.findManyCoursesByLecturerUsername("lecturer1");
 		for (final Course course : courses) {
 			param = String.format("courseId=%d", course.getId());
 
