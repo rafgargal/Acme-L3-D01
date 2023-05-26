@@ -1,0 +1,6 @@
+recordIndex,code,title,c-abstract,draft-mode,retail-price,further-info,activity-type
+0,ABC003,T,Este es un curso de ejemplo,true,EUR 49.99,https://www.contarcaracteres.com/,THEORETICAL
+1,KK210,Titulo de ejemplo,Este es un curso de ejemplo,true,EUR 140.00,,HANDS_ON
+2,LS992,Titulo de ejemplo,Este es un curso de ejemplo,true,EUR 399.99,https://www.google.com/,THEORETICAL
+3,Z978,Titulo de ejemplo,E,true,EUR 30.49,https://www.us.es/,THEORETICAL
+4,A001,Titulo de ejemplo,Este es un curso de ejemplo,true,EUR 99.99,,THEORETICAL

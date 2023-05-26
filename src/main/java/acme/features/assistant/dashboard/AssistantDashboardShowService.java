@@ -77,7 +77,15 @@ public class AssistantDashboardShowService extends AbstractService<Assistant, As
 
 		tuple = super.unbind(object, "totalTutorials", "averageSessionTime", "deviationSessionTime", "minimumSessionTime", "maximumSessionTime", "averageTutorialTime", "deviationTutorialTime", "minimumTutorialTime", "maximumTutorialTime");
 
+		final int id = super.getRequest().getPrincipal().getAccountId();
+		final boolean haveTutorials = this.repository.findNumberOfTutorialsByAssistantId(id) > 0;
+		final boolean haveSessions = this.repository.findNumberOfSessionsByAssistantId(id) > 0;
+
+		super.getResponse().setGlobal("haveTutorials", haveTutorials);
+		super.getResponse().setGlobal("haveSessions", haveSessions);
+
 		super.getResponse().setData(tuple);
+
 	}
 
 }

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.course.Course;
 import acme.entities.practicum.Practicum;
+import acme.entities.practicumSessions.PracticumSession;
+import acme.features.company.practicumSession.CompanyPracticumSessionRepository;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -18,7 +20,9 @@ import acme.roles.Company;
 public class CompanyPracticumPublishService extends AbstractService<Company, Practicum> {
 
 	@Autowired
-	protected CompanyPracticumRepository practicumRepository;
+	protected CompanyPracticumRepository		practicumRepository;
+	@Autowired
+	protected CompanyPracticumSessionRepository	practicumSessionRepository;
 
 
 	@Override
@@ -76,6 +80,11 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	@Override
 	public void validate(final Practicum object) {
 		assert object != null;
+		Collection<PracticumSession> sessions;
+		sessions = this.practicumSessionRepository.findPracticumSessionsByPracticumId(object.getId());
+
+		super.state(sessions.size() != 0, "*", "company.practicum.error.label.empty");
+
 	}
 
 	@Override
@@ -95,6 +104,7 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 
 		courses = this.practicumRepository.findAllCourses();
 		choices = SelectChoices.from(courses, "code", practicum.getCourse());
+
 		tuple = super.unbind(practicum, "code", "title", "summary", "goals", "draftMode");
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);

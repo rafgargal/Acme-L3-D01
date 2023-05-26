@@ -9,10 +9,14 @@ import org.springframework.stereotype.Repository;
 import acme.datatypes.ActivityType;
 import acme.entities.activities.Activity;
 import acme.entities.auditing.Audit;
+import acme.entities.auditing.AuditingRecord;
 import acme.entities.course.Course;
 import acme.entities.course.LectureCourse;
 import acme.entities.enrolments.Enrolment;
 import acme.entities.lecture.Lecture;
+import acme.entities.practicum.Practicum;
+import acme.entities.practicumSessions.PracticumSession;
+import acme.entities.tutorial.Session;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Lecturer;
@@ -55,6 +59,18 @@ public interface LecturerCourseRepository extends AbstractRepository {
 
 	@Query("select t from Tutorial t where t.course.id = :id")
 	List<Tutorial> findAllTutorialByCourseId(int id);
+
+	@Query("select ar from AuditingRecord ar where ar.audit.id = :id")
+	List<AuditingRecord> findAllAuditingRecordByAuditId(int id);
+
+	@Query("select s from Session s where s.tutorial.id = :id")
+	List<Session> findAllSessionByTutorialId(int id);
+
+	@Query("select p from Practicum p where p.course.id = :id")
+	List<Practicum> findAllPracticumByCourseId(int id);
+
+	@Query("select ps from PracticumSession ps where ps.practicum.id = :id")
+	List<PracticumSession> findAllPracticumSessionByPracticumId(int id);
 
 	@Query("select l from Lecture l join LectureCourse lc on l.id = lc.lecture.id where lc.course.id = :courseId")
 	List<Lecture> findAllLecturesOfACourse(int courseId);

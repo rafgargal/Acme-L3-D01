@@ -19,3 +19,4 @@ company.practicum.list.label.draftMode = Borrador
 
 company.practicum.form.button.publish = Publicar
 company.practicum.error.label.code = El codigo ya existe
+company.practicum.error.label.empty = No puedes publicar una empresa sin practicas
