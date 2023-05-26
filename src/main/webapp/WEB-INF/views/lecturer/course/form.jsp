@@ -10,10 +10,14 @@
 	<acme:input-textbox code="lecturer.course.form.label.code" path="code"/>
 	<acme:input-textbox code="lecturer.course.form.label.title" path="title"/>
 	<acme:input-textbox code="lecturer.course.form.label.cAbstract" path="cAbstract"/>
+	<jstl:if test="${_command != 'create'}">
 	<acme:input-textbox code="lecturer.course.form.label.draftMode" path="draftMode" readonly="true"/>
+	</jstl:if>
 	<acme:input-money code="lecturer.course.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="lecturer.course.form.label.furtherInfo" path="furtherInfo"/>
+	<jstl:if test="${_command != 'create'}">
 	<acme:input-textbox code="lecturer.course.form.label.activityType" path="activityType" readonly="true"/>
+	</jstl:if>
 	
 	<jstl:if test="${_command != 'create'}">
 		<acme:button code="lecturer.course.button.lectures" action="/lecturer/lecture/list?courseId=${id}"/>
@@ -24,8 +28,6 @@
 	<jstl:if test="${_command != 'create' && draftMode == true }">	
 		<acme:submit code="lecturer.course.button.update" action="/lecturer/course/update"/>
 		<acme:submit code="lecturer.course.button.delete" action="/lecturer/course/delete"/>
-	</jstl:if>
-	<jstl:if test="${_command != 'create' && draftMode == true && canPublish}">	
 		<acme:submit code="lecturer.course.button.publish" action="/lecturer/course/publish"/>		
 	</jstl:if>
 	

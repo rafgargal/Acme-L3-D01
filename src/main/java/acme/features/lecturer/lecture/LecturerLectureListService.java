@@ -76,6 +76,10 @@ public class LecturerLectureListService extends AbstractService<Lecturer, Lectur
 
 		id = super.getRequest().getData("courseId", int.class);
 
+		final boolean courseInDraftMode = this.repository.findOneCourseById(super.getRequest().getData("courseId", int.class)).isDraftMode();
+
+		super.getResponse().setGlobal("courseInDraftMode", courseInDraftMode);
+
 		super.getResponse().setGlobal("courseId", id);
 	}
 

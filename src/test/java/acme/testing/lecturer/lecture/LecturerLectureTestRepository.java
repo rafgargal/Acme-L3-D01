@@ -15,6 +15,6 @@ public interface LecturerLectureTestRepository extends AbstractRepository {
 	Collection<Lecture> findManyLecturesByLecturerUsername(String username);
 
 	@Query("select c from Course c where c.lecturer.userAccount.username = :username")
-	Collection<Course> findManyCoursesByLecturerUsurname(String username);
+	Collection<Course> findManyCoursesByLecturerUsername(String username);
 
 }

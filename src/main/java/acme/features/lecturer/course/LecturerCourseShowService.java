@@ -61,10 +61,6 @@ public class LecturerCourseShowService extends AbstractService<Lecturer, Course>
 		tuple = super.unbind(object, "id", "code", "title", "cAbstract", "draftMode", "retailPrice", "furtherInfo");
 		tuple.put("activityType", this.repository.findActivityType(object.getId()));
 
-		final boolean canPublish = this.repository.findAllLecturesOfACourse(super.getRequest().getData("id", int.class)).size() > 0;
-
-		super.getResponse().setGlobal("canPublish", canPublish);
-
 		super.getResponse().setData(tuple);
 	}
 

@@ -4,7 +4,7 @@ package acme.features.lecturer.lecture;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActivityType2;
 import acme.entities.lecture.Lecture;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -57,7 +57,7 @@ public class LecturerLectureCreateFreeService extends AbstractService<Lecturer, 
 	public void bind(final Lecture object) {
 		assert object != null;
 
-		super.bind(object, "title", "lAbstract", "learningTime", "body", "activityType", "furtherInfo", "draftMode");
+		super.bind(object, "title", "lAbstract", "learningTime", "body", "activityType", "furtherInfo");
 	}
 
 	@Override
@@ -85,9 +85,9 @@ public class LecturerLectureCreateFreeService extends AbstractService<Lecturer, 
 
 		Tuple tuple;
 
-		tuple = super.unbind(object, "title", "lAbstract", "learningTime", "body", "activityType", "furtherInfo", "draftMode");
+		tuple = super.unbind(object, "title", "lAbstract", "learningTime", "body", "activityType", "furtherInfo");
 
-		tuple.put("activityTypes", SelectChoices.from(ActivityType.class, object.getActivityType()));
+		tuple.put("activityTypes", SelectChoices.from(ActivityType2.class, object.getActivityType()));
 
 		super.getResponse().setData(tuple);
 	}

@@ -20,7 +20,9 @@
 	<jstl:if test="${draftMode != false}">
 	<acme:input-select code="lecturer.lecture.form.label.activityType" path="activityType" choices="${activityTypes}"/>
 	</jstl:if>
+	<jstl:if test="${_command != 'create' && _command != 'createFree'}">
 	<acme:input-textbox code="lecturer.lecture.form.label.draftMode" path="draftMode" readonly="true"/>
+	</jstl:if>
 
 	<acme:submit test="${_command == 'create' && courseCode!=null}" code="lecturer.lecture.button.create" action="/lecturer/lecture/create?courseId=${courseId}"/>		
 	<acme:submit test="${_command == 'create' && courseCode==null}" code="lecturer.lecture.button.create" action="/lecturer/lecture/create"/>

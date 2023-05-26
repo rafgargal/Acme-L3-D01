@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.datatypes.ActivityType;
+import acme.datatypes.ActivityType2;
 import acme.entities.activities.Activity;
 import acme.entities.auditing.Audit;
 import acme.entities.auditing.AuditingRecord;
@@ -76,11 +77,11 @@ public interface LecturerCourseRepository extends AbstractRepository {
 	List<Lecture> findAllLecturesOfACourse(int courseId);
 
 	@Query("select count(lc) from LectureCourse lc where lc.lecture.activityType = :type and lc.course.id = :id")
-	Integer numOfLecturesOfOneTypeByCourseId(int id, ActivityType type);
+	Integer numOfLecturesOfOneTypeByCourseId(int id, ActivityType2 type);
 
 	default ActivityType findActivityType(final int id) {
-		final Integer theoreticalLectures = this.numOfLecturesOfOneTypeByCourseId(id, ActivityType.THEORETICAL);
-		final Integer handsOnLectures = this.numOfLecturesOfOneTypeByCourseId(id, ActivityType.HANDS_ON);
+		final Integer theoreticalLectures = this.numOfLecturesOfOneTypeByCourseId(id, ActivityType2.THEORETICAL);
+		final Integer handsOnLectures = this.numOfLecturesOfOneTypeByCourseId(id, ActivityType2.HANDS_ON);
 
 		if (theoreticalLectures > handsOnLectures)
 			return ActivityType.THEORETICAL;

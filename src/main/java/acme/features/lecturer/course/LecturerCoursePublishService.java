@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.datatypes.ActivityType;
+import acme.datatypes.ActivityType2;
 import acme.entities.course.Course;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
@@ -74,8 +75,7 @@ public class LecturerCoursePublishService extends AbstractService<Lecturer, Cour
 		super.state(!(this.repository.findActivityType(object.getId()) == ActivityType.THEORETICAL), "*", "lecturer.course.error.theoretical-course");
 		super.state(!this.repository.isAnyLectureInDraftModeByCourseId(object.getId()), "*", "lecturer.course.error.lecture-in-draft-mode");
 
-		final int numLectures = this.repository.numOfLecturesOfOneTypeByCourseId(object.getId(), ActivityType.THEORETICAL) + this.repository.numOfLecturesOfOneTypeByCourseId(object.getId(), ActivityType.HANDS_ON)
-			+ this.repository.numOfLecturesOfOneTypeByCourseId(object.getId(), ActivityType.BALANCED);
+		final int numLectures = this.repository.numOfLecturesOfOneTypeByCourseId(object.getId(), ActivityType2.THEORETICAL) + this.repository.numOfLecturesOfOneTypeByCourseId(object.getId(), ActivityType2.HANDS_ON);
 		super.state(numLectures > 0, "*", "lecturer.course.error.course-without-lecture");
 	}
 
