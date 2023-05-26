@@ -34,7 +34,7 @@ Tutorial
 + title: String {NotBlank,Length(max = 75)}
 + tAbstract: String {NotBlank, Length(max = 100)}
 + goals: String {NotBlank, Length(max = 100)}
-+ estimatedTotalTime: double
++ estimatedTotalTime: double {Positive}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>

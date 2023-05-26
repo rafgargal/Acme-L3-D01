@@ -24,8 +24,6 @@ public class AssistantSessionCreateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/session/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final int tutorialIndex, final String title, final String sAbstract, final String type, final String startDateTime, final String endDateTime, final String furtherInformation) {
-		// HINT: this test signs in as a lecturer, then lists the lectures,
-		// HINT+ and checks that the listing shows the expected data.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -73,8 +71,6 @@ public class AssistantSessionCreateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/session/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test200Negative(final int recordIndex, final int tutorialIndex, final String title, final String sAbstract, final String type, final String startDateTime, final String endDateTime, final String furtherInformation) {
-		// HINT: there aren't any negative tests for this feature because it
-		// HINT+ doesn't involve any forms.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -107,7 +103,6 @@ public class AssistantSessionCreateTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to show lectures that the principal cannot show.
 
 		final Collection<Tutorial> tutorials;
 		String param;

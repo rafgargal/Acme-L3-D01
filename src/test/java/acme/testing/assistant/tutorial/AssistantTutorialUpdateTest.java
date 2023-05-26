@@ -25,9 +25,6 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String title, final String tAbstract, final String code, final String estimatedTotalTime, final String goals, final String course) {
-		// HINT: this test logs in as a lecturer, lists his or her courses, 
-		// HINT+ selects one of them, updates it, and then checks that 
-		// HINT+ the update has actually been performed.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -93,7 +90,6 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/update-negative-1.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test200Negative(final int recordIndex, final String title, final String tAbstract, final String code, final String estimatedTotalTime, final String goals, final String course) {
-		// HINT: this test attempts to update a course with wrong data.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -123,7 +119,6 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/update-negative-2.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test201Negative(final int recordIndex, final String title, final String tAbstract, final String code, final String estimatedTotalTime, final String goals, final String course) {
-		// HINT: this test attempts to update a course with wrong data.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -143,8 +138,6 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to update a course with a role other than "Lecturer",
-		// HINT+ or using an lecturer who is not the owner.
 
 		final Collection<Tutorial> tutorials;
 		String param;

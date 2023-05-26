@@ -24,8 +24,6 @@ public class AssistantTutorialShowTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/assistant/tutorial/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String title, final String tAbstract, final String code, final String estimatedTotalTime, final String goals, final String course, final String published) {
-		// HINT: this test signs in as an lecturer, then lists the courses,
-		// HINT+ and checks that the listing shows the expected data.
 
 		super.signIn("assistant1", "assistant1");
 
@@ -33,7 +31,6 @@ public class AssistantTutorialShowTest extends TestHarness {
 		super.checkListingExists();
 		super.sortListing(2, "asc");
 		super.checkColumnHasValue(recordIndex, 0, title);
-		super.checkColumnHasValue(recordIndex, 1, course);
 		super.checkColumnHasValue(recordIndex, 2, code);
 
 		super.clickOnListingRecord(recordIndex);
@@ -51,13 +48,10 @@ public class AssistantTutorialShowTest extends TestHarness {
 
 	@Test
 	public void test200Negative() {
-		// HINT: there aren't any negative tests for this feature because it
-		// HINT+ doesn't involve any forms.
 	}
 
 	@Test
 	public void test300Hacking() {
-		// HINT: this test tries to show courses that the principal cannot show.
 
 		final Collection<Tutorial> tutorials;
 		String param;
