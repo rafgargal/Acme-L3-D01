@@ -1,9 +1,9 @@
 recordIndex,title,t-abstract,code,estimated-total-time,goals,course,published
-0,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0001,2.20,aprendizaje,Titulo de ejemplo,true
-1,a,Este es un tutorial de ejemplo,AAA0002,0.50,aprendizaje,Titulo de ejemplo,false
-2,Cadena de 75 caracteres Cadena de 75 caracteres Cadena de 75 caracteres Cad,Este es un tutorial de ejemplo,AAA0003,2.20,aprendizaje,Titulo de ejemplo,false
-3,A,Este es un tutorial de ejemplo,AAA0004,2.20,aprendizaje,Titulo de ejemplo,false
-4,Titulo de ejemplo,A,AAA0005,2.20,aprendizaje,Titulo de ejemplo,false
-5,Titulo de ejemplo,Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres,AAA0006,22.00,aprendizaje,Titulo de ejemplo,false
-6,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0007,2.20,A,Titulo de ejemplo,false
-7,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0008,2.20,Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres,Titulo de ejemplo,false
+0,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0001,2.20,aprendizaje,A001,true
+1,a,Este es un tutorial de ejemplo,AAA0002,0.50,aprendizaje,A001,false
+2,Cadena de 75 caracteres Cadena de 75 caracteres Cadena de 75 caracteres Cad,Este es un tutorial de ejemplo,AAA0003,2.20,aprendizaje,A001,false
+3,A,Este es un tutorial de ejemplo,AAA0004,2.20,aprendizaje,A001,false
+4,Titulo de ejemplo,A,AAA0005,2.20,aprendizaje,A001,false
+5,Titulo de ejemplo,Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres,AAA0006,22.00,aprendizaje,A001,false
+6,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0007,2.20,A,A001,false
+7,Titulo de ejemplo,Este es un tutorial de ejemplo,AAA0008,2.20,Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres Cadena de 100 caracteres,A001,false

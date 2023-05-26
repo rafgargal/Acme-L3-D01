@@ -82,8 +82,6 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 	public void perform(final Tutorial object) {
 		assert object != null;
 
-		System.out.println("ENTRA EN PERform");
-
 		this.repository.save(object);
 	}
 

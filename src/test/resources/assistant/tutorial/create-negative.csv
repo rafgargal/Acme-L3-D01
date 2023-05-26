@@ -1,12 +1,12 @@
 recordIndex,title,t-abstract,code,estimated-total-time,goals,course
-0,Titulo de ejemplo negativo Titulo de ejemplo negativo Titulo de ejemplo nega,Titulo de ejemplo,AAA0014,2.20,aprendizaje,T
-0,,a,AAA0014,2.20,aprendizaje,T
-0,Titulo de ejemplo,Resumen de ejemplo negativo Resumen de ejemplo negativo Resumen de ejemplo negativo Resumen de ejempl,AAA0014,2.20,aprendizaje,T
-0,Titulo de ejemplo,,AAA0014,2.20,aprendizaje,T
-0,Titulo de ejemplo,Titulo de ejemplo,AB123,2.20,aprendizaje,T
-0,Titulo de ejemplo,Titulo de ejemplo,AAA0001,2.20,aprendizaje,T
-0,Titulo de ejemplo,Titulo de ejemplo,AAA0014,0.00,aprendizaje,T
-0,Titulo de ejemplo,Titulo de ejemplo,AAA0014,-1.00,aprendizaje,T
-0,Titulo de ejemplo,Titulo de ejemplo,AAA0014,2.20,Ejemplo de objetivos negativo Ejemplo de objetivos negativo Ejemplo de objetivos negativo aEjemplo de,T
-0,Titulo de ejemplo,Titulo de ejemplo,AAA0014,2.20,,T
+0,Titulo de ejemplo negativo Titulo de ejemplo negativo Titulo de ejemplo nega,Titulo de ejemplo,AAA0014,2.20,aprendizaje,A001
+0,,a,AAA0014,2.20,aprendizaje,AB002
+0,Titulo de ejemplo,Resumen de ejemplo negativo Resumen de ejemplo negativo Resumen de ejemplo negativo Resumen de ejempl,AAA0014,2.20,aprendizaje,AB002
+0,Titulo de ejemplo,,AAA0014,2.20,aprendizaje,AB002
+0,Titulo de ejemplo,Titulo de ejemplo,AB123,2.20,aprendizaje,A001
+0,Titulo de ejemplo,Titulo de ejemplo,AAA0001,2.20,aprendizaje,A001
+0,Titulo de ejemplo,Titulo de ejemplo,AAA0014,0.00,aprendizaje,A001
+0,Titulo de ejemplo,Titulo de ejemplo,AAA0014,-1.00,aprendizaje,A001
+0,Titulo de ejemplo,Titulo de ejemplo,AAA0014,2.20,Ejemplo de objetivos negativo Ejemplo de objetivos negativo Ejemplo de objetivos negativo aEjemplo de,A001
+0,Titulo de ejemplo,Titulo de ejemplo,AAA0014,2.20,,A001
 0,Titulo de ejemplo,Titulo de ejemplo,AAA0014,2.20,aprendizaje,---

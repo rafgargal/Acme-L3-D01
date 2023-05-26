@@ -8,10 +8,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.entities.tutorial.Tutorial;
+import acme.entities.tutorial.Session;
 import acme.testing.TestHarness;
 
-public class AssistantSessionCreateTest extends TestHarness {
+public class AssistantSessionUpdateTest extends TestHarness {
 
 	// Internal state ---------------------------------------------------------
 
@@ -22,7 +22,7 @@ public class AssistantSessionCreateTest extends TestHarness {
 
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/assistant/session/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/assistant/session/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final int tutorialIndex, final String title, final String sAbstract, final String type, final String startDateTime, final String endDateTime, final String furtherInformation) {
 		// HINT: this test signs in as a lecturer, then lists the lectures,
 		// HINT+ and checks that the listing shows the expected data.
@@ -37,8 +37,8 @@ public class AssistantSessionCreateTest extends TestHarness {
 		super.clickOnButton("View sessions");
 
 		super.checkListingExists();
-
-		super.clickOnButton("Create new Session");
+		super.sortListing(0, "asc");
+		super.clickOnListingRecord(recordIndex);
 
 		super.checkFormExists();
 
@@ -49,7 +49,7 @@ public class AssistantSessionCreateTest extends TestHarness {
 		super.fillInputBoxIn("type", type);
 		super.fillInputBoxIn("furtherInformation", furtherInformation);
 
-		super.clickOnSubmit("Save");
+		super.clickOnSubmit("Update");
 
 		super.checkNotErrorsExist();
 
@@ -63,15 +63,25 @@ public class AssistantSessionCreateTest extends TestHarness {
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 
-		super.checkColumnHasValue(recordIndex, 0, title);
+		// super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, sAbstract);
 		super.checkColumnHasValue(recordIndex, 2, type);
+
+		super.clickOnListingRecord(recordIndex);
+		super.checkFormExists();
+
+		super.checkInputBoxHasValue("title", title);
+		super.checkInputBoxHasValue("sAbstract", sAbstract);
+		super.checkInputBoxHasValue("startDateTime", startDateTime);
+		super.checkInputBoxHasValue("endDateTime", endDateTime);
+		super.checkInputBoxHasValue("type", type);
+		super.checkInputBoxHasValue("furtherInformation", furtherInformation);
 
 		super.signOut();
 	}
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/assistant/session/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/assistant/session/update-negative-1.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test200Negative(final int recordIndex, final int tutorialIndex, final String title, final String sAbstract, final String type, final String startDateTime, final String endDateTime, final String furtherInformation) {
 		// HINT: there aren't any negative tests for this feature because it
 		// HINT+ doesn't involve any forms.
@@ -86,8 +96,8 @@ public class AssistantSessionCreateTest extends TestHarness {
 		super.clickOnButton("View sessions");
 
 		super.checkListingExists();
-
-		super.clickOnButton("Create new Session");
+		super.sortListing(0, "asc");
+		super.clickOnListingRecord(recordIndex);
 
 		super.checkFormExists();
 
@@ -98,9 +108,35 @@ public class AssistantSessionCreateTest extends TestHarness {
 		super.fillInputBoxIn("type", type);
 		super.fillInputBoxIn("furtherInformation", furtherInformation);
 
-		super.clickOnSubmit("Save");
+		super.clickOnSubmit("Update");
 
 		super.checkErrorsExist();
+
+		super.signOut();
+	}
+
+	@ParameterizedTest
+	@CsvFileSource(resources = "/assistant/session/update-negative-2.csv", encoding = "utf-8", numLinesToSkip = 1)
+	public void test201Negative(final int recordIndex, final int tutorialIndex) {
+		// HINT: there aren't any negative tests for this feature because it
+		// HINT+ doesn't involve any forms.
+
+		super.signIn("assistant1", "assistant1");
+
+		super.clickOnMenu("Assistant", "My tutorials");
+		super.checkListingExists();
+		super.sortListing(2, "asc");
+		super.clickOnListingRecord(tutorialIndex);
+
+		super.clickOnButton("View sessions");
+
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+		super.clickOnListingRecord(recordIndex);
+
+		super.checkFormExists();
+
+		super.checkNotSubmitExists("Update");
 
 		super.signOut();
 	}
@@ -109,30 +145,38 @@ public class AssistantSessionCreateTest extends TestHarness {
 	public void test300Hacking() {
 		// HINT: this test tries to show lectures that the principal cannot show.
 
-		final Collection<Tutorial> tutorials;
+		final Collection<Session> sessions;
 		String param;
 
-		tutorials = this.repository.findManyTutorialsByAssistantUsername("assistant1");
+		sessions = this.repository.findManySessionsByAssistantUsername("assistant1");
 
 		super.checkLinkExists("Sign in");
-		for (final Tutorial tutorial : tutorials) {
-			param = String.format("tutorialId=%d", tutorial.getId());
-			super.request("/assistant/session/create", param);
+		for (final Session session : sessions) {
+			param = String.format("id=%d", session.getId());
+			super.request("/assistant/session/update", param);
 			super.checkPanicExists();
 		}
 
+		super.signIn("administrator", "administrator");
+		for (final Session session : sessions) {
+			param = String.format("id=%d", session.getId());
+			super.request("/assistant/session/update", param);
+			super.checkPanicExists();
+		}
+		super.signOut();
+
 		super.signIn("assistant2", "assistant2");
-		for (final Tutorial tutorial : tutorials) {
-			param = String.format("tutorialId=%d", tutorial.getId());
-			super.request("/assistant/session/create", param);
+		for (final Session session : sessions) {
+			param = String.format("id=%d", session.getId());
+			super.request("/assistant/session/update", param);
 			super.checkPanicExists();
 		}
 		super.signOut();
 
 		super.signIn("lecturer1", "lecturer1");
-		for (final Tutorial tutorial : tutorials) {
-			param = String.format("tutorialId=%d", tutorial.getId());
-			super.request("/assistant/session/create", param);
+		for (final Session session : sessions) {
+			param = String.format("id=%d", session.getId());
+			super.request("/assistant/session/update", param);
 			super.checkPanicExists();
 		}
 		super.signOut();

@@ -7,10 +7,10 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AssistantTutorialCreateTest extends TestHarness {
+public class AssistantTutorialDeleteTest extends TestHarness {
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/assistant/tutorial/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/assistant/tutorial/delete-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void test100Positive(final int recordIndex, final String title, final String tAbstract, final String code, final String estimatedTotalTime, final String goals, final String course) {
 
 		super.signIn("assistant1", "assistant1");
@@ -26,8 +26,6 @@ public class AssistantTutorialCreateTest extends TestHarness {
 		super.fillInputBoxIn("goals", goals);
 		super.fillInputBoxIn("course", course);
 		super.clickOnSubmit("Save");
-
-		super.checkNotErrorsExist();
 
 		super.clickOnMenu("Assistant", "My tutorials");
 		super.checkListingExists();

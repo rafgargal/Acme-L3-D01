@@ -4,7 +4,7 @@ package acme.features.assistant.session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.ActivityType;
+import acme.datatypes.ActivityType2;
 import acme.entities.tutorial.Session;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.components.jsp.SelectChoices;
@@ -86,7 +86,7 @@ public class AssistantSessionDeleteService extends AbstractService<Assistant, Se
 
 		final SelectChoices choices;
 		Tuple tuple;
-		choices = SelectChoices.from(ActivityType.class, object.getType());
+		choices = SelectChoices.from(ActivityType2.class, object.getType());
 
 		tuple = super.unbind(object, "title", "sAbstract", "startDateTime", "endDateTime", "furtherInformation");
 		tuple.put("type", choices.getSelected().getKey());

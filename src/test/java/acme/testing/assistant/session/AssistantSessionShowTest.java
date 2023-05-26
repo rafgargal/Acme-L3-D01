@@ -66,23 +66,29 @@ public class AssistantSessionShowTest extends TestHarness {
 		String param;
 
 		sessions = this.repository.findManySessionsByAssistantUsername("assistant1");
+
+		super.checkLinkExists("Sign in");
 		for (final Session session : sessions) {
 			param = String.format("id=%d", session.getId());
-
-			super.checkLinkExists("Sign in");
 			super.request("/assistant/session/show", param);
 			super.checkPanicExists();
-
-			super.signIn("assistant2", "assistant2");
-			super.request("/assistant/session/show", param);
-			super.checkPanicExists();
-			super.signOut();
-
-			super.signIn("lecturer1", "lecturer1");
-			super.request("/assistant/session/show", param);
-			super.checkPanicExists();
-			super.signOut();
 		}
+
+		super.signIn("assistant2", "assistant2");
+		for (final Session session : sessions) {
+			param = String.format("tutorialId=%d", session.getId());
+			super.request("/assistant/session/show", param);
+			super.checkPanicExists();
+		}
+		super.signOut();
+
+		super.signIn("lecturer1", "lecturer1");
+		for (final Session session : sessions) {
+			param = String.format("tutorialId=%d", session.getId());
+			super.request("/assistant/session/show", param);
+			super.checkPanicExists();
+		}
+		super.signOut();
 	}
 
 }

@@ -60,6 +60,8 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		super.checkSubmitExists("Update");
 		super.clickOnSubmit("Update");
 
+		super.checkNotErrorsExist();
+
 		super.sortListing(2, "asc");
 
 		tutorials = this.repository.findManyTutorialsByAssistantUsernameOrderedByCode("assistant1");
@@ -148,28 +150,37 @@ public class AssistantTutorialUpdateTest extends TestHarness {
 		String param;
 
 		tutorials = this.repository.findManyTutorialsByAssistantUsername("assistant1");
+
+		super.checkLinkExists("Sign in");
 		for (final Tutorial tutorial : tutorials) {
 			param = String.format("id=%d", tutorial.getId());
-
-			super.checkLinkExists("Sign in");
 			super.request("/assistant/tutorial/update", param);
 			super.checkPanicExists();
-
-			super.signIn("administrator", "administrator");
-			super.request("/assistant/tutorial/update", param);
-			super.checkPanicExists();
-			super.signOut();
-
-			super.signIn("lecturer1", "lecturer1");
-			super.request("/assistant/tutorial/update", param);
-			super.checkPanicExists();
-			super.signOut();
-
-			super.signIn("assistant2", "assistant2");
-			super.request("/assistant/tutorial/update", param);
-			super.checkPanicExists();
-			super.signOut();
 		}
+
+		super.signIn("administrator", "administrator");
+		for (final Tutorial tutorial : tutorials) {
+			param = String.format("id=%d", tutorial.getId());
+			super.request("/assistant/tutorial/update", param);
+			super.checkPanicExists();
+		}
+		super.signOut();
+
+		super.signIn("lecturer1", "lecturer1");
+		for (final Tutorial tutorial : tutorials) {
+			param = String.format("id=%d", tutorial.getId());
+			super.request("/assistant/tutorial/update", param);
+			super.checkPanicExists();
+		}
+		super.signOut();
+
+		super.signIn("assistant2", "assistant2");
+		for (final Tutorial tutorial : tutorials) {
+			param = String.format("id=%d", tutorial.getId());
+			super.request("/assistant/tutorial/update", param);
+			super.checkPanicExists();
+		}
+		super.signOut();
 	}
 
 }

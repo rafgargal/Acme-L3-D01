@@ -119,11 +119,10 @@ belongs to &gt;</panel_attributes>
       <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
-ActivityType
+ActivityType2
 --
 + THEORETICAL
 + HANDS-ON
-+ BALANCED
 bg=orange</panel_attributes>
     <additional_attributes/>
   </element>
