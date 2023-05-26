@@ -54,6 +54,32 @@ public class CompanyPracticumPublishTest extends TestHarness {
 	}
 
 	@Test
+	public void test201Negative() {
+		//Borra la practicumSession y comprueba que no puede publicar sin practicumSession
+
+		super.signIn("company1", "company1");
+
+		super.clickOnMenu("Company", "My practicums");
+		super.checkListingExists();
+
+		super.clickOnListingRecord(2);
+		super.checkFormExists();
+		super.clickOnButton("Practicum Sessions");
+		super.clickOnListingRecord(0);
+		super.clickOnSubmit("Delete");
+		super.checkListingExists();
+
+		super.clickOnButton("Return");
+
+		super.clickOnSubmit("Publish");
+
+		super.checkErrorsExist();
+
+		super.signOut();
+
+	}
+
+	@Test
 	public void test300Hacking() {
 
 		Collection<Practicum> practicums;
