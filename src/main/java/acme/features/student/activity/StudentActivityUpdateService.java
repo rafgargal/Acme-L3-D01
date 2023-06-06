@@ -74,9 +74,6 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 	public void bind(final Activity object) {
 		assert object != null;
 
-		final int enrolmentId;
-		final Enrolment enrolment;
-
 		super.bind(object, "title", "summary", "activityType", "startDate", "endDate", "moreInfo");
 	}
 
@@ -98,7 +95,7 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 
 		choices = SelectChoices.from(ActivityType.class, object.getActivityType());
 
-		tuple = super.unbind(object, "title", "summary", "activityType", "startDate", "endDate", "moreInfo");
+		tuple = super.unbind(object, "title", "summary", "activityType", "startDate", "endDate", "moreInfo", "draftMode");
 		tuple.put("activities", choices);
 		tuple.put("enrolmentId", enrolmentId);
 
