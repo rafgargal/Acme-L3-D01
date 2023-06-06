@@ -1,0 +1,13 @@
+# messages-es.i18n
+
+student.lecutre.form.button.lectures = Lecciones
+
+student.lecture.list.label.title = Título
+student.lecture.list.label.learningTime = Tiempo Necesario
+
+student.lecture.form.label.title = Título
+student.lecture.form.label.lAbstract = Resumen
+student.lecture.form.label.learningTime = Tiempo Necesario
+student.lecture.form.label.body = Cuerpo
+student.lecture.form.label.activityType = Tipo de Actividad
+student.lecture.form.label.furtherInfo = Más Información
