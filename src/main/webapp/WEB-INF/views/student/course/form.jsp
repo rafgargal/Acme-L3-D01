@@ -11,4 +11,6 @@
 	<acme:input-textbox code="student.course.form.label.furtherInfo" path="furtherInfo"/>
 	<acme:input-textbox code="student.course.form.label.lecturers" path="lecturers"/>
 	
+	<acme:button code="student.lecutre.form.button.lectures" action="/student/lecture/list?id=${id}"/>
+	
 </acme:form>
