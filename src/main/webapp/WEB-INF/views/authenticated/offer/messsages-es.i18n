@@ -14,3 +14,5 @@ authenticated.offer.form.button.update = Actualizar
 authenticated.offer.form.button.create = Crear
 
 authorise.offer.error.availabilityPeriodFin = No es posible utilizar esta fecha
+authorise.offer.error.priceNegative = La cantidad no puede ser menor que 0.0
+authorise.offer.error.price = Tipo de moneda no váldio. Le sugerimos probar [USD, EUR, GBP, CAD...]
