@@ -13,3 +13,5 @@ authenticated.offer.form.button.update = Update
 authenticated.offer.form.button.create = Create
 
 authorise.offer.error.availabilityPeriodFin = Invalid Date
+authorise.offer.error.priceNegative = Can not be less than 0.0
+authorise.offer.error.price = Non-valid currency type. Try [USD, EUR, GBP, CAD...]

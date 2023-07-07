@@ -1,6 +1,10 @@
 
 package acme.features.authenticated.offers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -68,6 +72,9 @@ public class AuthenticatedOfferUpdateService extends AbstractService<Authenticat
 	public void validate(final Offer object) {
 		assert object != null;
 
+		final List<String> tmonedas = new ArrayList<>(
+			Arrays.asList("USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY", "HKD", "NZD", "SEK", "KRW", "SGD", "NOK", "MXN", "INR", "RUB", "ZAR", "TRY", "BRL", "TWD", "DKK", "PLN", "THB", "IDR", "HUF", "CZK", "ILS", "CLP", "PHP"));
+
 		if (!super.getBuffer().getErrors().hasErrors("availabilityPeriodInit"))
 			super.state(object.getAvailabilityPeriodInit() != null, "availabilityPeriodInit", "authorise.offer.error.availabilityPeriodFin");
 
@@ -75,8 +82,13 @@ public class AuthenticatedOfferUpdateService extends AbstractService<Authenticat
 			super.state(object.getAvailabilityPeriodFin() != null, "availabilityPeriodFin", "authorise.offer.error.availabilityPeriodFin");
 
 		if (!super.getBuffer().getErrors().hasErrors("availabilityPeriodFin"))
-			super.state(!MomentHelper.isAfter(object.getAvailabilityPeriodFin(), object.getAvailabilityPeriodInit()), "availabilityPeriodFin", "authorise.offer.error.availabilityPeriodFin");
+			super.state(MomentHelper.isAfter(object.getAvailabilityPeriodFin(), object.getAvailabilityPeriodInit()), "availabilityPeriodFin", "authorise.offer.error.availabilityPeriodFin");
 
+		if (!super.getBuffer().getErrors().hasErrors("price"))
+			super.state(object.getPrice().getAmount() >= 0.0, "price", "authorise.offer.error.priceNegative");
+
+		if (!super.getBuffer().getErrors().hasErrors("price"))
+			super.state(tmonedas.contains(object.getPrice().getCurrency()), "price", "authorise.offer.error.price");
 	}
 
 	@Override
