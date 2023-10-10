@@ -14,7 +14,7 @@
 			<acme:input-textbox code="student.enrolment.form.label.course" path="coursesRead" readonly="true"/>
 			<acme:input-textbox code="student.enrolment.form.label.holderName" path="holderName"/>
 			<acme:input-textbox code="student.enrolment.form.label.lowerNibble" path="lowerNibble"/>
-			<acme:input-textbox code="student.enrolment.form.label.expiryDate" path="expiryDate"/>
+			<acme:input-textbox code="student.enrolment.form.label.expiryDate" path="expiryDate" placeholder="MM/YY"/>
  			<acme:input-textbox code="student.enrolment.form.label.cvc" path="cvc"/>
 			<acme:submit code="student.enrolment.form.button.finalise" action="/student/enrolment/publish"/>
 			<acme:submit code="student.enrolment.form.button.update" action="/student/enrolment/update"/>

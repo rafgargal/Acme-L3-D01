@@ -29,3 +29,5 @@ student.enrolment.error.cvc.matches = Formato Incorrecto
 student.enrolment.error.code = Código duplicado
 
 student.activity.form.button.publish = Finalizar
+
+student.enrolment.error.courseCode = Ya tienes una inscripción en este curso

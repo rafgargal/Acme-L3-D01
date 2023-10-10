@@ -44,7 +44,11 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 		object = this.repository.findEnrolmentById(enrolmentId);
 		principal = super.getRequest().getPrincipal();
 
-		status = object.getStudent().getId() == principal.getActiveRoleId() && object.isDraftMode();
+		final boolean stado = object == null;
+		if (stado)
+			status = false;
+		else
+			status = object.getStudent().getId() == principal.getActiveRoleId() && object.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -130,8 +134,8 @@ public class StudentEnrolmentPublishService extends AbstractService<Student, Enr
 	@Override
 	public void unbind(final Enrolment object) {
 		assert object != null;
-		final String cvc = "";
-		final String expiryDate = "";
+		final String cvc = super.getRequest().getData("cvc", String.class);
+		final String expiryDate = super.getRequest().getData("expiryDate", String.class);
 
 		final Course course = object.getCourse();
 

@@ -30,3 +30,5 @@ student.enrolment.error.cvc.matches = Not valid format
 student.enrolment.error.code = Code duplicate
 
 student.activity.form.button.publish = Finalise
+
+student.enrolment.error.courseCode = You already have one enrolment in this course

@@ -40,7 +40,11 @@ public class StudentEnrolmentDeleteService extends AbstractService<Student, Enro
 		object = this.repository.findEnrolmentById(enrolmentId);
 		principal = super.getRequest().getPrincipal();
 
-		status = object.getStudent().getId() == principal.getActiveRoleId();
+		final boolean stado = object == null;
+		if (stado)
+			status = false;
+		else
+			status = object.getStudent().getId() == principal.getActiveRoleId() && object.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
